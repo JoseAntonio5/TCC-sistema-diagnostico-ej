@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model Empresa {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  createdAt DateTime @default(now())
+
+  diagnosticos Diagnostico[]
+}
+
+model Diagnostico {
+  id                   Int      @id @default(autoincrement())
+  empresaId            Int
+  notaGeral            Float
+  percentualMaturidade Float
+  nivelMaturidade      String
+  porDiretoria         Json
+  porDimensao          Json
+  createdAt            DateTime @default(now())
+
+  empresa   Empresa   @relation(fields: [empresaId], references: [id])
+  respostas Resposta[]
+
+  @@index([empresaId])
+}
+
+model Resposta {
+  id            Int @id @default(autoincrement())
+  diagnosticoId Int
+  perguntaId    Int
+  codigo        String
+  diretoria     String
+  dimensao      String
+  texto         String @db.Text
+  valor         Int
+
+  diagnostico Diagnostico @relation(fields: [diagnosticoId], references: [id])
+
+  @@index([diagnosticoId])
+}
