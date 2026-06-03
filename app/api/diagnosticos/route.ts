@@ -51,7 +51,7 @@ export async function POST(request: Request) {
         nivelMaturidade: body.nivelMaturidade,
         porDiretoria: body.porDiretoria,
         porDimensao: body.porDimensao,
-        respostas: {
+        resposta: {
           create: body.respostas.map((resposta) => ({
             perguntaId: resposta.perguntaId,
             codigo: resposta.codigo,
@@ -68,7 +68,7 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json({ diagnosticoId: diagnostico.id }, { status: 201 });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Erro ao processar o diagnóstico." },
       { status: 500 },

@@ -1,6 +1,4 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import { prisma } from "../../lib/prisma";
 
 type DashboardData = {
   empresa: string;
@@ -11,65 +9,124 @@ type DashboardData = {
   porDimensao: Record<string, number>;
 };
 
-const mockData: DashboardData = {
-  empresa: "Empresa Júnior Exemplo",
-  notaGeral: 3.8,
-  percentualMaturidade: 70,
-  nivelMaturidade: "Avançado",
-  porDiretoria: {
-    "Diretoria Executiva": 3.9,
-    "Diretoria Comercial": 3.6,
-    "Diretoria de Projetos": 3.8,
-    "Diretoria Financeira": 3.9,
-  },
-  porDimensao: {
-    "Planejamento estratégico": 3.8,
-    "Governança e tomada de decisão": 3.9,
-    "Gestão de desempenho organizacional": 3.7,
-    "Comunicação e alinhamento interno": 3.9,
-    "Prospecção e geração de oportunidades": 3.5,
-    "Gestão do funil comercial": 3.6,
-    "Propostas e negociação": 3.7,
-    "Relacionamento com clientes": 3.6,
-    "Planejamento de projetos": 3.8,
-    "Execução e acompanhamento": 3.7,
-    "Comunicação com o cliente": 3.9,
-    "Qualidade e encerramento": 3.9,
-  },
+type DashboardPageProps = {
+  searchParams: Promise<{
+    diagnosticoId?: string | string[];
+  }>;
 };
 
-const STORAGE_KEY = "ultimoDiagnostico";
+export default async function DashboardPage({ searchParams }: DashboardPageProps) {
+  const params = await searchParams;
+  const diagnosticoIdParam = Array.isArray(params.diagnosticoId)
+    ? params.diagnosticoId[0]
+    : params.diagnosticoId;
+  const diagnosticoId = diagnosticoIdParam ? Number(diagnosticoIdParam) : NaN;
 
-export default function DashboardPage() {
-  const [data, setData] = useState<DashboardData>(mockData);
-  const [isSavedData, setIsSavedData] = useState(false);
+  if (!diagnosticoIdParam) {
+    const historico = await prisma.diagnostico.findMany({
+      orderBy: { createdAt: "desc" },
+      take: 10,
+      include: { empresa: true },
+    });
 
-  useEffect(() => {
-    const saved = window.localStorage.getItem(STORAGE_KEY);
+    return (
+      <main className="min-h-screen bg-slate-50 py-10">
+        <div className="mx-auto max-w-6xl space-y-8 px-4 sm:px-6">
+          <section className="rounded-4xl border border-slate-200 bg-white p-8 shadow-sm">
+            <h1 className="text-4xl font-semibold text-slate-900">Dashboard</h1>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Sem parâmetro <code className="rounded bg-slate-100 px-1 py-0.5 text-slate-900">diagnosticoId</code>. Veja abaixo os diagnósticos salvos e clique em um para visualizar o dashboard.
+            </p>
+          </section>
 
-    if (!saved) {
-      setIsSavedData(false);
-      return;
-    }
+          {historico.length === 0 ? (
+            <section className="rounded-4xl border border-slate-200 bg-white p-8 shadow-sm">
+              <p className="text-base leading-7 text-slate-600">Ainda não há diagnósticos salvos.</p>
+            </section>
+          ) : (
+            <section className="rounded-4xl border border-slate-200 bg-white p-8 shadow-sm">
+              <h2 className="text-2xl font-semibold text-slate-900">Histórico de diagnósticos</h2>
+              <div className="mt-6 overflow-x-auto">
+                <table className="min-w-full text-left text-sm text-slate-700">
+                  <thead>
+                    <tr>
+                      <th className="pb-3 pr-6 text-slate-500">ID</th>
+                      <th className="pb-3 pr-6 text-slate-500">Empresa</th>
+                      <th className="pb-3 pr-6 text-slate-500">Nota geral</th>
+                      <th className="pb-3 pr-6 text-slate-500">Criado em</th>
+                      <th className="pb-3 text-slate-500">Ação</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {historico.map((item) => (
+                      <tr key={item.id} className="border-t border-slate-200">
+                        <td className="whitespace-nowrap px-4 py-4 font-semibold text-slate-900">{item.id}</td>
+                        <td className="px-4 py-4">{item.empresa.nome}</td>
+                        <td className="px-4 py-4">{item.notaGeral.toFixed(2)}</td>
+                        <td className="px-4 py-4">{new Date(item.createdAt).toLocaleString("pt-BR")}</td>
+                        <td className="px-4 py-4">
+                          <a
+                            href={`/dashboard?diagnosticoId=${item.id}`}
+                            className="inline-flex min-w-[140px] items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500"
+                          >
+                            Ver dashboard
+                          </a>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          )}
+        </div>
+      </main>
+    );
+  }
 
-    try {
-      const parsed = JSON.parse(saved) as Partial<DashboardData> & { empresa?: string };
+  if (Number.isNaN(diagnosticoId) || diagnosticoId <= 0) {
+    return (
+      <main className="min-h-screen bg-slate-50 py-10">
+        <div className="mx-auto max-w-6xl space-y-8 px-4 sm:px-6">
+          <section className="rounded-4xl border border-slate-200 bg-white p-8 shadow-sm">
+            <h1 className="text-4xl font-semibold text-slate-900">Dashboard</h1>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              ID do diagnóstico inválido. Use um valor numérico válido em <code className="rounded bg-slate-100 px-1 py-0.5 text-slate-900">diagnosticoId</code>.
+            </p>
+          </section>
+        </div>
+      </main>
+    );
+  }
 
-      if (typeof parsed?.notaGeral === "number") {
-        setData({
-          empresa: parsed.empresa ?? mockData.empresa,
-          notaGeral: parsed.notaGeral,
-          percentualMaturidade: parsed.percentualMaturidade ?? mockData.percentualMaturidade,
-          nivelMaturidade: parsed.nivelMaturidade ?? mockData.nivelMaturidade,
-          porDiretoria: parsed.porDiretoria ?? mockData.porDiretoria,
-          porDimensao: parsed.porDimensao ?? mockData.porDimensao,
-        });
-        setIsSavedData(true);
-      }
-    } catch {
-      setIsSavedData(false);
-    }
-  }, []);
+  const diagnostico = await prisma.diagnostico.findUnique({
+    where: { id: diagnosticoId },
+    include: { empresa: true },
+  });
+
+  if (!diagnostico) {
+    return (
+      <main className="min-h-screen bg-slate-50 py-10">
+        <div className="mx-auto max-w-6xl space-y-8 px-4 sm:px-6">
+          <section className="rounded-4xl border border-slate-200 bg-white p-8 shadow-sm">
+            <h1 className="text-4xl font-semibold text-slate-900">Dashboard</h1>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Diagnóstico não encontrado para o ID fornecido.
+            </p>
+          </section>
+        </div>
+      </main>
+    );
+  }
+
+  const data: DashboardData = {
+    empresa: diagnostico.empresa.nome,
+    notaGeral: diagnostico.notaGeral,
+    percentualMaturidade: diagnostico.percentualMaturidade,
+    nivelMaturidade: diagnostico.nivelMaturidade,
+    porDiretoria: (diagnostico.porDiretoria as Record<string, number>) ?? {},
+    porDimensao: (diagnostico.porDimensao as Record<string, number>) ?? {},
+  };
 
   return (
     <main className="min-h-screen bg-slate-50 py-10">
@@ -84,7 +141,7 @@ export default function DashboardPage() {
                 {data.empresa}
               </h1>
               <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
-                Visão geral de maturidade organizacional. Dados mockados, prontos para receber resultados reais do questionário.
+                Visão geral de maturidade organizacional carregada do banco de dados.
               </p>
             </div>
 
@@ -96,9 +153,7 @@ export default function DashboardPage() {
           </div>
 
           <div className="mt-6 rounded-3xl bg-slate-100 p-5 text-sm text-slate-700">
-            {isSavedData
-              ? "Resultados carregados do último diagnóstico finalizado."
-              : "Exibindo valores mockados até que os dados reais sejam integrados."}
+            Dados carregados do diagnóstico #{diagnosticoId}.
           </div>
         </section>
 

@@ -7,41 +7,38 @@ datasource db {
   provider = "mysql"
 }
 
-model Empresa {
-  id        Int      @id @default(autoincrement())
-  nome      String
-  createdAt DateTime @default(now())
-
-  diagnosticos Diagnostico[]
-}
-
-model Diagnostico {
-  id                   Int      @id @default(autoincrement())
+model diagnostico {
+  id                   Int        @id @default(autoincrement())
+  createdAt            DateTime   @default(now())
   empresaId            Int
+  nivelMaturidade      String
   notaGeral            Float
   percentualMaturidade Float
-  nivelMaturidade      String
-  porDiretoria         Json
   porDimensao          Json
-  createdAt            DateTime @default(now())
+  porDiretoria         Json
+  empresa              empresa    @relation(fields: [empresaId], references: [id], map: "Diagnostico_empresaId_fkey")
+  resposta             resposta[]
 
-  empresa   Empresa   @relation(fields: [empresaId], references: [id])
-  respostas Resposta[]
-
-  @@index([empresaId])
+  @@index([empresaId], map: "Diagnostico_empresaId_idx")
 }
 
-model Resposta {
-  id            Int @id @default(autoincrement())
+model empresa {
+  id          Int           @id @default(autoincrement())
+  nome        String
+  createdAt   DateTime      @default(now())
+  diagnostico diagnostico[]
+}
+
+model resposta {
+  id            Int         @id @default(autoincrement())
   diagnosticoId Int
   perguntaId    Int
   codigo        String
   diretoria     String
   dimensao      String
-  texto         String @db.Text
+  texto         String      @db.Text
   valor         Int
+  diagnostico   diagnostico @relation(fields: [diagnosticoId], references: [id], map: "Resposta_diagnosticoId_fkey")
 
-  diagnostico Diagnostico @relation(fields: [diagnosticoId], references: [id])
-
-  @@index([diagnosticoId])
+  @@index([diagnosticoId], map: "Resposta_diagnosticoId_idx")
 }

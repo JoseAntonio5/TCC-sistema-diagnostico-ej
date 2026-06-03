@@ -14,20 +14,20 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model Empresa
+ * Model diagnostico
  * 
  */
-export type Empresa = $Result.DefaultSelection<Prisma.$EmpresaPayload>
+export type diagnostico = $Result.DefaultSelection<Prisma.$diagnosticoPayload>
 /**
- * Model Diagnostico
+ * Model empresa
  * 
  */
-export type Diagnostico = $Result.DefaultSelection<Prisma.$DiagnosticoPayload>
+export type empresa = $Result.DefaultSelection<Prisma.$empresaPayload>
 /**
- * Model Resposta
+ * Model resposta
  * 
  */
-export type Resposta = $Result.DefaultSelection<Prisma.$RespostaPayload>
+export type resposta = $Result.DefaultSelection<Prisma.$respostaPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -38,8 +38,8 @@ export type Resposta = $Result.DefaultSelection<Prisma.$RespostaPayload>
  * const prisma = new PrismaClient({
  *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
  * })
- * // Fetch zero or more Empresas
- * const empresas = await prisma.empresa.findMany()
+ * // Fetch zero or more Diagnosticos
+ * const diagnosticos = await prisma.diagnostico.findMany()
  * ```
  *
  *
@@ -61,8 +61,8 @@ export class PrismaClient<
    * const prisma = new PrismaClient({
    *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
    * })
-   * // Fetch zero or more Empresas
-   * const empresas = await prisma.empresa.findMany()
+   * // Fetch zero or more Diagnosticos
+   * const diagnosticos = await prisma.diagnostico.findMany()
    * ```
    *
    *
@@ -151,34 +151,34 @@ export class PrismaClient<
   }>>
 
       /**
-   * `prisma.empresa`: Exposes CRUD operations for the **Empresa** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Empresas
-    * const empresas = await prisma.empresa.findMany()
-    * ```
-    */
-  get empresa(): Prisma.EmpresaDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.diagnostico`: Exposes CRUD operations for the **Diagnostico** model.
+   * `prisma.diagnostico`: Exposes CRUD operations for the **diagnostico** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Diagnosticos
     * const diagnosticos = await prisma.diagnostico.findMany()
     * ```
     */
-  get diagnostico(): Prisma.DiagnosticoDelegate<ExtArgs, ClientOptions>;
+  get diagnostico(): Prisma.diagnosticoDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.resposta`: Exposes CRUD operations for the **Resposta** model.
+   * `prisma.empresa`: Exposes CRUD operations for the **empresa** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Empresas
+    * const empresas = await prisma.empresa.findMany()
+    * ```
+    */
+  get empresa(): Prisma.empresaDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.resposta`: Exposes CRUD operations for the **resposta** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Respostas
     * const respostas = await prisma.resposta.findMany()
     * ```
     */
-  get resposta(): Prisma.RespostaDelegate<ExtArgs, ClientOptions>;
+  get resposta(): Prisma.respostaDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -613,9 +613,9 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    Empresa: 'Empresa',
-    Diagnostico: 'Diagnostico',
-    Resposta: 'Resposta'
+    diagnostico: 'diagnostico',
+    empresa: 'empresa',
+    resposta: 'resposta'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -631,204 +631,204 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "empresa" | "diagnostico" | "resposta"
+      modelProps: "diagnostico" | "empresa" | "resposta"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
-      Empresa: {
-        payload: Prisma.$EmpresaPayload<ExtArgs>
-        fields: Prisma.EmpresaFieldRefs
+      diagnostico: {
+        payload: Prisma.$diagnosticoPayload<ExtArgs>
+        fields: Prisma.diagnosticoFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.EmpresaFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmpresaPayload> | null
+            args: Prisma.diagnosticoFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$diagnosticoPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.EmpresaFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmpresaPayload>
+            args: Prisma.diagnosticoFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$diagnosticoPayload>
           }
           findFirst: {
-            args: Prisma.EmpresaFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmpresaPayload> | null
+            args: Prisma.diagnosticoFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$diagnosticoPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.EmpresaFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmpresaPayload>
+            args: Prisma.diagnosticoFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$diagnosticoPayload>
           }
           findMany: {
-            args: Prisma.EmpresaFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmpresaPayload>[]
+            args: Prisma.diagnosticoFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$diagnosticoPayload>[]
           }
           create: {
-            args: Prisma.EmpresaCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmpresaPayload>
+            args: Prisma.diagnosticoCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$diagnosticoPayload>
           }
           createMany: {
-            args: Prisma.EmpresaCreateManyArgs<ExtArgs>
+            args: Prisma.diagnosticoCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.EmpresaDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmpresaPayload>
+            args: Prisma.diagnosticoDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$diagnosticoPayload>
           }
           update: {
-            args: Prisma.EmpresaUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmpresaPayload>
+            args: Prisma.diagnosticoUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$diagnosticoPayload>
           }
           deleteMany: {
-            args: Prisma.EmpresaDeleteManyArgs<ExtArgs>
+            args: Prisma.diagnosticoDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.EmpresaUpdateManyArgs<ExtArgs>
+            args: Prisma.diagnosticoUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.EmpresaUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EmpresaPayload>
-          }
-          aggregate: {
-            args: Prisma.EmpresaAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateEmpresa>
-          }
-          groupBy: {
-            args: Prisma.EmpresaGroupByArgs<ExtArgs>
-            result: $Utils.Optional<EmpresaGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.EmpresaCountArgs<ExtArgs>
-            result: $Utils.Optional<EmpresaCountAggregateOutputType> | number
-          }
-        }
-      }
-      Diagnostico: {
-        payload: Prisma.$DiagnosticoPayload<ExtArgs>
-        fields: Prisma.DiagnosticoFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.DiagnosticoFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DiagnosticoPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.DiagnosticoFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DiagnosticoPayload>
-          }
-          findFirst: {
-            args: Prisma.DiagnosticoFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DiagnosticoPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.DiagnosticoFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DiagnosticoPayload>
-          }
-          findMany: {
-            args: Prisma.DiagnosticoFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DiagnosticoPayload>[]
-          }
-          create: {
-            args: Prisma.DiagnosticoCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DiagnosticoPayload>
-          }
-          createMany: {
-            args: Prisma.DiagnosticoCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          delete: {
-            args: Prisma.DiagnosticoDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DiagnosticoPayload>
-          }
-          update: {
-            args: Prisma.DiagnosticoUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DiagnosticoPayload>
-          }
-          deleteMany: {
-            args: Prisma.DiagnosticoDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.DiagnosticoUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          upsert: {
-            args: Prisma.DiagnosticoUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DiagnosticoPayload>
+            args: Prisma.diagnosticoUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$diagnosticoPayload>
           }
           aggregate: {
             args: Prisma.DiagnosticoAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateDiagnostico>
           }
           groupBy: {
-            args: Prisma.DiagnosticoGroupByArgs<ExtArgs>
+            args: Prisma.diagnosticoGroupByArgs<ExtArgs>
             result: $Utils.Optional<DiagnosticoGroupByOutputType>[]
           }
           count: {
-            args: Prisma.DiagnosticoCountArgs<ExtArgs>
+            args: Prisma.diagnosticoCountArgs<ExtArgs>
             result: $Utils.Optional<DiagnosticoCountAggregateOutputType> | number
           }
         }
       }
-      Resposta: {
-        payload: Prisma.$RespostaPayload<ExtArgs>
-        fields: Prisma.RespostaFieldRefs
+      empresa: {
+        payload: Prisma.$empresaPayload<ExtArgs>
+        fields: Prisma.empresaFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.RespostaFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RespostaPayload> | null
+            args: Prisma.empresaFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$empresaPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.RespostaFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RespostaPayload>
+            args: Prisma.empresaFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$empresaPayload>
           }
           findFirst: {
-            args: Prisma.RespostaFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RespostaPayload> | null
+            args: Prisma.empresaFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$empresaPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.RespostaFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RespostaPayload>
+            args: Prisma.empresaFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$empresaPayload>
           }
           findMany: {
-            args: Prisma.RespostaFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RespostaPayload>[]
+            args: Prisma.empresaFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$empresaPayload>[]
           }
           create: {
-            args: Prisma.RespostaCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RespostaPayload>
+            args: Prisma.empresaCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$empresaPayload>
           }
           createMany: {
-            args: Prisma.RespostaCreateManyArgs<ExtArgs>
+            args: Prisma.empresaCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.RespostaDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RespostaPayload>
+            args: Prisma.empresaDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$empresaPayload>
           }
           update: {
-            args: Prisma.RespostaUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RespostaPayload>
+            args: Prisma.empresaUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$empresaPayload>
           }
           deleteMany: {
-            args: Prisma.RespostaDeleteManyArgs<ExtArgs>
+            args: Prisma.empresaDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.RespostaUpdateManyArgs<ExtArgs>
+            args: Prisma.empresaUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.RespostaUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RespostaPayload>
+            args: Prisma.empresaUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$empresaPayload>
+          }
+          aggregate: {
+            args: Prisma.EmpresaAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateEmpresa>
+          }
+          groupBy: {
+            args: Prisma.empresaGroupByArgs<ExtArgs>
+            result: $Utils.Optional<EmpresaGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.empresaCountArgs<ExtArgs>
+            result: $Utils.Optional<EmpresaCountAggregateOutputType> | number
+          }
+        }
+      }
+      resposta: {
+        payload: Prisma.$respostaPayload<ExtArgs>
+        fields: Prisma.respostaFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.respostaFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$respostaPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.respostaFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$respostaPayload>
+          }
+          findFirst: {
+            args: Prisma.respostaFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$respostaPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.respostaFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$respostaPayload>
+          }
+          findMany: {
+            args: Prisma.respostaFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$respostaPayload>[]
+          }
+          create: {
+            args: Prisma.respostaCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$respostaPayload>
+          }
+          createMany: {
+            args: Prisma.respostaCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.respostaDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$respostaPayload>
+          }
+          update: {
+            args: Prisma.respostaUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$respostaPayload>
+          }
+          deleteMany: {
+            args: Prisma.respostaDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.respostaUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.respostaUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$respostaPayload>
           }
           aggregate: {
             args: Prisma.RespostaAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateResposta>
           }
           groupBy: {
-            args: Prisma.RespostaGroupByArgs<ExtArgs>
+            args: Prisma.respostaGroupByArgs<ExtArgs>
             result: $Utils.Optional<RespostaGroupByOutputType>[]
           }
           count: {
-            args: Prisma.RespostaCountArgs<ExtArgs>
+            args: Prisma.respostaCountArgs<ExtArgs>
             result: $Utils.Optional<RespostaCountAggregateOutputType> | number
           }
         }
@@ -941,9 +941,9 @@ export namespace Prisma {
     comments?: runtime.SqlCommenterPlugin[]
   }
   export type GlobalOmitConfig = {
-    empresa?: EmpresaOmit
-    diagnostico?: DiagnosticoOmit
-    resposta?: RespostaOmit
+    diagnostico?: diagnosticoOmit
+    empresa?: empresaOmit
+    resposta?: respostaOmit
   }
 
   /* Types for Logging */
@@ -1020,46 +1020,15 @@ export namespace Prisma {
 
 
   /**
-   * Count Type EmpresaCountOutputType
-   */
-
-  export type EmpresaCountOutputType = {
-    diagnosticos: number
-  }
-
-  export type EmpresaCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    diagnosticos?: boolean | EmpresaCountOutputTypeCountDiagnosticosArgs
-  }
-
-  // Custom InputTypes
-  /**
-   * EmpresaCountOutputType without action
-   */
-  export type EmpresaCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the EmpresaCountOutputType
-     */
-    select?: EmpresaCountOutputTypeSelect<ExtArgs> | null
-  }
-
-  /**
-   * EmpresaCountOutputType without action
-   */
-  export type EmpresaCountOutputTypeCountDiagnosticosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: DiagnosticoWhereInput
-  }
-
-
-  /**
    * Count Type DiagnosticoCountOutputType
    */
 
   export type DiagnosticoCountOutputType = {
-    respostas: number
+    resposta: number
   }
 
   export type DiagnosticoCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    respostas?: boolean | DiagnosticoCountOutputTypeCountRespostasArgs
+    resposta?: boolean | DiagnosticoCountOutputTypeCountRespostaArgs
   }
 
   // Custom InputTypes
@@ -1076,8 +1045,39 @@ export namespace Prisma {
   /**
    * DiagnosticoCountOutputType without action
    */
-  export type DiagnosticoCountOutputTypeCountRespostasArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: RespostaWhereInput
+  export type DiagnosticoCountOutputTypeCountRespostaArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: respostaWhereInput
+  }
+
+
+  /**
+   * Count Type EmpresaCountOutputType
+   */
+
+  export type EmpresaCountOutputType = {
+    diagnostico: number
+  }
+
+  export type EmpresaCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    diagnostico?: boolean | EmpresaCountOutputTypeCountDiagnosticoArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * EmpresaCountOutputType without action
+   */
+  export type EmpresaCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the EmpresaCountOutputType
+     */
+    select?: EmpresaCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * EmpresaCountOutputType without action
+   */
+  export type EmpresaCountOutputTypeCountDiagnosticoArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: diagnosticoWhereInput
   }
 
 
@@ -1086,7 +1086,1042 @@ export namespace Prisma {
    */
 
   /**
-   * Model Empresa
+   * Model diagnostico
+   */
+
+  export type AggregateDiagnostico = {
+    _count: DiagnosticoCountAggregateOutputType | null
+    _avg: DiagnosticoAvgAggregateOutputType | null
+    _sum: DiagnosticoSumAggregateOutputType | null
+    _min: DiagnosticoMinAggregateOutputType | null
+    _max: DiagnosticoMaxAggregateOutputType | null
+  }
+
+  export type DiagnosticoAvgAggregateOutputType = {
+    id: number | null
+    empresaId: number | null
+    notaGeral: number | null
+    percentualMaturidade: number | null
+  }
+
+  export type DiagnosticoSumAggregateOutputType = {
+    id: number | null
+    empresaId: number | null
+    notaGeral: number | null
+    percentualMaturidade: number | null
+  }
+
+  export type DiagnosticoMinAggregateOutputType = {
+    id: number | null
+    createdAt: Date | null
+    empresaId: number | null
+    nivelMaturidade: string | null
+    notaGeral: number | null
+    percentualMaturidade: number | null
+  }
+
+  export type DiagnosticoMaxAggregateOutputType = {
+    id: number | null
+    createdAt: Date | null
+    empresaId: number | null
+    nivelMaturidade: string | null
+    notaGeral: number | null
+    percentualMaturidade: number | null
+  }
+
+  export type DiagnosticoCountAggregateOutputType = {
+    id: number
+    createdAt: number
+    empresaId: number
+    nivelMaturidade: number
+    notaGeral: number
+    percentualMaturidade: number
+    porDimensao: number
+    porDiretoria: number
+    _all: number
+  }
+
+
+  export type DiagnosticoAvgAggregateInputType = {
+    id?: true
+    empresaId?: true
+    notaGeral?: true
+    percentualMaturidade?: true
+  }
+
+  export type DiagnosticoSumAggregateInputType = {
+    id?: true
+    empresaId?: true
+    notaGeral?: true
+    percentualMaturidade?: true
+  }
+
+  export type DiagnosticoMinAggregateInputType = {
+    id?: true
+    createdAt?: true
+    empresaId?: true
+    nivelMaturidade?: true
+    notaGeral?: true
+    percentualMaturidade?: true
+  }
+
+  export type DiagnosticoMaxAggregateInputType = {
+    id?: true
+    createdAt?: true
+    empresaId?: true
+    nivelMaturidade?: true
+    notaGeral?: true
+    percentualMaturidade?: true
+  }
+
+  export type DiagnosticoCountAggregateInputType = {
+    id?: true
+    createdAt?: true
+    empresaId?: true
+    nivelMaturidade?: true
+    notaGeral?: true
+    percentualMaturidade?: true
+    porDimensao?: true
+    porDiretoria?: true
+    _all?: true
+  }
+
+  export type DiagnosticoAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which diagnostico to aggregate.
+     */
+    where?: diagnosticoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of diagnosticos to fetch.
+     */
+    orderBy?: diagnosticoOrderByWithRelationInput | diagnosticoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: diagnosticoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` diagnosticos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` diagnosticos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned diagnosticos
+    **/
+    _count?: true | DiagnosticoCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: DiagnosticoAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: DiagnosticoSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: DiagnosticoMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: DiagnosticoMaxAggregateInputType
+  }
+
+  export type GetDiagnosticoAggregateType<T extends DiagnosticoAggregateArgs> = {
+        [P in keyof T & keyof AggregateDiagnostico]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateDiagnostico[P]>
+      : GetScalarType<T[P], AggregateDiagnostico[P]>
+  }
+
+
+
+
+  export type diagnosticoGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: diagnosticoWhereInput
+    orderBy?: diagnosticoOrderByWithAggregationInput | diagnosticoOrderByWithAggregationInput[]
+    by: DiagnosticoScalarFieldEnum[] | DiagnosticoScalarFieldEnum
+    having?: diagnosticoScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: DiagnosticoCountAggregateInputType | true
+    _avg?: DiagnosticoAvgAggregateInputType
+    _sum?: DiagnosticoSumAggregateInputType
+    _min?: DiagnosticoMinAggregateInputType
+    _max?: DiagnosticoMaxAggregateInputType
+  }
+
+  export type DiagnosticoGroupByOutputType = {
+    id: number
+    createdAt: Date
+    empresaId: number
+    nivelMaturidade: string
+    notaGeral: number
+    percentualMaturidade: number
+    porDimensao: JsonValue
+    porDiretoria: JsonValue
+    _count: DiagnosticoCountAggregateOutputType | null
+    _avg: DiagnosticoAvgAggregateOutputType | null
+    _sum: DiagnosticoSumAggregateOutputType | null
+    _min: DiagnosticoMinAggregateOutputType | null
+    _max: DiagnosticoMaxAggregateOutputType | null
+  }
+
+  type GetDiagnosticoGroupByPayload<T extends diagnosticoGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<DiagnosticoGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof DiagnosticoGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], DiagnosticoGroupByOutputType[P]>
+            : GetScalarType<T[P], DiagnosticoGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type diagnosticoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    empresaId?: boolean
+    nivelMaturidade?: boolean
+    notaGeral?: boolean
+    percentualMaturidade?: boolean
+    porDimensao?: boolean
+    porDiretoria?: boolean
+    empresa?: boolean | empresaDefaultArgs<ExtArgs>
+    resposta?: boolean | diagnostico$respostaArgs<ExtArgs>
+    _count?: boolean | DiagnosticoCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["diagnostico"]>
+
+
+
+  export type diagnosticoSelectScalar = {
+    id?: boolean
+    createdAt?: boolean
+    empresaId?: boolean
+    nivelMaturidade?: boolean
+    notaGeral?: boolean
+    percentualMaturidade?: boolean
+    porDimensao?: boolean
+    porDiretoria?: boolean
+  }
+
+  export type diagnosticoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "empresaId" | "nivelMaturidade" | "notaGeral" | "percentualMaturidade" | "porDimensao" | "porDiretoria", ExtArgs["result"]["diagnostico"]>
+  export type diagnosticoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    empresa?: boolean | empresaDefaultArgs<ExtArgs>
+    resposta?: boolean | diagnostico$respostaArgs<ExtArgs>
+    _count?: boolean | DiagnosticoCountOutputTypeDefaultArgs<ExtArgs>
+  }
+
+  export type $diagnosticoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "diagnostico"
+    objects: {
+      empresa: Prisma.$empresaPayload<ExtArgs>
+      resposta: Prisma.$respostaPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      createdAt: Date
+      empresaId: number
+      nivelMaturidade: string
+      notaGeral: number
+      percentualMaturidade: number
+      porDimensao: Prisma.JsonValue
+      porDiretoria: Prisma.JsonValue
+    }, ExtArgs["result"]["diagnostico"]>
+    composites: {}
+  }
+
+  type diagnosticoGetPayload<S extends boolean | null | undefined | diagnosticoDefaultArgs> = $Result.GetResult<Prisma.$diagnosticoPayload, S>
+
+  type diagnosticoCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<diagnosticoFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: DiagnosticoCountAggregateInputType | true
+    }
+
+  export interface diagnosticoDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['diagnostico'], meta: { name: 'diagnostico' } }
+    /**
+     * Find zero or one Diagnostico that matches the filter.
+     * @param {diagnosticoFindUniqueArgs} args - Arguments to find a Diagnostico
+     * @example
+     * // Get one Diagnostico
+     * const diagnostico = await prisma.diagnostico.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends diagnosticoFindUniqueArgs>(args: SelectSubset<T, diagnosticoFindUniqueArgs<ExtArgs>>): Prisma__diagnosticoClient<$Result.GetResult<Prisma.$diagnosticoPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Diagnostico that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {diagnosticoFindUniqueOrThrowArgs} args - Arguments to find a Diagnostico
+     * @example
+     * // Get one Diagnostico
+     * const diagnostico = await prisma.diagnostico.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends diagnosticoFindUniqueOrThrowArgs>(args: SelectSubset<T, diagnosticoFindUniqueOrThrowArgs<ExtArgs>>): Prisma__diagnosticoClient<$Result.GetResult<Prisma.$diagnosticoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Diagnostico that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {diagnosticoFindFirstArgs} args - Arguments to find a Diagnostico
+     * @example
+     * // Get one Diagnostico
+     * const diagnostico = await prisma.diagnostico.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends diagnosticoFindFirstArgs>(args?: SelectSubset<T, diagnosticoFindFirstArgs<ExtArgs>>): Prisma__diagnosticoClient<$Result.GetResult<Prisma.$diagnosticoPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Diagnostico that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {diagnosticoFindFirstOrThrowArgs} args - Arguments to find a Diagnostico
+     * @example
+     * // Get one Diagnostico
+     * const diagnostico = await prisma.diagnostico.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends diagnosticoFindFirstOrThrowArgs>(args?: SelectSubset<T, diagnosticoFindFirstOrThrowArgs<ExtArgs>>): Prisma__diagnosticoClient<$Result.GetResult<Prisma.$diagnosticoPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Diagnosticos that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {diagnosticoFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Diagnosticos
+     * const diagnosticos = await prisma.diagnostico.findMany()
+     * 
+     * // Get first 10 Diagnosticos
+     * const diagnosticos = await prisma.diagnostico.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const diagnosticoWithIdOnly = await prisma.diagnostico.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends diagnosticoFindManyArgs>(args?: SelectSubset<T, diagnosticoFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$diagnosticoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Diagnostico.
+     * @param {diagnosticoCreateArgs} args - Arguments to create a Diagnostico.
+     * @example
+     * // Create one Diagnostico
+     * const Diagnostico = await prisma.diagnostico.create({
+     *   data: {
+     *     // ... data to create a Diagnostico
+     *   }
+     * })
+     * 
+     */
+    create<T extends diagnosticoCreateArgs>(args: SelectSubset<T, diagnosticoCreateArgs<ExtArgs>>): Prisma__diagnosticoClient<$Result.GetResult<Prisma.$diagnosticoPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Diagnosticos.
+     * @param {diagnosticoCreateManyArgs} args - Arguments to create many Diagnosticos.
+     * @example
+     * // Create many Diagnosticos
+     * const diagnostico = await prisma.diagnostico.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends diagnosticoCreateManyArgs>(args?: SelectSubset<T, diagnosticoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Diagnostico.
+     * @param {diagnosticoDeleteArgs} args - Arguments to delete one Diagnostico.
+     * @example
+     * // Delete one Diagnostico
+     * const Diagnostico = await prisma.diagnostico.delete({
+     *   where: {
+     *     // ... filter to delete one Diagnostico
+     *   }
+     * })
+     * 
+     */
+    delete<T extends diagnosticoDeleteArgs>(args: SelectSubset<T, diagnosticoDeleteArgs<ExtArgs>>): Prisma__diagnosticoClient<$Result.GetResult<Prisma.$diagnosticoPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Diagnostico.
+     * @param {diagnosticoUpdateArgs} args - Arguments to update one Diagnostico.
+     * @example
+     * // Update one Diagnostico
+     * const diagnostico = await prisma.diagnostico.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends diagnosticoUpdateArgs>(args: SelectSubset<T, diagnosticoUpdateArgs<ExtArgs>>): Prisma__diagnosticoClient<$Result.GetResult<Prisma.$diagnosticoPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Diagnosticos.
+     * @param {diagnosticoDeleteManyArgs} args - Arguments to filter Diagnosticos to delete.
+     * @example
+     * // Delete a few Diagnosticos
+     * const { count } = await prisma.diagnostico.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends diagnosticoDeleteManyArgs>(args?: SelectSubset<T, diagnosticoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Diagnosticos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {diagnosticoUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Diagnosticos
+     * const diagnostico = await prisma.diagnostico.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends diagnosticoUpdateManyArgs>(args: SelectSubset<T, diagnosticoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Diagnostico.
+     * @param {diagnosticoUpsertArgs} args - Arguments to update or create a Diagnostico.
+     * @example
+     * // Update or create a Diagnostico
+     * const diagnostico = await prisma.diagnostico.upsert({
+     *   create: {
+     *     // ... data to create a Diagnostico
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Diagnostico we want to update
+     *   }
+     * })
+     */
+    upsert<T extends diagnosticoUpsertArgs>(args: SelectSubset<T, diagnosticoUpsertArgs<ExtArgs>>): Prisma__diagnosticoClient<$Result.GetResult<Prisma.$diagnosticoPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Diagnosticos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {diagnosticoCountArgs} args - Arguments to filter Diagnosticos to count.
+     * @example
+     * // Count the number of Diagnosticos
+     * const count = await prisma.diagnostico.count({
+     *   where: {
+     *     // ... the filter for the Diagnosticos we want to count
+     *   }
+     * })
+    **/
+    count<T extends diagnosticoCountArgs>(
+      args?: Subset<T, diagnosticoCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], DiagnosticoCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Diagnostico.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DiagnosticoAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends DiagnosticoAggregateArgs>(args: Subset<T, DiagnosticoAggregateArgs>): Prisma.PrismaPromise<GetDiagnosticoAggregateType<T>>
+
+    /**
+     * Group by Diagnostico.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {diagnosticoGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends diagnosticoGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: diagnosticoGroupByArgs['orderBy'] }
+        : { orderBy?: diagnosticoGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, diagnosticoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDiagnosticoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the diagnostico model
+   */
+  readonly fields: diagnosticoFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for diagnostico.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__diagnosticoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    empresa<T extends empresaDefaultArgs<ExtArgs> = {}>(args?: Subset<T, empresaDefaultArgs<ExtArgs>>): Prisma__empresaClient<$Result.GetResult<Prisma.$empresaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    resposta<T extends diagnostico$respostaArgs<ExtArgs> = {}>(args?: Subset<T, diagnostico$respostaArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$respostaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the diagnostico model
+   */
+  interface diagnosticoFieldRefs {
+    readonly id: FieldRef<"diagnostico", 'Int'>
+    readonly createdAt: FieldRef<"diagnostico", 'DateTime'>
+    readonly empresaId: FieldRef<"diagnostico", 'Int'>
+    readonly nivelMaturidade: FieldRef<"diagnostico", 'String'>
+    readonly notaGeral: FieldRef<"diagnostico", 'Float'>
+    readonly percentualMaturidade: FieldRef<"diagnostico", 'Float'>
+    readonly porDimensao: FieldRef<"diagnostico", 'Json'>
+    readonly porDiretoria: FieldRef<"diagnostico", 'Json'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * diagnostico findUnique
+   */
+  export type diagnosticoFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the diagnostico
+     */
+    select?: diagnosticoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the diagnostico
+     */
+    omit?: diagnosticoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: diagnosticoInclude<ExtArgs> | null
+    /**
+     * Filter, which diagnostico to fetch.
+     */
+    where: diagnosticoWhereUniqueInput
+  }
+
+  /**
+   * diagnostico findUniqueOrThrow
+   */
+  export type diagnosticoFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the diagnostico
+     */
+    select?: diagnosticoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the diagnostico
+     */
+    omit?: diagnosticoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: diagnosticoInclude<ExtArgs> | null
+    /**
+     * Filter, which diagnostico to fetch.
+     */
+    where: diagnosticoWhereUniqueInput
+  }
+
+  /**
+   * diagnostico findFirst
+   */
+  export type diagnosticoFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the diagnostico
+     */
+    select?: diagnosticoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the diagnostico
+     */
+    omit?: diagnosticoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: diagnosticoInclude<ExtArgs> | null
+    /**
+     * Filter, which diagnostico to fetch.
+     */
+    where?: diagnosticoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of diagnosticos to fetch.
+     */
+    orderBy?: diagnosticoOrderByWithRelationInput | diagnosticoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for diagnosticos.
+     */
+    cursor?: diagnosticoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` diagnosticos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` diagnosticos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of diagnosticos.
+     */
+    distinct?: DiagnosticoScalarFieldEnum | DiagnosticoScalarFieldEnum[]
+  }
+
+  /**
+   * diagnostico findFirstOrThrow
+   */
+  export type diagnosticoFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the diagnostico
+     */
+    select?: diagnosticoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the diagnostico
+     */
+    omit?: diagnosticoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: diagnosticoInclude<ExtArgs> | null
+    /**
+     * Filter, which diagnostico to fetch.
+     */
+    where?: diagnosticoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of diagnosticos to fetch.
+     */
+    orderBy?: diagnosticoOrderByWithRelationInput | diagnosticoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for diagnosticos.
+     */
+    cursor?: diagnosticoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` diagnosticos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` diagnosticos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of diagnosticos.
+     */
+    distinct?: DiagnosticoScalarFieldEnum | DiagnosticoScalarFieldEnum[]
+  }
+
+  /**
+   * diagnostico findMany
+   */
+  export type diagnosticoFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the diagnostico
+     */
+    select?: diagnosticoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the diagnostico
+     */
+    omit?: diagnosticoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: diagnosticoInclude<ExtArgs> | null
+    /**
+     * Filter, which diagnosticos to fetch.
+     */
+    where?: diagnosticoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of diagnosticos to fetch.
+     */
+    orderBy?: diagnosticoOrderByWithRelationInput | diagnosticoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing diagnosticos.
+     */
+    cursor?: diagnosticoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` diagnosticos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` diagnosticos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of diagnosticos.
+     */
+    distinct?: DiagnosticoScalarFieldEnum | DiagnosticoScalarFieldEnum[]
+  }
+
+  /**
+   * diagnostico create
+   */
+  export type diagnosticoCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the diagnostico
+     */
+    select?: diagnosticoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the diagnostico
+     */
+    omit?: diagnosticoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: diagnosticoInclude<ExtArgs> | null
+    /**
+     * The data needed to create a diagnostico.
+     */
+    data: XOR<diagnosticoCreateInput, diagnosticoUncheckedCreateInput>
+  }
+
+  /**
+   * diagnostico createMany
+   */
+  export type diagnosticoCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many diagnosticos.
+     */
+    data: diagnosticoCreateManyInput | diagnosticoCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * diagnostico update
+   */
+  export type diagnosticoUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the diagnostico
+     */
+    select?: diagnosticoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the diagnostico
+     */
+    omit?: diagnosticoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: diagnosticoInclude<ExtArgs> | null
+    /**
+     * The data needed to update a diagnostico.
+     */
+    data: XOR<diagnosticoUpdateInput, diagnosticoUncheckedUpdateInput>
+    /**
+     * Choose, which diagnostico to update.
+     */
+    where: diagnosticoWhereUniqueInput
+  }
+
+  /**
+   * diagnostico updateMany
+   */
+  export type diagnosticoUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update diagnosticos.
+     */
+    data: XOR<diagnosticoUpdateManyMutationInput, diagnosticoUncheckedUpdateManyInput>
+    /**
+     * Filter which diagnosticos to update
+     */
+    where?: diagnosticoWhereInput
+    /**
+     * Limit how many diagnosticos to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * diagnostico upsert
+   */
+  export type diagnosticoUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the diagnostico
+     */
+    select?: diagnosticoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the diagnostico
+     */
+    omit?: diagnosticoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: diagnosticoInclude<ExtArgs> | null
+    /**
+     * The filter to search for the diagnostico to update in case it exists.
+     */
+    where: diagnosticoWhereUniqueInput
+    /**
+     * In case the diagnostico found by the `where` argument doesn't exist, create a new diagnostico with this data.
+     */
+    create: XOR<diagnosticoCreateInput, diagnosticoUncheckedCreateInput>
+    /**
+     * In case the diagnostico was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<diagnosticoUpdateInput, diagnosticoUncheckedUpdateInput>
+  }
+
+  /**
+   * diagnostico delete
+   */
+  export type diagnosticoDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the diagnostico
+     */
+    select?: diagnosticoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the diagnostico
+     */
+    omit?: diagnosticoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: diagnosticoInclude<ExtArgs> | null
+    /**
+     * Filter which diagnostico to delete.
+     */
+    where: diagnosticoWhereUniqueInput
+  }
+
+  /**
+   * diagnostico deleteMany
+   */
+  export type diagnosticoDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which diagnosticos to delete
+     */
+    where?: diagnosticoWhereInput
+    /**
+     * Limit how many diagnosticos to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * diagnostico.resposta
+   */
+  export type diagnostico$respostaArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the resposta
+     */
+    select?: respostaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the resposta
+     */
+    omit?: respostaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: respostaInclude<ExtArgs> | null
+    where?: respostaWhereInput
+    orderBy?: respostaOrderByWithRelationInput | respostaOrderByWithRelationInput[]
+    cursor?: respostaWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: RespostaScalarFieldEnum | RespostaScalarFieldEnum[]
+  }
+
+  /**
+   * diagnostico without action
+   */
+  export type diagnosticoDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the diagnostico
+     */
+    select?: diagnosticoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the diagnostico
+     */
+    omit?: diagnosticoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: diagnosticoInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model empresa
    */
 
   export type AggregateEmpresa = {
@@ -1154,37 +2189,37 @@ export namespace Prisma {
 
   export type EmpresaAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Empresa to aggregate.
+     * Filter which empresa to aggregate.
      */
-    where?: EmpresaWhereInput
+    where?: empresaWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Empresas to fetch.
+     * Determine the order of empresas to fetch.
      */
-    orderBy?: EmpresaOrderByWithRelationInput | EmpresaOrderByWithRelationInput[]
+    orderBy?: empresaOrderByWithRelationInput | empresaOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: EmpresaWhereUniqueInput
+    cursor?: empresaWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Empresas from the position of the cursor.
+     * Take `±n` empresas from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Empresas.
+     * Skip the first `n` empresas.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Empresas
+     * Count returned empresas
     **/
     _count?: true | EmpresaCountAggregateInputType
     /**
@@ -1224,11 +2259,11 @@ export namespace Prisma {
 
 
 
-  export type EmpresaGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: EmpresaWhereInput
-    orderBy?: EmpresaOrderByWithAggregationInput | EmpresaOrderByWithAggregationInput[]
+  export type empresaGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: empresaWhereInput
+    orderBy?: empresaOrderByWithAggregationInput | empresaOrderByWithAggregationInput[]
     by: EmpresaScalarFieldEnum[] | EmpresaScalarFieldEnum
-    having?: EmpresaScalarWhereWithAggregatesInput
+    having?: empresaScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: EmpresaCountAggregateInputType | true
@@ -1249,7 +2284,7 @@ export namespace Prisma {
     _max: EmpresaMaxAggregateOutputType | null
   }
 
-  type GetEmpresaGroupByPayload<T extends EmpresaGroupByArgs> = Prisma.PrismaPromise<
+  type GetEmpresaGroupByPayload<T extends empresaGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<EmpresaGroupByOutputType, T['by']> &
         {
@@ -1263,32 +2298,32 @@ export namespace Prisma {
     >
 
 
-  export type EmpresaSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type empresaSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     nome?: boolean
     createdAt?: boolean
-    diagnosticos?: boolean | Empresa$diagnosticosArgs<ExtArgs>
+    diagnostico?: boolean | empresa$diagnosticoArgs<ExtArgs>
     _count?: boolean | EmpresaCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["empresa"]>
 
 
 
-  export type EmpresaSelectScalar = {
+  export type empresaSelectScalar = {
     id?: boolean
     nome?: boolean
     createdAt?: boolean
   }
 
-  export type EmpresaOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "createdAt", ExtArgs["result"]["empresa"]>
-  export type EmpresaInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    diagnosticos?: boolean | Empresa$diagnosticosArgs<ExtArgs>
+  export type empresaOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "createdAt", ExtArgs["result"]["empresa"]>
+  export type empresaInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    diagnostico?: boolean | empresa$diagnosticoArgs<ExtArgs>
     _count?: boolean | EmpresaCountOutputTypeDefaultArgs<ExtArgs>
   }
 
-  export type $EmpresaPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Empresa"
+  export type $empresaPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "empresa"
     objects: {
-      diagnosticos: Prisma.$DiagnosticoPayload<ExtArgs>[]
+      diagnostico: Prisma.$diagnosticoPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -1298,18 +2333,18 @@ export namespace Prisma {
     composites: {}
   }
 
-  type EmpresaGetPayload<S extends boolean | null | undefined | EmpresaDefaultArgs> = $Result.GetResult<Prisma.$EmpresaPayload, S>
+  type empresaGetPayload<S extends boolean | null | undefined | empresaDefaultArgs> = $Result.GetResult<Prisma.$empresaPayload, S>
 
-  type EmpresaCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<EmpresaFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type empresaCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<empresaFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: EmpresaCountAggregateInputType | true
     }
 
-  export interface EmpresaDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Empresa'], meta: { name: 'Empresa' } }
+  export interface empresaDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['empresa'], meta: { name: 'empresa' } }
     /**
      * Find zero or one Empresa that matches the filter.
-     * @param {EmpresaFindUniqueArgs} args - Arguments to find a Empresa
+     * @param {empresaFindUniqueArgs} args - Arguments to find a Empresa
      * @example
      * // Get one Empresa
      * const empresa = await prisma.empresa.findUnique({
@@ -1318,12 +2353,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends EmpresaFindUniqueArgs>(args: SelectSubset<T, EmpresaFindUniqueArgs<ExtArgs>>): Prisma__EmpresaClient<$Result.GetResult<Prisma.$EmpresaPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends empresaFindUniqueArgs>(args: SelectSubset<T, empresaFindUniqueArgs<ExtArgs>>): Prisma__empresaClient<$Result.GetResult<Prisma.$empresaPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find one Empresa that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {EmpresaFindUniqueOrThrowArgs} args - Arguments to find a Empresa
+     * @param {empresaFindUniqueOrThrowArgs} args - Arguments to find a Empresa
      * @example
      * // Get one Empresa
      * const empresa = await prisma.empresa.findUniqueOrThrow({
@@ -1332,13 +2367,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends EmpresaFindUniqueOrThrowArgs>(args: SelectSubset<T, EmpresaFindUniqueOrThrowArgs<ExtArgs>>): Prisma__EmpresaClient<$Result.GetResult<Prisma.$EmpresaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends empresaFindUniqueOrThrowArgs>(args: SelectSubset<T, empresaFindUniqueOrThrowArgs<ExtArgs>>): Prisma__empresaClient<$Result.GetResult<Prisma.$empresaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Empresa that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EmpresaFindFirstArgs} args - Arguments to find a Empresa
+     * @param {empresaFindFirstArgs} args - Arguments to find a Empresa
      * @example
      * // Get one Empresa
      * const empresa = await prisma.empresa.findFirst({
@@ -1347,14 +2382,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends EmpresaFindFirstArgs>(args?: SelectSubset<T, EmpresaFindFirstArgs<ExtArgs>>): Prisma__EmpresaClient<$Result.GetResult<Prisma.$EmpresaPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends empresaFindFirstArgs>(args?: SelectSubset<T, empresaFindFirstArgs<ExtArgs>>): Prisma__empresaClient<$Result.GetResult<Prisma.$empresaPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Empresa that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EmpresaFindFirstOrThrowArgs} args - Arguments to find a Empresa
+     * @param {empresaFindFirstOrThrowArgs} args - Arguments to find a Empresa
      * @example
      * // Get one Empresa
      * const empresa = await prisma.empresa.findFirstOrThrow({
@@ -1363,13 +2398,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends EmpresaFindFirstOrThrowArgs>(args?: SelectSubset<T, EmpresaFindFirstOrThrowArgs<ExtArgs>>): Prisma__EmpresaClient<$Result.GetResult<Prisma.$EmpresaPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends empresaFindFirstOrThrowArgs>(args?: SelectSubset<T, empresaFindFirstOrThrowArgs<ExtArgs>>): Prisma__empresaClient<$Result.GetResult<Prisma.$empresaPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Empresas that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EmpresaFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {empresaFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Empresas
      * const empresas = await prisma.empresa.findMany()
@@ -1381,11 +2416,11 @@ export namespace Prisma {
      * const empresaWithIdOnly = await prisma.empresa.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends EmpresaFindManyArgs>(args?: SelectSubset<T, EmpresaFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EmpresaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends empresaFindManyArgs>(args?: SelectSubset<T, empresaFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$empresaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
      * Create a Empresa.
-     * @param {EmpresaCreateArgs} args - Arguments to create a Empresa.
+     * @param {empresaCreateArgs} args - Arguments to create a Empresa.
      * @example
      * // Create one Empresa
      * const Empresa = await prisma.empresa.create({
@@ -1395,11 +2430,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends EmpresaCreateArgs>(args: SelectSubset<T, EmpresaCreateArgs<ExtArgs>>): Prisma__EmpresaClient<$Result.GetResult<Prisma.$EmpresaPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends empresaCreateArgs>(args: SelectSubset<T, empresaCreateArgs<ExtArgs>>): Prisma__empresaClient<$Result.GetResult<Prisma.$empresaPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Empresas.
-     * @param {EmpresaCreateManyArgs} args - Arguments to create many Empresas.
+     * @param {empresaCreateManyArgs} args - Arguments to create many Empresas.
      * @example
      * // Create many Empresas
      * const empresa = await prisma.empresa.createMany({
@@ -1409,11 +2444,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends EmpresaCreateManyArgs>(args?: SelectSubset<T, EmpresaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends empresaCreateManyArgs>(args?: SelectSubset<T, empresaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a Empresa.
-     * @param {EmpresaDeleteArgs} args - Arguments to delete one Empresa.
+     * @param {empresaDeleteArgs} args - Arguments to delete one Empresa.
      * @example
      * // Delete one Empresa
      * const Empresa = await prisma.empresa.delete({
@@ -1423,11 +2458,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends EmpresaDeleteArgs>(args: SelectSubset<T, EmpresaDeleteArgs<ExtArgs>>): Prisma__EmpresaClient<$Result.GetResult<Prisma.$EmpresaPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends empresaDeleteArgs>(args: SelectSubset<T, empresaDeleteArgs<ExtArgs>>): Prisma__empresaClient<$Result.GetResult<Prisma.$empresaPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Update one Empresa.
-     * @param {EmpresaUpdateArgs} args - Arguments to update one Empresa.
+     * @param {empresaUpdateArgs} args - Arguments to update one Empresa.
      * @example
      * // Update one Empresa
      * const empresa = await prisma.empresa.update({
@@ -1440,11 +2475,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends EmpresaUpdateArgs>(args: SelectSubset<T, EmpresaUpdateArgs<ExtArgs>>): Prisma__EmpresaClient<$Result.GetResult<Prisma.$EmpresaPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends empresaUpdateArgs>(args: SelectSubset<T, empresaUpdateArgs<ExtArgs>>): Prisma__empresaClient<$Result.GetResult<Prisma.$empresaPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Empresas.
-     * @param {EmpresaDeleteManyArgs} args - Arguments to filter Empresas to delete.
+     * @param {empresaDeleteManyArgs} args - Arguments to filter Empresas to delete.
      * @example
      * // Delete a few Empresas
      * const { count } = await prisma.empresa.deleteMany({
@@ -1454,13 +2489,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends EmpresaDeleteManyArgs>(args?: SelectSubset<T, EmpresaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends empresaDeleteManyArgs>(args?: SelectSubset<T, empresaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Empresas.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EmpresaUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {empresaUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Empresas
      * const empresa = await prisma.empresa.updateMany({
@@ -1473,11 +2508,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends EmpresaUpdateManyArgs>(args: SelectSubset<T, EmpresaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends empresaUpdateManyArgs>(args: SelectSubset<T, empresaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one Empresa.
-     * @param {EmpresaUpsertArgs} args - Arguments to update or create a Empresa.
+     * @param {empresaUpsertArgs} args - Arguments to update or create a Empresa.
      * @example
      * // Update or create a Empresa
      * const empresa = await prisma.empresa.upsert({
@@ -1492,14 +2527,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends EmpresaUpsertArgs>(args: SelectSubset<T, EmpresaUpsertArgs<ExtArgs>>): Prisma__EmpresaClient<$Result.GetResult<Prisma.$EmpresaPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends empresaUpsertArgs>(args: SelectSubset<T, empresaUpsertArgs<ExtArgs>>): Prisma__empresaClient<$Result.GetResult<Prisma.$empresaPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
      * Count the number of Empresas.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EmpresaCountArgs} args - Arguments to filter Empresas to count.
+     * @param {empresaCountArgs} args - Arguments to filter Empresas to count.
      * @example
      * // Count the number of Empresas
      * const count = await prisma.empresa.count({
@@ -1508,8 +2543,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends EmpresaCountArgs>(
-      args?: Subset<T, EmpresaCountArgs>,
+    count<T extends empresaCountArgs>(
+      args?: Subset<T, empresaCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -1548,7 +2583,7 @@ export namespace Prisma {
      * Group by Empresa.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EmpresaGroupByArgs} args - Group by arguments.
+     * @param {empresaGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -1563,14 +2598,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends EmpresaGroupByArgs,
+      T extends empresaGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: EmpresaGroupByArgs['orderBy'] }
-        : { orderBy?: EmpresaGroupByArgs['orderBy'] },
+        ? { orderBy: empresaGroupByArgs['orderBy'] }
+        : { orderBy?: empresaGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -1619,22 +2654,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, EmpresaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetEmpresaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, empresaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetEmpresaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Empresa model
+   * Fields of the empresa model
    */
-  readonly fields: EmpresaFieldRefs;
+  readonly fields: empresaFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Empresa.
+   * The delegate class that acts as a "Promise-like" for empresa.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__EmpresaClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__empresaClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    diagnosticos<T extends Empresa$diagnosticosArgs<ExtArgs> = {}>(args?: Subset<T, Empresa$diagnosticosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DiagnosticoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    diagnostico<T extends empresa$diagnosticoArgs<ExtArgs> = {}>(args?: Subset<T, empresa$diagnosticoArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$diagnosticoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1661,1439 +2696,404 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Empresa model
+   * Fields of the empresa model
    */
-  interface EmpresaFieldRefs {
-    readonly id: FieldRef<"Empresa", 'Int'>
-    readonly nome: FieldRef<"Empresa", 'String'>
-    readonly createdAt: FieldRef<"Empresa", 'DateTime'>
+  interface empresaFieldRefs {
+    readonly id: FieldRef<"empresa", 'Int'>
+    readonly nome: FieldRef<"empresa", 'String'>
+    readonly createdAt: FieldRef<"empresa", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Empresa findUnique
+   * empresa findUnique
    */
-  export type EmpresaFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type empresaFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Empresa
+     * Select specific fields to fetch from the empresa
      */
-    select?: EmpresaSelect<ExtArgs> | null
+    select?: empresaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Empresa
+     * Omit specific fields from the empresa
      */
-    omit?: EmpresaOmit<ExtArgs> | null
+    omit?: empresaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EmpresaInclude<ExtArgs> | null
+    include?: empresaInclude<ExtArgs> | null
     /**
-     * Filter, which Empresa to fetch.
+     * Filter, which empresa to fetch.
      */
-    where: EmpresaWhereUniqueInput
+    where: empresaWhereUniqueInput
   }
 
   /**
-   * Empresa findUniqueOrThrow
+   * empresa findUniqueOrThrow
    */
-  export type EmpresaFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type empresaFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Empresa
+     * Select specific fields to fetch from the empresa
      */
-    select?: EmpresaSelect<ExtArgs> | null
+    select?: empresaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Empresa
+     * Omit specific fields from the empresa
      */
-    omit?: EmpresaOmit<ExtArgs> | null
+    omit?: empresaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EmpresaInclude<ExtArgs> | null
+    include?: empresaInclude<ExtArgs> | null
     /**
-     * Filter, which Empresa to fetch.
+     * Filter, which empresa to fetch.
      */
-    where: EmpresaWhereUniqueInput
+    where: empresaWhereUniqueInput
   }
 
   /**
-   * Empresa findFirst
+   * empresa findFirst
    */
-  export type EmpresaFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type empresaFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Empresa
+     * Select specific fields to fetch from the empresa
      */
-    select?: EmpresaSelect<ExtArgs> | null
+    select?: empresaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Empresa
+     * Omit specific fields from the empresa
      */
-    omit?: EmpresaOmit<ExtArgs> | null
+    omit?: empresaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EmpresaInclude<ExtArgs> | null
+    include?: empresaInclude<ExtArgs> | null
     /**
-     * Filter, which Empresa to fetch.
+     * Filter, which empresa to fetch.
      */
-    where?: EmpresaWhereInput
+    where?: empresaWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Empresas to fetch.
+     * Determine the order of empresas to fetch.
      */
-    orderBy?: EmpresaOrderByWithRelationInput | EmpresaOrderByWithRelationInput[]
+    orderBy?: empresaOrderByWithRelationInput | empresaOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Empresas.
+     * Sets the position for searching for empresas.
      */
-    cursor?: EmpresaWhereUniqueInput
+    cursor?: empresaWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Empresas from the position of the cursor.
+     * Take `±n` empresas from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Empresas.
+     * Skip the first `n` empresas.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Empresas.
+     * Filter by unique combinations of empresas.
      */
     distinct?: EmpresaScalarFieldEnum | EmpresaScalarFieldEnum[]
   }
 
   /**
-   * Empresa findFirstOrThrow
+   * empresa findFirstOrThrow
    */
-  export type EmpresaFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type empresaFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Empresa
+     * Select specific fields to fetch from the empresa
      */
-    select?: EmpresaSelect<ExtArgs> | null
+    select?: empresaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Empresa
+     * Omit specific fields from the empresa
      */
-    omit?: EmpresaOmit<ExtArgs> | null
+    omit?: empresaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EmpresaInclude<ExtArgs> | null
+    include?: empresaInclude<ExtArgs> | null
     /**
-     * Filter, which Empresa to fetch.
+     * Filter, which empresa to fetch.
      */
-    where?: EmpresaWhereInput
+    where?: empresaWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Empresas to fetch.
+     * Determine the order of empresas to fetch.
      */
-    orderBy?: EmpresaOrderByWithRelationInput | EmpresaOrderByWithRelationInput[]
+    orderBy?: empresaOrderByWithRelationInput | empresaOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Empresas.
+     * Sets the position for searching for empresas.
      */
-    cursor?: EmpresaWhereUniqueInput
+    cursor?: empresaWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Empresas from the position of the cursor.
+     * Take `±n` empresas from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Empresas.
+     * Skip the first `n` empresas.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Empresas.
+     * Filter by unique combinations of empresas.
      */
     distinct?: EmpresaScalarFieldEnum | EmpresaScalarFieldEnum[]
   }
 
   /**
-   * Empresa findMany
+   * empresa findMany
    */
-  export type EmpresaFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type empresaFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Empresa
+     * Select specific fields to fetch from the empresa
      */
-    select?: EmpresaSelect<ExtArgs> | null
+    select?: empresaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Empresa
+     * Omit specific fields from the empresa
      */
-    omit?: EmpresaOmit<ExtArgs> | null
+    omit?: empresaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EmpresaInclude<ExtArgs> | null
+    include?: empresaInclude<ExtArgs> | null
     /**
-     * Filter, which Empresas to fetch.
+     * Filter, which empresas to fetch.
      */
-    where?: EmpresaWhereInput
+    where?: empresaWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Empresas to fetch.
+     * Determine the order of empresas to fetch.
      */
-    orderBy?: EmpresaOrderByWithRelationInput | EmpresaOrderByWithRelationInput[]
+    orderBy?: empresaOrderByWithRelationInput | empresaOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Empresas.
+     * Sets the position for listing empresas.
      */
-    cursor?: EmpresaWhereUniqueInput
+    cursor?: empresaWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Empresas from the position of the cursor.
+     * Take `±n` empresas from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Empresas.
+     * Skip the first `n` empresas.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Empresas.
+     * Filter by unique combinations of empresas.
      */
     distinct?: EmpresaScalarFieldEnum | EmpresaScalarFieldEnum[]
   }
 
   /**
-   * Empresa create
+   * empresa create
    */
-  export type EmpresaCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type empresaCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Empresa
+     * Select specific fields to fetch from the empresa
      */
-    select?: EmpresaSelect<ExtArgs> | null
+    select?: empresaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Empresa
+     * Omit specific fields from the empresa
      */
-    omit?: EmpresaOmit<ExtArgs> | null
+    omit?: empresaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EmpresaInclude<ExtArgs> | null
+    include?: empresaInclude<ExtArgs> | null
     /**
-     * The data needed to create a Empresa.
+     * The data needed to create a empresa.
      */
-    data: XOR<EmpresaCreateInput, EmpresaUncheckedCreateInput>
+    data: XOR<empresaCreateInput, empresaUncheckedCreateInput>
   }
 
   /**
-   * Empresa createMany
+   * empresa createMany
    */
-  export type EmpresaCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type empresaCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Empresas.
+     * The data used to create many empresas.
      */
-    data: EmpresaCreateManyInput | EmpresaCreateManyInput[]
+    data: empresaCreateManyInput | empresaCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Empresa update
+   * empresa update
    */
-  export type EmpresaUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type empresaUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Empresa
+     * Select specific fields to fetch from the empresa
      */
-    select?: EmpresaSelect<ExtArgs> | null
+    select?: empresaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Empresa
+     * Omit specific fields from the empresa
      */
-    omit?: EmpresaOmit<ExtArgs> | null
+    omit?: empresaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EmpresaInclude<ExtArgs> | null
+    include?: empresaInclude<ExtArgs> | null
     /**
-     * The data needed to update a Empresa.
+     * The data needed to update a empresa.
      */
-    data: XOR<EmpresaUpdateInput, EmpresaUncheckedUpdateInput>
+    data: XOR<empresaUpdateInput, empresaUncheckedUpdateInput>
     /**
-     * Choose, which Empresa to update.
+     * Choose, which empresa to update.
      */
-    where: EmpresaWhereUniqueInput
+    where: empresaWhereUniqueInput
   }
 
   /**
-   * Empresa updateMany
+   * empresa updateMany
    */
-  export type EmpresaUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type empresaUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Empresas.
+     * The data used to update empresas.
      */
-    data: XOR<EmpresaUpdateManyMutationInput, EmpresaUncheckedUpdateManyInput>
+    data: XOR<empresaUpdateManyMutationInput, empresaUncheckedUpdateManyInput>
     /**
-     * Filter which Empresas to update
+     * Filter which empresas to update
      */
-    where?: EmpresaWhereInput
+    where?: empresaWhereInput
     /**
-     * Limit how many Empresas to update.
+     * Limit how many empresas to update.
      */
     limit?: number
   }
 
   /**
-   * Empresa upsert
+   * empresa upsert
    */
-  export type EmpresaUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type empresaUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Empresa
+     * Select specific fields to fetch from the empresa
      */
-    select?: EmpresaSelect<ExtArgs> | null
+    select?: empresaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Empresa
+     * Omit specific fields from the empresa
      */
-    omit?: EmpresaOmit<ExtArgs> | null
+    omit?: empresaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EmpresaInclude<ExtArgs> | null
+    include?: empresaInclude<ExtArgs> | null
     /**
-     * The filter to search for the Empresa to update in case it exists.
+     * The filter to search for the empresa to update in case it exists.
      */
-    where: EmpresaWhereUniqueInput
+    where: empresaWhereUniqueInput
     /**
-     * In case the Empresa found by the `where` argument doesn't exist, create a new Empresa with this data.
+     * In case the empresa found by the `where` argument doesn't exist, create a new empresa with this data.
      */
-    create: XOR<EmpresaCreateInput, EmpresaUncheckedCreateInput>
+    create: XOR<empresaCreateInput, empresaUncheckedCreateInput>
     /**
-     * In case the Empresa was found with the provided `where` argument, update it with this data.
+     * In case the empresa was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<EmpresaUpdateInput, EmpresaUncheckedUpdateInput>
+    update: XOR<empresaUpdateInput, empresaUncheckedUpdateInput>
   }
 
   /**
-   * Empresa delete
+   * empresa delete
    */
-  export type EmpresaDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type empresaDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Empresa
+     * Select specific fields to fetch from the empresa
      */
-    select?: EmpresaSelect<ExtArgs> | null
+    select?: empresaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Empresa
+     * Omit specific fields from the empresa
      */
-    omit?: EmpresaOmit<ExtArgs> | null
+    omit?: empresaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EmpresaInclude<ExtArgs> | null
+    include?: empresaInclude<ExtArgs> | null
     /**
-     * Filter which Empresa to delete.
+     * Filter which empresa to delete.
      */
-    where: EmpresaWhereUniqueInput
+    where: empresaWhereUniqueInput
   }
 
   /**
-   * Empresa deleteMany
+   * empresa deleteMany
    */
-  export type EmpresaDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type empresaDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Empresas to delete
+     * Filter which empresas to delete
      */
-    where?: EmpresaWhereInput
+    where?: empresaWhereInput
     /**
-     * Limit how many Empresas to delete.
+     * Limit how many empresas to delete.
      */
     limit?: number
   }
 
   /**
-   * Empresa.diagnosticos
+   * empresa.diagnostico
    */
-  export type Empresa$diagnosticosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type empresa$diagnosticoArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Diagnostico
+     * Select specific fields to fetch from the diagnostico
      */
-    select?: DiagnosticoSelect<ExtArgs> | null
+    select?: diagnosticoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Diagnostico
+     * Omit specific fields from the diagnostico
      */
-    omit?: DiagnosticoOmit<ExtArgs> | null
+    omit?: diagnosticoOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: DiagnosticoInclude<ExtArgs> | null
-    where?: DiagnosticoWhereInput
-    orderBy?: DiagnosticoOrderByWithRelationInput | DiagnosticoOrderByWithRelationInput[]
-    cursor?: DiagnosticoWhereUniqueInput
+    include?: diagnosticoInclude<ExtArgs> | null
+    where?: diagnosticoWhereInput
+    orderBy?: diagnosticoOrderByWithRelationInput | diagnosticoOrderByWithRelationInput[]
+    cursor?: diagnosticoWhereUniqueInput
     take?: number
     skip?: number
     distinct?: DiagnosticoScalarFieldEnum | DiagnosticoScalarFieldEnum[]
   }
 
   /**
-   * Empresa without action
+   * empresa without action
    */
-  export type EmpresaDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type empresaDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Empresa
+     * Select specific fields to fetch from the empresa
      */
-    select?: EmpresaSelect<ExtArgs> | null
+    select?: empresaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Empresa
+     * Omit specific fields from the empresa
      */
-    omit?: EmpresaOmit<ExtArgs> | null
+    omit?: empresaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EmpresaInclude<ExtArgs> | null
+    include?: empresaInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model Diagnostico
-   */
-
-  export type AggregateDiagnostico = {
-    _count: DiagnosticoCountAggregateOutputType | null
-    _avg: DiagnosticoAvgAggregateOutputType | null
-    _sum: DiagnosticoSumAggregateOutputType | null
-    _min: DiagnosticoMinAggregateOutputType | null
-    _max: DiagnosticoMaxAggregateOutputType | null
-  }
-
-  export type DiagnosticoAvgAggregateOutputType = {
-    id: number | null
-    empresaId: number | null
-    notaGeral: number | null
-    percentualMaturidade: number | null
-  }
-
-  export type DiagnosticoSumAggregateOutputType = {
-    id: number | null
-    empresaId: number | null
-    notaGeral: number | null
-    percentualMaturidade: number | null
-  }
-
-  export type DiagnosticoMinAggregateOutputType = {
-    id: number | null
-    empresaId: number | null
-    notaGeral: number | null
-    percentualMaturidade: number | null
-    nivelMaturidade: string | null
-    createdAt: Date | null
-  }
-
-  export type DiagnosticoMaxAggregateOutputType = {
-    id: number | null
-    empresaId: number | null
-    notaGeral: number | null
-    percentualMaturidade: number | null
-    nivelMaturidade: string | null
-    createdAt: Date | null
-  }
-
-  export type DiagnosticoCountAggregateOutputType = {
-    id: number
-    empresaId: number
-    notaGeral: number
-    percentualMaturidade: number
-    nivelMaturidade: number
-    porDiretoria: number
-    porDimensao: number
-    createdAt: number
-    _all: number
-  }
-
-
-  export type DiagnosticoAvgAggregateInputType = {
-    id?: true
-    empresaId?: true
-    notaGeral?: true
-    percentualMaturidade?: true
-  }
-
-  export type DiagnosticoSumAggregateInputType = {
-    id?: true
-    empresaId?: true
-    notaGeral?: true
-    percentualMaturidade?: true
-  }
-
-  export type DiagnosticoMinAggregateInputType = {
-    id?: true
-    empresaId?: true
-    notaGeral?: true
-    percentualMaturidade?: true
-    nivelMaturidade?: true
-    createdAt?: true
-  }
-
-  export type DiagnosticoMaxAggregateInputType = {
-    id?: true
-    empresaId?: true
-    notaGeral?: true
-    percentualMaturidade?: true
-    nivelMaturidade?: true
-    createdAt?: true
-  }
-
-  export type DiagnosticoCountAggregateInputType = {
-    id?: true
-    empresaId?: true
-    notaGeral?: true
-    percentualMaturidade?: true
-    nivelMaturidade?: true
-    porDiretoria?: true
-    porDimensao?: true
-    createdAt?: true
-    _all?: true
-  }
-
-  export type DiagnosticoAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Diagnostico to aggregate.
-     */
-    where?: DiagnosticoWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Diagnosticos to fetch.
-     */
-    orderBy?: DiagnosticoOrderByWithRelationInput | DiagnosticoOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: DiagnosticoWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Diagnosticos from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Diagnosticos.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned Diagnosticos
-    **/
-    _count?: true | DiagnosticoCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: DiagnosticoAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: DiagnosticoSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: DiagnosticoMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: DiagnosticoMaxAggregateInputType
-  }
-
-  export type GetDiagnosticoAggregateType<T extends DiagnosticoAggregateArgs> = {
-        [P in keyof T & keyof AggregateDiagnostico]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateDiagnostico[P]>
-      : GetScalarType<T[P], AggregateDiagnostico[P]>
-  }
-
-
-
-
-  export type DiagnosticoGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: DiagnosticoWhereInput
-    orderBy?: DiagnosticoOrderByWithAggregationInput | DiagnosticoOrderByWithAggregationInput[]
-    by: DiagnosticoScalarFieldEnum[] | DiagnosticoScalarFieldEnum
-    having?: DiagnosticoScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: DiagnosticoCountAggregateInputType | true
-    _avg?: DiagnosticoAvgAggregateInputType
-    _sum?: DiagnosticoSumAggregateInputType
-    _min?: DiagnosticoMinAggregateInputType
-    _max?: DiagnosticoMaxAggregateInputType
-  }
-
-  export type DiagnosticoGroupByOutputType = {
-    id: number
-    empresaId: number
-    notaGeral: number
-    percentualMaturidade: number
-    nivelMaturidade: string
-    porDiretoria: JsonValue
-    porDimensao: JsonValue
-    createdAt: Date
-    _count: DiagnosticoCountAggregateOutputType | null
-    _avg: DiagnosticoAvgAggregateOutputType | null
-    _sum: DiagnosticoSumAggregateOutputType | null
-    _min: DiagnosticoMinAggregateOutputType | null
-    _max: DiagnosticoMaxAggregateOutputType | null
-  }
-
-  type GetDiagnosticoGroupByPayload<T extends DiagnosticoGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<DiagnosticoGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof DiagnosticoGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], DiagnosticoGroupByOutputType[P]>
-            : GetScalarType<T[P], DiagnosticoGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type DiagnosticoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    empresaId?: boolean
-    notaGeral?: boolean
-    percentualMaturidade?: boolean
-    nivelMaturidade?: boolean
-    porDiretoria?: boolean
-    porDimensao?: boolean
-    createdAt?: boolean
-    empresa?: boolean | EmpresaDefaultArgs<ExtArgs>
-    respostas?: boolean | Diagnostico$respostasArgs<ExtArgs>
-    _count?: boolean | DiagnosticoCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["diagnostico"]>
-
-
-
-  export type DiagnosticoSelectScalar = {
-    id?: boolean
-    empresaId?: boolean
-    notaGeral?: boolean
-    percentualMaturidade?: boolean
-    nivelMaturidade?: boolean
-    porDiretoria?: boolean
-    porDimensao?: boolean
-    createdAt?: boolean
-  }
-
-  export type DiagnosticoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "empresaId" | "notaGeral" | "percentualMaturidade" | "nivelMaturidade" | "porDiretoria" | "porDimensao" | "createdAt", ExtArgs["result"]["diagnostico"]>
-  export type DiagnosticoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    empresa?: boolean | EmpresaDefaultArgs<ExtArgs>
-    respostas?: boolean | Diagnostico$respostasArgs<ExtArgs>
-    _count?: boolean | DiagnosticoCountOutputTypeDefaultArgs<ExtArgs>
-  }
-
-  export type $DiagnosticoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Diagnostico"
-    objects: {
-      empresa: Prisma.$EmpresaPayload<ExtArgs>
-      respostas: Prisma.$RespostaPayload<ExtArgs>[]
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: number
-      empresaId: number
-      notaGeral: number
-      percentualMaturidade: number
-      nivelMaturidade: string
-      porDiretoria: Prisma.JsonValue
-      porDimensao: Prisma.JsonValue
-      createdAt: Date
-    }, ExtArgs["result"]["diagnostico"]>
-    composites: {}
-  }
-
-  type DiagnosticoGetPayload<S extends boolean | null | undefined | DiagnosticoDefaultArgs> = $Result.GetResult<Prisma.$DiagnosticoPayload, S>
-
-  type DiagnosticoCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<DiagnosticoFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: DiagnosticoCountAggregateInputType | true
-    }
-
-  export interface DiagnosticoDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Diagnostico'], meta: { name: 'Diagnostico' } }
-    /**
-     * Find zero or one Diagnostico that matches the filter.
-     * @param {DiagnosticoFindUniqueArgs} args - Arguments to find a Diagnostico
-     * @example
-     * // Get one Diagnostico
-     * const diagnostico = await prisma.diagnostico.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends DiagnosticoFindUniqueArgs>(args: SelectSubset<T, DiagnosticoFindUniqueArgs<ExtArgs>>): Prisma__DiagnosticoClient<$Result.GetResult<Prisma.$DiagnosticoPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one Diagnostico that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {DiagnosticoFindUniqueOrThrowArgs} args - Arguments to find a Diagnostico
-     * @example
-     * // Get one Diagnostico
-     * const diagnostico = await prisma.diagnostico.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends DiagnosticoFindUniqueOrThrowArgs>(args: SelectSubset<T, DiagnosticoFindUniqueOrThrowArgs<ExtArgs>>): Prisma__DiagnosticoClient<$Result.GetResult<Prisma.$DiagnosticoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Diagnostico that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {DiagnosticoFindFirstArgs} args - Arguments to find a Diagnostico
-     * @example
-     * // Get one Diagnostico
-     * const diagnostico = await prisma.diagnostico.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends DiagnosticoFindFirstArgs>(args?: SelectSubset<T, DiagnosticoFindFirstArgs<ExtArgs>>): Prisma__DiagnosticoClient<$Result.GetResult<Prisma.$DiagnosticoPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Diagnostico that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {DiagnosticoFindFirstOrThrowArgs} args - Arguments to find a Diagnostico
-     * @example
-     * // Get one Diagnostico
-     * const diagnostico = await prisma.diagnostico.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends DiagnosticoFindFirstOrThrowArgs>(args?: SelectSubset<T, DiagnosticoFindFirstOrThrowArgs<ExtArgs>>): Prisma__DiagnosticoClient<$Result.GetResult<Prisma.$DiagnosticoPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more Diagnosticos that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {DiagnosticoFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Diagnosticos
-     * const diagnosticos = await prisma.diagnostico.findMany()
-     * 
-     * // Get first 10 Diagnosticos
-     * const diagnosticos = await prisma.diagnostico.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const diagnosticoWithIdOnly = await prisma.diagnostico.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends DiagnosticoFindManyArgs>(args?: SelectSubset<T, DiagnosticoFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DiagnosticoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a Diagnostico.
-     * @param {DiagnosticoCreateArgs} args - Arguments to create a Diagnostico.
-     * @example
-     * // Create one Diagnostico
-     * const Diagnostico = await prisma.diagnostico.create({
-     *   data: {
-     *     // ... data to create a Diagnostico
-     *   }
-     * })
-     * 
-     */
-    create<T extends DiagnosticoCreateArgs>(args: SelectSubset<T, DiagnosticoCreateArgs<ExtArgs>>): Prisma__DiagnosticoClient<$Result.GetResult<Prisma.$DiagnosticoPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many Diagnosticos.
-     * @param {DiagnosticoCreateManyArgs} args - Arguments to create many Diagnosticos.
-     * @example
-     * // Create many Diagnosticos
-     * const diagnostico = await prisma.diagnostico.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends DiagnosticoCreateManyArgs>(args?: SelectSubset<T, DiagnosticoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Delete a Diagnostico.
-     * @param {DiagnosticoDeleteArgs} args - Arguments to delete one Diagnostico.
-     * @example
-     * // Delete one Diagnostico
-     * const Diagnostico = await prisma.diagnostico.delete({
-     *   where: {
-     *     // ... filter to delete one Diagnostico
-     *   }
-     * })
-     * 
-     */
-    delete<T extends DiagnosticoDeleteArgs>(args: SelectSubset<T, DiagnosticoDeleteArgs<ExtArgs>>): Prisma__DiagnosticoClient<$Result.GetResult<Prisma.$DiagnosticoPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one Diagnostico.
-     * @param {DiagnosticoUpdateArgs} args - Arguments to update one Diagnostico.
-     * @example
-     * // Update one Diagnostico
-     * const diagnostico = await prisma.diagnostico.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends DiagnosticoUpdateArgs>(args: SelectSubset<T, DiagnosticoUpdateArgs<ExtArgs>>): Prisma__DiagnosticoClient<$Result.GetResult<Prisma.$DiagnosticoPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more Diagnosticos.
-     * @param {DiagnosticoDeleteManyArgs} args - Arguments to filter Diagnosticos to delete.
-     * @example
-     * // Delete a few Diagnosticos
-     * const { count } = await prisma.diagnostico.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends DiagnosticoDeleteManyArgs>(args?: SelectSubset<T, DiagnosticoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Diagnosticos.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {DiagnosticoUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Diagnosticos
-     * const diagnostico = await prisma.diagnostico.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends DiagnosticoUpdateManyArgs>(args: SelectSubset<T, DiagnosticoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one Diagnostico.
-     * @param {DiagnosticoUpsertArgs} args - Arguments to update or create a Diagnostico.
-     * @example
-     * // Update or create a Diagnostico
-     * const diagnostico = await prisma.diagnostico.upsert({
-     *   create: {
-     *     // ... data to create a Diagnostico
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Diagnostico we want to update
-     *   }
-     * })
-     */
-    upsert<T extends DiagnosticoUpsertArgs>(args: SelectSubset<T, DiagnosticoUpsertArgs<ExtArgs>>): Prisma__DiagnosticoClient<$Result.GetResult<Prisma.$DiagnosticoPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of Diagnosticos.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {DiagnosticoCountArgs} args - Arguments to filter Diagnosticos to count.
-     * @example
-     * // Count the number of Diagnosticos
-     * const count = await prisma.diagnostico.count({
-     *   where: {
-     *     // ... the filter for the Diagnosticos we want to count
-     *   }
-     * })
-    **/
-    count<T extends DiagnosticoCountArgs>(
-      args?: Subset<T, DiagnosticoCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], DiagnosticoCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Diagnostico.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {DiagnosticoAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends DiagnosticoAggregateArgs>(args: Subset<T, DiagnosticoAggregateArgs>): Prisma.PrismaPromise<GetDiagnosticoAggregateType<T>>
-
-    /**
-     * Group by Diagnostico.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {DiagnosticoGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends DiagnosticoGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: DiagnosticoGroupByArgs['orderBy'] }
-        : { orderBy?: DiagnosticoGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, DiagnosticoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDiagnosticoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the Diagnostico model
-   */
-  readonly fields: DiagnosticoFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for Diagnostico.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__DiagnosticoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    empresa<T extends EmpresaDefaultArgs<ExtArgs> = {}>(args?: Subset<T, EmpresaDefaultArgs<ExtArgs>>): Prisma__EmpresaClient<$Result.GetResult<Prisma.$EmpresaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    respostas<T extends Diagnostico$respostasArgs<ExtArgs> = {}>(args?: Subset<T, Diagnostico$respostasArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RespostaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the Diagnostico model
-   */
-  interface DiagnosticoFieldRefs {
-    readonly id: FieldRef<"Diagnostico", 'Int'>
-    readonly empresaId: FieldRef<"Diagnostico", 'Int'>
-    readonly notaGeral: FieldRef<"Diagnostico", 'Float'>
-    readonly percentualMaturidade: FieldRef<"Diagnostico", 'Float'>
-    readonly nivelMaturidade: FieldRef<"Diagnostico", 'String'>
-    readonly porDiretoria: FieldRef<"Diagnostico", 'Json'>
-    readonly porDimensao: FieldRef<"Diagnostico", 'Json'>
-    readonly createdAt: FieldRef<"Diagnostico", 'DateTime'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * Diagnostico findUnique
-   */
-  export type DiagnosticoFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Diagnostico
-     */
-    select?: DiagnosticoSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Diagnostico
-     */
-    omit?: DiagnosticoOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: DiagnosticoInclude<ExtArgs> | null
-    /**
-     * Filter, which Diagnostico to fetch.
-     */
-    where: DiagnosticoWhereUniqueInput
-  }
-
-  /**
-   * Diagnostico findUniqueOrThrow
-   */
-  export type DiagnosticoFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Diagnostico
-     */
-    select?: DiagnosticoSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Diagnostico
-     */
-    omit?: DiagnosticoOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: DiagnosticoInclude<ExtArgs> | null
-    /**
-     * Filter, which Diagnostico to fetch.
-     */
-    where: DiagnosticoWhereUniqueInput
-  }
-
-  /**
-   * Diagnostico findFirst
-   */
-  export type DiagnosticoFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Diagnostico
-     */
-    select?: DiagnosticoSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Diagnostico
-     */
-    omit?: DiagnosticoOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: DiagnosticoInclude<ExtArgs> | null
-    /**
-     * Filter, which Diagnostico to fetch.
-     */
-    where?: DiagnosticoWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Diagnosticos to fetch.
-     */
-    orderBy?: DiagnosticoOrderByWithRelationInput | DiagnosticoOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Diagnosticos.
-     */
-    cursor?: DiagnosticoWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Diagnosticos from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Diagnosticos.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Diagnosticos.
-     */
-    distinct?: DiagnosticoScalarFieldEnum | DiagnosticoScalarFieldEnum[]
-  }
-
-  /**
-   * Diagnostico findFirstOrThrow
-   */
-  export type DiagnosticoFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Diagnostico
-     */
-    select?: DiagnosticoSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Diagnostico
-     */
-    omit?: DiagnosticoOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: DiagnosticoInclude<ExtArgs> | null
-    /**
-     * Filter, which Diagnostico to fetch.
-     */
-    where?: DiagnosticoWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Diagnosticos to fetch.
-     */
-    orderBy?: DiagnosticoOrderByWithRelationInput | DiagnosticoOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Diagnosticos.
-     */
-    cursor?: DiagnosticoWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Diagnosticos from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Diagnosticos.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Diagnosticos.
-     */
-    distinct?: DiagnosticoScalarFieldEnum | DiagnosticoScalarFieldEnum[]
-  }
-
-  /**
-   * Diagnostico findMany
-   */
-  export type DiagnosticoFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Diagnostico
-     */
-    select?: DiagnosticoSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Diagnostico
-     */
-    omit?: DiagnosticoOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: DiagnosticoInclude<ExtArgs> | null
-    /**
-     * Filter, which Diagnosticos to fetch.
-     */
-    where?: DiagnosticoWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Diagnosticos to fetch.
-     */
-    orderBy?: DiagnosticoOrderByWithRelationInput | DiagnosticoOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing Diagnosticos.
-     */
-    cursor?: DiagnosticoWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Diagnosticos from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Diagnosticos.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Diagnosticos.
-     */
-    distinct?: DiagnosticoScalarFieldEnum | DiagnosticoScalarFieldEnum[]
-  }
-
-  /**
-   * Diagnostico create
-   */
-  export type DiagnosticoCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Diagnostico
-     */
-    select?: DiagnosticoSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Diagnostico
-     */
-    omit?: DiagnosticoOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: DiagnosticoInclude<ExtArgs> | null
-    /**
-     * The data needed to create a Diagnostico.
-     */
-    data: XOR<DiagnosticoCreateInput, DiagnosticoUncheckedCreateInput>
-  }
-
-  /**
-   * Diagnostico createMany
-   */
-  export type DiagnosticoCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many Diagnosticos.
-     */
-    data: DiagnosticoCreateManyInput | DiagnosticoCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * Diagnostico update
-   */
-  export type DiagnosticoUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Diagnostico
-     */
-    select?: DiagnosticoSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Diagnostico
-     */
-    omit?: DiagnosticoOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: DiagnosticoInclude<ExtArgs> | null
-    /**
-     * The data needed to update a Diagnostico.
-     */
-    data: XOR<DiagnosticoUpdateInput, DiagnosticoUncheckedUpdateInput>
-    /**
-     * Choose, which Diagnostico to update.
-     */
-    where: DiagnosticoWhereUniqueInput
-  }
-
-  /**
-   * Diagnostico updateMany
-   */
-  export type DiagnosticoUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update Diagnosticos.
-     */
-    data: XOR<DiagnosticoUpdateManyMutationInput, DiagnosticoUncheckedUpdateManyInput>
-    /**
-     * Filter which Diagnosticos to update
-     */
-    where?: DiagnosticoWhereInput
-    /**
-     * Limit how many Diagnosticos to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * Diagnostico upsert
-   */
-  export type DiagnosticoUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Diagnostico
-     */
-    select?: DiagnosticoSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Diagnostico
-     */
-    omit?: DiagnosticoOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: DiagnosticoInclude<ExtArgs> | null
-    /**
-     * The filter to search for the Diagnostico to update in case it exists.
-     */
-    where: DiagnosticoWhereUniqueInput
-    /**
-     * In case the Diagnostico found by the `where` argument doesn't exist, create a new Diagnostico with this data.
-     */
-    create: XOR<DiagnosticoCreateInput, DiagnosticoUncheckedCreateInput>
-    /**
-     * In case the Diagnostico was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<DiagnosticoUpdateInput, DiagnosticoUncheckedUpdateInput>
-  }
-
-  /**
-   * Diagnostico delete
-   */
-  export type DiagnosticoDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Diagnostico
-     */
-    select?: DiagnosticoSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Diagnostico
-     */
-    omit?: DiagnosticoOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: DiagnosticoInclude<ExtArgs> | null
-    /**
-     * Filter which Diagnostico to delete.
-     */
-    where: DiagnosticoWhereUniqueInput
-  }
-
-  /**
-   * Diagnostico deleteMany
-   */
-  export type DiagnosticoDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Diagnosticos to delete
-     */
-    where?: DiagnosticoWhereInput
-    /**
-     * Limit how many Diagnosticos to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * Diagnostico.respostas
-   */
-  export type Diagnostico$respostasArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Resposta
-     */
-    select?: RespostaSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Resposta
-     */
-    omit?: RespostaOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: RespostaInclude<ExtArgs> | null
-    where?: RespostaWhereInput
-    orderBy?: RespostaOrderByWithRelationInput | RespostaOrderByWithRelationInput[]
-    cursor?: RespostaWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: RespostaScalarFieldEnum | RespostaScalarFieldEnum[]
-  }
-
-  /**
-   * Diagnostico without action
-   */
-  export type DiagnosticoDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Diagnostico
-     */
-    select?: DiagnosticoSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Diagnostico
-     */
-    omit?: DiagnosticoOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: DiagnosticoInclude<ExtArgs> | null
-  }
-
-
-  /**
-   * Model Resposta
+   * Model resposta
    */
 
   export type AggregateResposta = {
@@ -3203,37 +3203,37 @@ export namespace Prisma {
 
   export type RespostaAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Resposta to aggregate.
+     * Filter which resposta to aggregate.
      */
-    where?: RespostaWhereInput
+    where?: respostaWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Respostas to fetch.
+     * Determine the order of respostas to fetch.
      */
-    orderBy?: RespostaOrderByWithRelationInput | RespostaOrderByWithRelationInput[]
+    orderBy?: respostaOrderByWithRelationInput | respostaOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: RespostaWhereUniqueInput
+    cursor?: respostaWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Respostas from the position of the cursor.
+     * Take `±n` respostas from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Respostas.
+     * Skip the first `n` respostas.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Respostas
+     * Count returned respostas
     **/
     _count?: true | RespostaCountAggregateInputType
     /**
@@ -3273,11 +3273,11 @@ export namespace Prisma {
 
 
 
-  export type RespostaGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: RespostaWhereInput
-    orderBy?: RespostaOrderByWithAggregationInput | RespostaOrderByWithAggregationInput[]
+  export type respostaGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: respostaWhereInput
+    orderBy?: respostaOrderByWithAggregationInput | respostaOrderByWithAggregationInput[]
     by: RespostaScalarFieldEnum[] | RespostaScalarFieldEnum
-    having?: RespostaScalarWhereWithAggregatesInput
+    having?: respostaScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: RespostaCountAggregateInputType | true
@@ -3303,7 +3303,7 @@ export namespace Prisma {
     _max: RespostaMaxAggregateOutputType | null
   }
 
-  type GetRespostaGroupByPayload<T extends RespostaGroupByArgs> = Prisma.PrismaPromise<
+  type GetRespostaGroupByPayload<T extends respostaGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<RespostaGroupByOutputType, T['by']> &
         {
@@ -3317,7 +3317,7 @@ export namespace Prisma {
     >
 
 
-  export type RespostaSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type respostaSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     diagnosticoId?: boolean
     perguntaId?: boolean
@@ -3326,12 +3326,12 @@ export namespace Prisma {
     dimensao?: boolean
     texto?: boolean
     valor?: boolean
-    diagnostico?: boolean | DiagnosticoDefaultArgs<ExtArgs>
+    diagnostico?: boolean | diagnosticoDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["resposta"]>
 
 
 
-  export type RespostaSelectScalar = {
+  export type respostaSelectScalar = {
     id?: boolean
     diagnosticoId?: boolean
     perguntaId?: boolean
@@ -3342,15 +3342,15 @@ export namespace Prisma {
     valor?: boolean
   }
 
-  export type RespostaOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "diagnosticoId" | "perguntaId" | "codigo" | "diretoria" | "dimensao" | "texto" | "valor", ExtArgs["result"]["resposta"]>
-  export type RespostaInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    diagnostico?: boolean | DiagnosticoDefaultArgs<ExtArgs>
+  export type respostaOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "diagnosticoId" | "perguntaId" | "codigo" | "diretoria" | "dimensao" | "texto" | "valor", ExtArgs["result"]["resposta"]>
+  export type respostaInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    diagnostico?: boolean | diagnosticoDefaultArgs<ExtArgs>
   }
 
-  export type $RespostaPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Resposta"
+  export type $respostaPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "resposta"
     objects: {
-      diagnostico: Prisma.$DiagnosticoPayload<ExtArgs>
+      diagnostico: Prisma.$diagnosticoPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -3365,18 +3365,18 @@ export namespace Prisma {
     composites: {}
   }
 
-  type RespostaGetPayload<S extends boolean | null | undefined | RespostaDefaultArgs> = $Result.GetResult<Prisma.$RespostaPayload, S>
+  type respostaGetPayload<S extends boolean | null | undefined | respostaDefaultArgs> = $Result.GetResult<Prisma.$respostaPayload, S>
 
-  type RespostaCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<RespostaFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type respostaCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<respostaFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: RespostaCountAggregateInputType | true
     }
 
-  export interface RespostaDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Resposta'], meta: { name: 'Resposta' } }
+  export interface respostaDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['resposta'], meta: { name: 'resposta' } }
     /**
      * Find zero or one Resposta that matches the filter.
-     * @param {RespostaFindUniqueArgs} args - Arguments to find a Resposta
+     * @param {respostaFindUniqueArgs} args - Arguments to find a Resposta
      * @example
      * // Get one Resposta
      * const resposta = await prisma.resposta.findUnique({
@@ -3385,12 +3385,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends RespostaFindUniqueArgs>(args: SelectSubset<T, RespostaFindUniqueArgs<ExtArgs>>): Prisma__RespostaClient<$Result.GetResult<Prisma.$RespostaPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends respostaFindUniqueArgs>(args: SelectSubset<T, respostaFindUniqueArgs<ExtArgs>>): Prisma__respostaClient<$Result.GetResult<Prisma.$respostaPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find one Resposta that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {RespostaFindUniqueOrThrowArgs} args - Arguments to find a Resposta
+     * @param {respostaFindUniqueOrThrowArgs} args - Arguments to find a Resposta
      * @example
      * // Get one Resposta
      * const resposta = await prisma.resposta.findUniqueOrThrow({
@@ -3399,13 +3399,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends RespostaFindUniqueOrThrowArgs>(args: SelectSubset<T, RespostaFindUniqueOrThrowArgs<ExtArgs>>): Prisma__RespostaClient<$Result.GetResult<Prisma.$RespostaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends respostaFindUniqueOrThrowArgs>(args: SelectSubset<T, respostaFindUniqueOrThrowArgs<ExtArgs>>): Prisma__respostaClient<$Result.GetResult<Prisma.$respostaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Resposta that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RespostaFindFirstArgs} args - Arguments to find a Resposta
+     * @param {respostaFindFirstArgs} args - Arguments to find a Resposta
      * @example
      * // Get one Resposta
      * const resposta = await prisma.resposta.findFirst({
@@ -3414,14 +3414,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends RespostaFindFirstArgs>(args?: SelectSubset<T, RespostaFindFirstArgs<ExtArgs>>): Prisma__RespostaClient<$Result.GetResult<Prisma.$RespostaPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends respostaFindFirstArgs>(args?: SelectSubset<T, respostaFindFirstArgs<ExtArgs>>): Prisma__respostaClient<$Result.GetResult<Prisma.$respostaPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Resposta that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RespostaFindFirstOrThrowArgs} args - Arguments to find a Resposta
+     * @param {respostaFindFirstOrThrowArgs} args - Arguments to find a Resposta
      * @example
      * // Get one Resposta
      * const resposta = await prisma.resposta.findFirstOrThrow({
@@ -3430,13 +3430,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends RespostaFindFirstOrThrowArgs>(args?: SelectSubset<T, RespostaFindFirstOrThrowArgs<ExtArgs>>): Prisma__RespostaClient<$Result.GetResult<Prisma.$RespostaPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends respostaFindFirstOrThrowArgs>(args?: SelectSubset<T, respostaFindFirstOrThrowArgs<ExtArgs>>): Prisma__respostaClient<$Result.GetResult<Prisma.$respostaPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Respostas that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RespostaFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {respostaFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Respostas
      * const respostas = await prisma.resposta.findMany()
@@ -3448,11 +3448,11 @@ export namespace Prisma {
      * const respostaWithIdOnly = await prisma.resposta.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends RespostaFindManyArgs>(args?: SelectSubset<T, RespostaFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RespostaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends respostaFindManyArgs>(args?: SelectSubset<T, respostaFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$respostaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
      * Create a Resposta.
-     * @param {RespostaCreateArgs} args - Arguments to create a Resposta.
+     * @param {respostaCreateArgs} args - Arguments to create a Resposta.
      * @example
      * // Create one Resposta
      * const Resposta = await prisma.resposta.create({
@@ -3462,11 +3462,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends RespostaCreateArgs>(args: SelectSubset<T, RespostaCreateArgs<ExtArgs>>): Prisma__RespostaClient<$Result.GetResult<Prisma.$RespostaPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends respostaCreateArgs>(args: SelectSubset<T, respostaCreateArgs<ExtArgs>>): Prisma__respostaClient<$Result.GetResult<Prisma.$respostaPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Respostas.
-     * @param {RespostaCreateManyArgs} args - Arguments to create many Respostas.
+     * @param {respostaCreateManyArgs} args - Arguments to create many Respostas.
      * @example
      * // Create many Respostas
      * const resposta = await prisma.resposta.createMany({
@@ -3476,11 +3476,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends RespostaCreateManyArgs>(args?: SelectSubset<T, RespostaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends respostaCreateManyArgs>(args?: SelectSubset<T, respostaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a Resposta.
-     * @param {RespostaDeleteArgs} args - Arguments to delete one Resposta.
+     * @param {respostaDeleteArgs} args - Arguments to delete one Resposta.
      * @example
      * // Delete one Resposta
      * const Resposta = await prisma.resposta.delete({
@@ -3490,11 +3490,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends RespostaDeleteArgs>(args: SelectSubset<T, RespostaDeleteArgs<ExtArgs>>): Prisma__RespostaClient<$Result.GetResult<Prisma.$RespostaPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends respostaDeleteArgs>(args: SelectSubset<T, respostaDeleteArgs<ExtArgs>>): Prisma__respostaClient<$Result.GetResult<Prisma.$respostaPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Update one Resposta.
-     * @param {RespostaUpdateArgs} args - Arguments to update one Resposta.
+     * @param {respostaUpdateArgs} args - Arguments to update one Resposta.
      * @example
      * // Update one Resposta
      * const resposta = await prisma.resposta.update({
@@ -3507,11 +3507,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends RespostaUpdateArgs>(args: SelectSubset<T, RespostaUpdateArgs<ExtArgs>>): Prisma__RespostaClient<$Result.GetResult<Prisma.$RespostaPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends respostaUpdateArgs>(args: SelectSubset<T, respostaUpdateArgs<ExtArgs>>): Prisma__respostaClient<$Result.GetResult<Prisma.$respostaPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Respostas.
-     * @param {RespostaDeleteManyArgs} args - Arguments to filter Respostas to delete.
+     * @param {respostaDeleteManyArgs} args - Arguments to filter Respostas to delete.
      * @example
      * // Delete a few Respostas
      * const { count } = await prisma.resposta.deleteMany({
@@ -3521,13 +3521,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends RespostaDeleteManyArgs>(args?: SelectSubset<T, RespostaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends respostaDeleteManyArgs>(args?: SelectSubset<T, respostaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Respostas.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RespostaUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {respostaUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Respostas
      * const resposta = await prisma.resposta.updateMany({
@@ -3540,11 +3540,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends RespostaUpdateManyArgs>(args: SelectSubset<T, RespostaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends respostaUpdateManyArgs>(args: SelectSubset<T, respostaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one Resposta.
-     * @param {RespostaUpsertArgs} args - Arguments to update or create a Resposta.
+     * @param {respostaUpsertArgs} args - Arguments to update or create a Resposta.
      * @example
      * // Update or create a Resposta
      * const resposta = await prisma.resposta.upsert({
@@ -3559,14 +3559,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends RespostaUpsertArgs>(args: SelectSubset<T, RespostaUpsertArgs<ExtArgs>>): Prisma__RespostaClient<$Result.GetResult<Prisma.$RespostaPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends respostaUpsertArgs>(args: SelectSubset<T, respostaUpsertArgs<ExtArgs>>): Prisma__respostaClient<$Result.GetResult<Prisma.$respostaPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
      * Count the number of Respostas.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RespostaCountArgs} args - Arguments to filter Respostas to count.
+     * @param {respostaCountArgs} args - Arguments to filter Respostas to count.
      * @example
      * // Count the number of Respostas
      * const count = await prisma.resposta.count({
@@ -3575,8 +3575,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends RespostaCountArgs>(
-      args?: Subset<T, RespostaCountArgs>,
+    count<T extends respostaCountArgs>(
+      args?: Subset<T, respostaCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -3615,7 +3615,7 @@ export namespace Prisma {
      * Group by Resposta.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RespostaGroupByArgs} args - Group by arguments.
+     * @param {respostaGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -3630,14 +3630,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends RespostaGroupByArgs,
+      T extends respostaGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: RespostaGroupByArgs['orderBy'] }
-        : { orderBy?: RespostaGroupByArgs['orderBy'] },
+        ? { orderBy: respostaGroupByArgs['orderBy'] }
+        : { orderBy?: respostaGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -3686,22 +3686,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, RespostaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRespostaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, respostaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRespostaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Resposta model
+   * Fields of the resposta model
    */
-  readonly fields: RespostaFieldRefs;
+  readonly fields: respostaFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Resposta.
+   * The delegate class that acts as a "Promise-like" for resposta.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__RespostaClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__respostaClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    diagnostico<T extends DiagnosticoDefaultArgs<ExtArgs> = {}>(args?: Subset<T, DiagnosticoDefaultArgs<ExtArgs>>): Prisma__DiagnosticoClient<$Result.GetResult<Prisma.$DiagnosticoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    diagnostico<T extends diagnosticoDefaultArgs<ExtArgs> = {}>(args?: Subset<T, diagnosticoDefaultArgs<ExtArgs>>): Prisma__diagnosticoClient<$Result.GetResult<Prisma.$diagnosticoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3728,380 +3728,380 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Resposta model
+   * Fields of the resposta model
    */
-  interface RespostaFieldRefs {
-    readonly id: FieldRef<"Resposta", 'Int'>
-    readonly diagnosticoId: FieldRef<"Resposta", 'Int'>
-    readonly perguntaId: FieldRef<"Resposta", 'Int'>
-    readonly codigo: FieldRef<"Resposta", 'String'>
-    readonly diretoria: FieldRef<"Resposta", 'String'>
-    readonly dimensao: FieldRef<"Resposta", 'String'>
-    readonly texto: FieldRef<"Resposta", 'String'>
-    readonly valor: FieldRef<"Resposta", 'Int'>
+  interface respostaFieldRefs {
+    readonly id: FieldRef<"resposta", 'Int'>
+    readonly diagnosticoId: FieldRef<"resposta", 'Int'>
+    readonly perguntaId: FieldRef<"resposta", 'Int'>
+    readonly codigo: FieldRef<"resposta", 'String'>
+    readonly diretoria: FieldRef<"resposta", 'String'>
+    readonly dimensao: FieldRef<"resposta", 'String'>
+    readonly texto: FieldRef<"resposta", 'String'>
+    readonly valor: FieldRef<"resposta", 'Int'>
   }
     
 
   // Custom InputTypes
   /**
-   * Resposta findUnique
+   * resposta findUnique
    */
-  export type RespostaFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type respostaFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Resposta
+     * Select specific fields to fetch from the resposta
      */
-    select?: RespostaSelect<ExtArgs> | null
+    select?: respostaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Resposta
+     * Omit specific fields from the resposta
      */
-    omit?: RespostaOmit<ExtArgs> | null
+    omit?: respostaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RespostaInclude<ExtArgs> | null
+    include?: respostaInclude<ExtArgs> | null
     /**
-     * Filter, which Resposta to fetch.
+     * Filter, which resposta to fetch.
      */
-    where: RespostaWhereUniqueInput
+    where: respostaWhereUniqueInput
   }
 
   /**
-   * Resposta findUniqueOrThrow
+   * resposta findUniqueOrThrow
    */
-  export type RespostaFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type respostaFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Resposta
+     * Select specific fields to fetch from the resposta
      */
-    select?: RespostaSelect<ExtArgs> | null
+    select?: respostaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Resposta
+     * Omit specific fields from the resposta
      */
-    omit?: RespostaOmit<ExtArgs> | null
+    omit?: respostaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RespostaInclude<ExtArgs> | null
+    include?: respostaInclude<ExtArgs> | null
     /**
-     * Filter, which Resposta to fetch.
+     * Filter, which resposta to fetch.
      */
-    where: RespostaWhereUniqueInput
+    where: respostaWhereUniqueInput
   }
 
   /**
-   * Resposta findFirst
+   * resposta findFirst
    */
-  export type RespostaFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type respostaFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Resposta
+     * Select specific fields to fetch from the resposta
      */
-    select?: RespostaSelect<ExtArgs> | null
+    select?: respostaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Resposta
+     * Omit specific fields from the resposta
      */
-    omit?: RespostaOmit<ExtArgs> | null
+    omit?: respostaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RespostaInclude<ExtArgs> | null
+    include?: respostaInclude<ExtArgs> | null
     /**
-     * Filter, which Resposta to fetch.
+     * Filter, which resposta to fetch.
      */
-    where?: RespostaWhereInput
+    where?: respostaWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Respostas to fetch.
+     * Determine the order of respostas to fetch.
      */
-    orderBy?: RespostaOrderByWithRelationInput | RespostaOrderByWithRelationInput[]
+    orderBy?: respostaOrderByWithRelationInput | respostaOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Respostas.
+     * Sets the position for searching for respostas.
      */
-    cursor?: RespostaWhereUniqueInput
+    cursor?: respostaWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Respostas from the position of the cursor.
+     * Take `±n` respostas from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Respostas.
+     * Skip the first `n` respostas.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Respostas.
+     * Filter by unique combinations of respostas.
      */
     distinct?: RespostaScalarFieldEnum | RespostaScalarFieldEnum[]
   }
 
   /**
-   * Resposta findFirstOrThrow
+   * resposta findFirstOrThrow
    */
-  export type RespostaFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type respostaFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Resposta
+     * Select specific fields to fetch from the resposta
      */
-    select?: RespostaSelect<ExtArgs> | null
+    select?: respostaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Resposta
+     * Omit specific fields from the resposta
      */
-    omit?: RespostaOmit<ExtArgs> | null
+    omit?: respostaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RespostaInclude<ExtArgs> | null
+    include?: respostaInclude<ExtArgs> | null
     /**
-     * Filter, which Resposta to fetch.
+     * Filter, which resposta to fetch.
      */
-    where?: RespostaWhereInput
+    where?: respostaWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Respostas to fetch.
+     * Determine the order of respostas to fetch.
      */
-    orderBy?: RespostaOrderByWithRelationInput | RespostaOrderByWithRelationInput[]
+    orderBy?: respostaOrderByWithRelationInput | respostaOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Respostas.
+     * Sets the position for searching for respostas.
      */
-    cursor?: RespostaWhereUniqueInput
+    cursor?: respostaWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Respostas from the position of the cursor.
+     * Take `±n` respostas from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Respostas.
+     * Skip the first `n` respostas.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Respostas.
+     * Filter by unique combinations of respostas.
      */
     distinct?: RespostaScalarFieldEnum | RespostaScalarFieldEnum[]
   }
 
   /**
-   * Resposta findMany
+   * resposta findMany
    */
-  export type RespostaFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type respostaFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Resposta
+     * Select specific fields to fetch from the resposta
      */
-    select?: RespostaSelect<ExtArgs> | null
+    select?: respostaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Resposta
+     * Omit specific fields from the resposta
      */
-    omit?: RespostaOmit<ExtArgs> | null
+    omit?: respostaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RespostaInclude<ExtArgs> | null
+    include?: respostaInclude<ExtArgs> | null
     /**
-     * Filter, which Respostas to fetch.
+     * Filter, which respostas to fetch.
      */
-    where?: RespostaWhereInput
+    where?: respostaWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Respostas to fetch.
+     * Determine the order of respostas to fetch.
      */
-    orderBy?: RespostaOrderByWithRelationInput | RespostaOrderByWithRelationInput[]
+    orderBy?: respostaOrderByWithRelationInput | respostaOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Respostas.
+     * Sets the position for listing respostas.
      */
-    cursor?: RespostaWhereUniqueInput
+    cursor?: respostaWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Respostas from the position of the cursor.
+     * Take `±n` respostas from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Respostas.
+     * Skip the first `n` respostas.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Respostas.
+     * Filter by unique combinations of respostas.
      */
     distinct?: RespostaScalarFieldEnum | RespostaScalarFieldEnum[]
   }
 
   /**
-   * Resposta create
+   * resposta create
    */
-  export type RespostaCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type respostaCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Resposta
+     * Select specific fields to fetch from the resposta
      */
-    select?: RespostaSelect<ExtArgs> | null
+    select?: respostaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Resposta
+     * Omit specific fields from the resposta
      */
-    omit?: RespostaOmit<ExtArgs> | null
+    omit?: respostaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RespostaInclude<ExtArgs> | null
+    include?: respostaInclude<ExtArgs> | null
     /**
-     * The data needed to create a Resposta.
+     * The data needed to create a resposta.
      */
-    data: XOR<RespostaCreateInput, RespostaUncheckedCreateInput>
+    data: XOR<respostaCreateInput, respostaUncheckedCreateInput>
   }
 
   /**
-   * Resposta createMany
+   * resposta createMany
    */
-  export type RespostaCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type respostaCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Respostas.
+     * The data used to create many respostas.
      */
-    data: RespostaCreateManyInput | RespostaCreateManyInput[]
+    data: respostaCreateManyInput | respostaCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Resposta update
+   * resposta update
    */
-  export type RespostaUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type respostaUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Resposta
+     * Select specific fields to fetch from the resposta
      */
-    select?: RespostaSelect<ExtArgs> | null
+    select?: respostaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Resposta
+     * Omit specific fields from the resposta
      */
-    omit?: RespostaOmit<ExtArgs> | null
+    omit?: respostaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RespostaInclude<ExtArgs> | null
+    include?: respostaInclude<ExtArgs> | null
     /**
-     * The data needed to update a Resposta.
+     * The data needed to update a resposta.
      */
-    data: XOR<RespostaUpdateInput, RespostaUncheckedUpdateInput>
+    data: XOR<respostaUpdateInput, respostaUncheckedUpdateInput>
     /**
-     * Choose, which Resposta to update.
+     * Choose, which resposta to update.
      */
-    where: RespostaWhereUniqueInput
+    where: respostaWhereUniqueInput
   }
 
   /**
-   * Resposta updateMany
+   * resposta updateMany
    */
-  export type RespostaUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type respostaUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Respostas.
+     * The data used to update respostas.
      */
-    data: XOR<RespostaUpdateManyMutationInput, RespostaUncheckedUpdateManyInput>
+    data: XOR<respostaUpdateManyMutationInput, respostaUncheckedUpdateManyInput>
     /**
-     * Filter which Respostas to update
+     * Filter which respostas to update
      */
-    where?: RespostaWhereInput
+    where?: respostaWhereInput
     /**
-     * Limit how many Respostas to update.
+     * Limit how many respostas to update.
      */
     limit?: number
   }
 
   /**
-   * Resposta upsert
+   * resposta upsert
    */
-  export type RespostaUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type respostaUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Resposta
+     * Select specific fields to fetch from the resposta
      */
-    select?: RespostaSelect<ExtArgs> | null
+    select?: respostaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Resposta
+     * Omit specific fields from the resposta
      */
-    omit?: RespostaOmit<ExtArgs> | null
+    omit?: respostaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RespostaInclude<ExtArgs> | null
+    include?: respostaInclude<ExtArgs> | null
     /**
-     * The filter to search for the Resposta to update in case it exists.
+     * The filter to search for the resposta to update in case it exists.
      */
-    where: RespostaWhereUniqueInput
+    where: respostaWhereUniqueInput
     /**
-     * In case the Resposta found by the `where` argument doesn't exist, create a new Resposta with this data.
+     * In case the resposta found by the `where` argument doesn't exist, create a new resposta with this data.
      */
-    create: XOR<RespostaCreateInput, RespostaUncheckedCreateInput>
+    create: XOR<respostaCreateInput, respostaUncheckedCreateInput>
     /**
-     * In case the Resposta was found with the provided `where` argument, update it with this data.
+     * In case the resposta was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<RespostaUpdateInput, RespostaUncheckedUpdateInput>
+    update: XOR<respostaUpdateInput, respostaUncheckedUpdateInput>
   }
 
   /**
-   * Resposta delete
+   * resposta delete
    */
-  export type RespostaDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type respostaDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Resposta
+     * Select specific fields to fetch from the resposta
      */
-    select?: RespostaSelect<ExtArgs> | null
+    select?: respostaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Resposta
+     * Omit specific fields from the resposta
      */
-    omit?: RespostaOmit<ExtArgs> | null
+    omit?: respostaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RespostaInclude<ExtArgs> | null
+    include?: respostaInclude<ExtArgs> | null
     /**
-     * Filter which Resposta to delete.
+     * Filter which resposta to delete.
      */
-    where: RespostaWhereUniqueInput
+    where: respostaWhereUniqueInput
   }
 
   /**
-   * Resposta deleteMany
+   * resposta deleteMany
    */
-  export type RespostaDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type respostaDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Respostas to delete
+     * Filter which respostas to delete
      */
-    where?: RespostaWhereInput
+    where?: respostaWhereInput
     /**
-     * Limit how many Respostas to delete.
+     * Limit how many respostas to delete.
      */
     limit?: number
   }
 
   /**
-   * Resposta without action
+   * resposta without action
    */
-  export type RespostaDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type respostaDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Resposta
+     * Select specific fields to fetch from the resposta
      */
-    select?: RespostaSelect<ExtArgs> | null
+    select?: respostaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Resposta
+     * Omit specific fields from the resposta
      */
-    omit?: RespostaOmit<ExtArgs> | null
+    omit?: respostaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RespostaInclude<ExtArgs> | null
+    include?: respostaInclude<ExtArgs> | null
   }
 
 
@@ -4119,6 +4119,20 @@ export namespace Prisma {
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+  export const DiagnosticoScalarFieldEnum: {
+    id: 'id',
+    createdAt: 'createdAt',
+    empresaId: 'empresaId',
+    nivelMaturidade: 'nivelMaturidade',
+    notaGeral: 'notaGeral',
+    percentualMaturidade: 'percentualMaturidade',
+    porDimensao: 'porDimensao',
+    porDiretoria: 'porDiretoria'
+  };
+
+  export type DiagnosticoScalarFieldEnum = (typeof DiagnosticoScalarFieldEnum)[keyof typeof DiagnosticoScalarFieldEnum]
+
+
   export const EmpresaScalarFieldEnum: {
     id: 'id',
     nome: 'nome',
@@ -4126,20 +4140,6 @@ export namespace Prisma {
   };
 
   export type EmpresaScalarFieldEnum = (typeof EmpresaScalarFieldEnum)[keyof typeof EmpresaScalarFieldEnum]
-
-
-  export const DiagnosticoScalarFieldEnum: {
-    id: 'id',
-    empresaId: 'empresaId',
-    notaGeral: 'notaGeral',
-    percentualMaturidade: 'percentualMaturidade',
-    nivelMaturidade: 'nivelMaturidade',
-    porDiretoria: 'porDiretoria',
-    porDimensao: 'porDimensao',
-    createdAt: 'createdAt'
-  };
-
-  export type DiagnosticoScalarFieldEnum = (typeof DiagnosticoScalarFieldEnum)[keyof typeof DiagnosticoScalarFieldEnum]
 
 
   export const RespostaScalarFieldEnum: {
@@ -4171,13 +4171,6 @@ export namespace Prisma {
   export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
-  export const EmpresaOrderByRelevanceFieldEnum: {
-    nome: 'nome'
-  };
-
-  export type EmpresaOrderByRelevanceFieldEnum = (typeof EmpresaOrderByRelevanceFieldEnum)[keyof typeof EmpresaOrderByRelevanceFieldEnum]
-
-
   export const JsonNullValueFilter: {
     DbNull: typeof DbNull,
     JsonNull: typeof JsonNull,
@@ -4195,21 +4188,28 @@ export namespace Prisma {
   export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
 
 
-  export const DiagnosticoOrderByRelevanceFieldEnum: {
+  export const diagnosticoOrderByRelevanceFieldEnum: {
     nivelMaturidade: 'nivelMaturidade'
   };
 
-  export type DiagnosticoOrderByRelevanceFieldEnum = (typeof DiagnosticoOrderByRelevanceFieldEnum)[keyof typeof DiagnosticoOrderByRelevanceFieldEnum]
+  export type diagnosticoOrderByRelevanceFieldEnum = (typeof diagnosticoOrderByRelevanceFieldEnum)[keyof typeof diagnosticoOrderByRelevanceFieldEnum]
 
 
-  export const RespostaOrderByRelevanceFieldEnum: {
+  export const empresaOrderByRelevanceFieldEnum: {
+    nome: 'nome'
+  };
+
+  export type empresaOrderByRelevanceFieldEnum = (typeof empresaOrderByRelevanceFieldEnum)[keyof typeof empresaOrderByRelevanceFieldEnum]
+
+
+  export const respostaOrderByRelevanceFieldEnum: {
     codigo: 'codigo',
     diretoria: 'diretoria',
     dimensao: 'dimensao',
     texto: 'texto'
   };
 
-  export type RespostaOrderByRelevanceFieldEnum = (typeof RespostaOrderByRelevanceFieldEnum)[keyof typeof RespostaOrderByRelevanceFieldEnum]
+  export type respostaOrderByRelevanceFieldEnum = (typeof respostaOrderByRelevanceFieldEnum)[keyof typeof respostaOrderByRelevanceFieldEnum]
 
 
   /**
@@ -4225,16 +4225,16 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'String'
+   * Reference to a field of type 'DateTime'
    */
-  export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
+  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
     
 
 
   /**
-   * Reference to a field of type 'DateTime'
+   * Reference to a field of type 'String'
    */
-  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+  export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
     
 
 
@@ -4262,146 +4262,146 @@ export namespace Prisma {
    */
 
 
-  export type EmpresaWhereInput = {
-    AND?: EmpresaWhereInput | EmpresaWhereInput[]
-    OR?: EmpresaWhereInput[]
-    NOT?: EmpresaWhereInput | EmpresaWhereInput[]
-    id?: IntFilter<"Empresa"> | number
-    nome?: StringFilter<"Empresa"> | string
-    createdAt?: DateTimeFilter<"Empresa"> | Date | string
-    diagnosticos?: DiagnosticoListRelationFilter
+  export type diagnosticoWhereInput = {
+    AND?: diagnosticoWhereInput | diagnosticoWhereInput[]
+    OR?: diagnosticoWhereInput[]
+    NOT?: diagnosticoWhereInput | diagnosticoWhereInput[]
+    id?: IntFilter<"diagnostico"> | number
+    createdAt?: DateTimeFilter<"diagnostico"> | Date | string
+    empresaId?: IntFilter<"diagnostico"> | number
+    nivelMaturidade?: StringFilter<"diagnostico"> | string
+    notaGeral?: FloatFilter<"diagnostico"> | number
+    percentualMaturidade?: FloatFilter<"diagnostico"> | number
+    porDimensao?: JsonFilter<"diagnostico">
+    porDiretoria?: JsonFilter<"diagnostico">
+    empresa?: XOR<EmpresaScalarRelationFilter, empresaWhereInput>
+    resposta?: RespostaListRelationFilter
   }
 
-  export type EmpresaOrderByWithRelationInput = {
+  export type diagnosticoOrderByWithRelationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    empresaId?: SortOrder
+    nivelMaturidade?: SortOrder
+    notaGeral?: SortOrder
+    percentualMaturidade?: SortOrder
+    porDimensao?: SortOrder
+    porDiretoria?: SortOrder
+    empresa?: empresaOrderByWithRelationInput
+    resposta?: respostaOrderByRelationAggregateInput
+    _relevance?: diagnosticoOrderByRelevanceInput
+  }
+
+  export type diagnosticoWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: diagnosticoWhereInput | diagnosticoWhereInput[]
+    OR?: diagnosticoWhereInput[]
+    NOT?: diagnosticoWhereInput | diagnosticoWhereInput[]
+    createdAt?: DateTimeFilter<"diagnostico"> | Date | string
+    empresaId?: IntFilter<"diagnostico"> | number
+    nivelMaturidade?: StringFilter<"diagnostico"> | string
+    notaGeral?: FloatFilter<"diagnostico"> | number
+    percentualMaturidade?: FloatFilter<"diagnostico"> | number
+    porDimensao?: JsonFilter<"diagnostico">
+    porDiretoria?: JsonFilter<"diagnostico">
+    empresa?: XOR<EmpresaScalarRelationFilter, empresaWhereInput>
+    resposta?: RespostaListRelationFilter
+  }, "id">
+
+  export type diagnosticoOrderByWithAggregationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    empresaId?: SortOrder
+    nivelMaturidade?: SortOrder
+    notaGeral?: SortOrder
+    percentualMaturidade?: SortOrder
+    porDimensao?: SortOrder
+    porDiretoria?: SortOrder
+    _count?: diagnosticoCountOrderByAggregateInput
+    _avg?: diagnosticoAvgOrderByAggregateInput
+    _max?: diagnosticoMaxOrderByAggregateInput
+    _min?: diagnosticoMinOrderByAggregateInput
+    _sum?: diagnosticoSumOrderByAggregateInput
+  }
+
+  export type diagnosticoScalarWhereWithAggregatesInput = {
+    AND?: diagnosticoScalarWhereWithAggregatesInput | diagnosticoScalarWhereWithAggregatesInput[]
+    OR?: diagnosticoScalarWhereWithAggregatesInput[]
+    NOT?: diagnosticoScalarWhereWithAggregatesInput | diagnosticoScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"diagnostico"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"diagnostico"> | Date | string
+    empresaId?: IntWithAggregatesFilter<"diagnostico"> | number
+    nivelMaturidade?: StringWithAggregatesFilter<"diagnostico"> | string
+    notaGeral?: FloatWithAggregatesFilter<"diagnostico"> | number
+    percentualMaturidade?: FloatWithAggregatesFilter<"diagnostico"> | number
+    porDimensao?: JsonWithAggregatesFilter<"diagnostico">
+    porDiretoria?: JsonWithAggregatesFilter<"diagnostico">
+  }
+
+  export type empresaWhereInput = {
+    AND?: empresaWhereInput | empresaWhereInput[]
+    OR?: empresaWhereInput[]
+    NOT?: empresaWhereInput | empresaWhereInput[]
+    id?: IntFilter<"empresa"> | number
+    nome?: StringFilter<"empresa"> | string
+    createdAt?: DateTimeFilter<"empresa"> | Date | string
+    diagnostico?: DiagnosticoListRelationFilter
+  }
+
+  export type empresaOrderByWithRelationInput = {
     id?: SortOrder
     nome?: SortOrder
     createdAt?: SortOrder
-    diagnosticos?: DiagnosticoOrderByRelationAggregateInput
-    _relevance?: EmpresaOrderByRelevanceInput
+    diagnostico?: diagnosticoOrderByRelationAggregateInput
+    _relevance?: empresaOrderByRelevanceInput
   }
 
-  export type EmpresaWhereUniqueInput = Prisma.AtLeast<{
+  export type empresaWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: EmpresaWhereInput | EmpresaWhereInput[]
-    OR?: EmpresaWhereInput[]
-    NOT?: EmpresaWhereInput | EmpresaWhereInput[]
-    nome?: StringFilter<"Empresa"> | string
-    createdAt?: DateTimeFilter<"Empresa"> | Date | string
-    diagnosticos?: DiagnosticoListRelationFilter
+    AND?: empresaWhereInput | empresaWhereInput[]
+    OR?: empresaWhereInput[]
+    NOT?: empresaWhereInput | empresaWhereInput[]
+    nome?: StringFilter<"empresa"> | string
+    createdAt?: DateTimeFilter<"empresa"> | Date | string
+    diagnostico?: DiagnosticoListRelationFilter
   }, "id">
 
-  export type EmpresaOrderByWithAggregationInput = {
+  export type empresaOrderByWithAggregationInput = {
     id?: SortOrder
     nome?: SortOrder
     createdAt?: SortOrder
-    _count?: EmpresaCountOrderByAggregateInput
-    _avg?: EmpresaAvgOrderByAggregateInput
-    _max?: EmpresaMaxOrderByAggregateInput
-    _min?: EmpresaMinOrderByAggregateInput
-    _sum?: EmpresaSumOrderByAggregateInput
+    _count?: empresaCountOrderByAggregateInput
+    _avg?: empresaAvgOrderByAggregateInput
+    _max?: empresaMaxOrderByAggregateInput
+    _min?: empresaMinOrderByAggregateInput
+    _sum?: empresaSumOrderByAggregateInput
   }
 
-  export type EmpresaScalarWhereWithAggregatesInput = {
-    AND?: EmpresaScalarWhereWithAggregatesInput | EmpresaScalarWhereWithAggregatesInput[]
-    OR?: EmpresaScalarWhereWithAggregatesInput[]
-    NOT?: EmpresaScalarWhereWithAggregatesInput | EmpresaScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Empresa"> | number
-    nome?: StringWithAggregatesFilter<"Empresa"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"Empresa"> | Date | string
+  export type empresaScalarWhereWithAggregatesInput = {
+    AND?: empresaScalarWhereWithAggregatesInput | empresaScalarWhereWithAggregatesInput[]
+    OR?: empresaScalarWhereWithAggregatesInput[]
+    NOT?: empresaScalarWhereWithAggregatesInput | empresaScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"empresa"> | number
+    nome?: StringWithAggregatesFilter<"empresa"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"empresa"> | Date | string
   }
 
-  export type DiagnosticoWhereInput = {
-    AND?: DiagnosticoWhereInput | DiagnosticoWhereInput[]
-    OR?: DiagnosticoWhereInput[]
-    NOT?: DiagnosticoWhereInput | DiagnosticoWhereInput[]
-    id?: IntFilter<"Diagnostico"> | number
-    empresaId?: IntFilter<"Diagnostico"> | number
-    notaGeral?: FloatFilter<"Diagnostico"> | number
-    percentualMaturidade?: FloatFilter<"Diagnostico"> | number
-    nivelMaturidade?: StringFilter<"Diagnostico"> | string
-    porDiretoria?: JsonFilter<"Diagnostico">
-    porDimensao?: JsonFilter<"Diagnostico">
-    createdAt?: DateTimeFilter<"Diagnostico"> | Date | string
-    empresa?: XOR<EmpresaScalarRelationFilter, EmpresaWhereInput>
-    respostas?: RespostaListRelationFilter
+  export type respostaWhereInput = {
+    AND?: respostaWhereInput | respostaWhereInput[]
+    OR?: respostaWhereInput[]
+    NOT?: respostaWhereInput | respostaWhereInput[]
+    id?: IntFilter<"resposta"> | number
+    diagnosticoId?: IntFilter<"resposta"> | number
+    perguntaId?: IntFilter<"resposta"> | number
+    codigo?: StringFilter<"resposta"> | string
+    diretoria?: StringFilter<"resposta"> | string
+    dimensao?: StringFilter<"resposta"> | string
+    texto?: StringFilter<"resposta"> | string
+    valor?: IntFilter<"resposta"> | number
+    diagnostico?: XOR<DiagnosticoScalarRelationFilter, diagnosticoWhereInput>
   }
 
-  export type DiagnosticoOrderByWithRelationInput = {
-    id?: SortOrder
-    empresaId?: SortOrder
-    notaGeral?: SortOrder
-    percentualMaturidade?: SortOrder
-    nivelMaturidade?: SortOrder
-    porDiretoria?: SortOrder
-    porDimensao?: SortOrder
-    createdAt?: SortOrder
-    empresa?: EmpresaOrderByWithRelationInput
-    respostas?: RespostaOrderByRelationAggregateInput
-    _relevance?: DiagnosticoOrderByRelevanceInput
-  }
-
-  export type DiagnosticoWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
-    AND?: DiagnosticoWhereInput | DiagnosticoWhereInput[]
-    OR?: DiagnosticoWhereInput[]
-    NOT?: DiagnosticoWhereInput | DiagnosticoWhereInput[]
-    empresaId?: IntFilter<"Diagnostico"> | number
-    notaGeral?: FloatFilter<"Diagnostico"> | number
-    percentualMaturidade?: FloatFilter<"Diagnostico"> | number
-    nivelMaturidade?: StringFilter<"Diagnostico"> | string
-    porDiretoria?: JsonFilter<"Diagnostico">
-    porDimensao?: JsonFilter<"Diagnostico">
-    createdAt?: DateTimeFilter<"Diagnostico"> | Date | string
-    empresa?: XOR<EmpresaScalarRelationFilter, EmpresaWhereInput>
-    respostas?: RespostaListRelationFilter
-  }, "id">
-
-  export type DiagnosticoOrderByWithAggregationInput = {
-    id?: SortOrder
-    empresaId?: SortOrder
-    notaGeral?: SortOrder
-    percentualMaturidade?: SortOrder
-    nivelMaturidade?: SortOrder
-    porDiretoria?: SortOrder
-    porDimensao?: SortOrder
-    createdAt?: SortOrder
-    _count?: DiagnosticoCountOrderByAggregateInput
-    _avg?: DiagnosticoAvgOrderByAggregateInput
-    _max?: DiagnosticoMaxOrderByAggregateInput
-    _min?: DiagnosticoMinOrderByAggregateInput
-    _sum?: DiagnosticoSumOrderByAggregateInput
-  }
-
-  export type DiagnosticoScalarWhereWithAggregatesInput = {
-    AND?: DiagnosticoScalarWhereWithAggregatesInput | DiagnosticoScalarWhereWithAggregatesInput[]
-    OR?: DiagnosticoScalarWhereWithAggregatesInput[]
-    NOT?: DiagnosticoScalarWhereWithAggregatesInput | DiagnosticoScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Diagnostico"> | number
-    empresaId?: IntWithAggregatesFilter<"Diagnostico"> | number
-    notaGeral?: FloatWithAggregatesFilter<"Diagnostico"> | number
-    percentualMaturidade?: FloatWithAggregatesFilter<"Diagnostico"> | number
-    nivelMaturidade?: StringWithAggregatesFilter<"Diagnostico"> | string
-    porDiretoria?: JsonWithAggregatesFilter<"Diagnostico">
-    porDimensao?: JsonWithAggregatesFilter<"Diagnostico">
-    createdAt?: DateTimeWithAggregatesFilter<"Diagnostico"> | Date | string
-  }
-
-  export type RespostaWhereInput = {
-    AND?: RespostaWhereInput | RespostaWhereInput[]
-    OR?: RespostaWhereInput[]
-    NOT?: RespostaWhereInput | RespostaWhereInput[]
-    id?: IntFilter<"Resposta"> | number
-    diagnosticoId?: IntFilter<"Resposta"> | number
-    perguntaId?: IntFilter<"Resposta"> | number
-    codigo?: StringFilter<"Resposta"> | string
-    diretoria?: StringFilter<"Resposta"> | string
-    dimensao?: StringFilter<"Resposta"> | string
-    texto?: StringFilter<"Resposta"> | string
-    valor?: IntFilter<"Resposta"> | number
-    diagnostico?: XOR<DiagnosticoScalarRelationFilter, DiagnosticoWhereInput>
-  }
-
-  export type RespostaOrderByWithRelationInput = {
+  export type respostaOrderByWithRelationInput = {
     id?: SortOrder
     diagnosticoId?: SortOrder
     perguntaId?: SortOrder
@@ -4410,26 +4410,26 @@ export namespace Prisma {
     dimensao?: SortOrder
     texto?: SortOrder
     valor?: SortOrder
-    diagnostico?: DiagnosticoOrderByWithRelationInput
-    _relevance?: RespostaOrderByRelevanceInput
+    diagnostico?: diagnosticoOrderByWithRelationInput
+    _relevance?: respostaOrderByRelevanceInput
   }
 
-  export type RespostaWhereUniqueInput = Prisma.AtLeast<{
+  export type respostaWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: RespostaWhereInput | RespostaWhereInput[]
-    OR?: RespostaWhereInput[]
-    NOT?: RespostaWhereInput | RespostaWhereInput[]
-    diagnosticoId?: IntFilter<"Resposta"> | number
-    perguntaId?: IntFilter<"Resposta"> | number
-    codigo?: StringFilter<"Resposta"> | string
-    diretoria?: StringFilter<"Resposta"> | string
-    dimensao?: StringFilter<"Resposta"> | string
-    texto?: StringFilter<"Resposta"> | string
-    valor?: IntFilter<"Resposta"> | number
-    diagnostico?: XOR<DiagnosticoScalarRelationFilter, DiagnosticoWhereInput>
+    AND?: respostaWhereInput | respostaWhereInput[]
+    OR?: respostaWhereInput[]
+    NOT?: respostaWhereInput | respostaWhereInput[]
+    diagnosticoId?: IntFilter<"resposta"> | number
+    perguntaId?: IntFilter<"resposta"> | number
+    codigo?: StringFilter<"resposta"> | string
+    diretoria?: StringFilter<"resposta"> | string
+    dimensao?: StringFilter<"resposta"> | string
+    texto?: StringFilter<"resposta"> | string
+    valor?: IntFilter<"resposta"> | number
+    diagnostico?: XOR<DiagnosticoScalarRelationFilter, diagnosticoWhereInput>
   }, "id">
 
-  export type RespostaOrderByWithAggregationInput = {
+  export type respostaOrderByWithAggregationInput = {
     id?: SortOrder
     diagnosticoId?: SortOrder
     perguntaId?: SortOrder
@@ -4438,158 +4438,158 @@ export namespace Prisma {
     dimensao?: SortOrder
     texto?: SortOrder
     valor?: SortOrder
-    _count?: RespostaCountOrderByAggregateInput
-    _avg?: RespostaAvgOrderByAggregateInput
-    _max?: RespostaMaxOrderByAggregateInput
-    _min?: RespostaMinOrderByAggregateInput
-    _sum?: RespostaSumOrderByAggregateInput
+    _count?: respostaCountOrderByAggregateInput
+    _avg?: respostaAvgOrderByAggregateInput
+    _max?: respostaMaxOrderByAggregateInput
+    _min?: respostaMinOrderByAggregateInput
+    _sum?: respostaSumOrderByAggregateInput
   }
 
-  export type RespostaScalarWhereWithAggregatesInput = {
-    AND?: RespostaScalarWhereWithAggregatesInput | RespostaScalarWhereWithAggregatesInput[]
-    OR?: RespostaScalarWhereWithAggregatesInput[]
-    NOT?: RespostaScalarWhereWithAggregatesInput | RespostaScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Resposta"> | number
-    diagnosticoId?: IntWithAggregatesFilter<"Resposta"> | number
-    perguntaId?: IntWithAggregatesFilter<"Resposta"> | number
-    codigo?: StringWithAggregatesFilter<"Resposta"> | string
-    diretoria?: StringWithAggregatesFilter<"Resposta"> | string
-    dimensao?: StringWithAggregatesFilter<"Resposta"> | string
-    texto?: StringWithAggregatesFilter<"Resposta"> | string
-    valor?: IntWithAggregatesFilter<"Resposta"> | number
+  export type respostaScalarWhereWithAggregatesInput = {
+    AND?: respostaScalarWhereWithAggregatesInput | respostaScalarWhereWithAggregatesInput[]
+    OR?: respostaScalarWhereWithAggregatesInput[]
+    NOT?: respostaScalarWhereWithAggregatesInput | respostaScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"resposta"> | number
+    diagnosticoId?: IntWithAggregatesFilter<"resposta"> | number
+    perguntaId?: IntWithAggregatesFilter<"resposta"> | number
+    codigo?: StringWithAggregatesFilter<"resposta"> | string
+    diretoria?: StringWithAggregatesFilter<"resposta"> | string
+    dimensao?: StringWithAggregatesFilter<"resposta"> | string
+    texto?: StringWithAggregatesFilter<"resposta"> | string
+    valor?: IntWithAggregatesFilter<"resposta"> | number
   }
 
-  export type EmpresaCreateInput = {
-    nome: string
+  export type diagnosticoCreateInput = {
     createdAt?: Date | string
-    diagnosticos?: DiagnosticoCreateNestedManyWithoutEmpresaInput
-  }
-
-  export type EmpresaUncheckedCreateInput = {
-    id?: number
-    nome: string
-    createdAt?: Date | string
-    diagnosticos?: DiagnosticoUncheckedCreateNestedManyWithoutEmpresaInput
-  }
-
-  export type EmpresaUpdateInput = {
-    nome?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    diagnosticos?: DiagnosticoUpdateManyWithoutEmpresaNestedInput
-  }
-
-  export type EmpresaUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    nome?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    diagnosticos?: DiagnosticoUncheckedUpdateManyWithoutEmpresaNestedInput
-  }
-
-  export type EmpresaCreateManyInput = {
-    id?: number
-    nome: string
-    createdAt?: Date | string
-  }
-
-  export type EmpresaUpdateManyMutationInput = {
-    nome?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type EmpresaUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    nome?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type DiagnosticoCreateInput = {
+    nivelMaturidade: string
     notaGeral: number
     percentualMaturidade: number
-    nivelMaturidade: string
-    porDiretoria: JsonNullValueInput | InputJsonValue
     porDimensao: JsonNullValueInput | InputJsonValue
-    createdAt?: Date | string
-    empresa: EmpresaCreateNestedOneWithoutDiagnosticosInput
-    respostas?: RespostaCreateNestedManyWithoutDiagnosticoInput
+    porDiretoria: JsonNullValueInput | InputJsonValue
+    empresa: empresaCreateNestedOneWithoutDiagnosticoInput
+    resposta?: respostaCreateNestedManyWithoutDiagnosticoInput
   }
 
-  export type DiagnosticoUncheckedCreateInput = {
+  export type diagnosticoUncheckedCreateInput = {
     id?: number
+    createdAt?: Date | string
     empresaId: number
+    nivelMaturidade: string
     notaGeral: number
     percentualMaturidade: number
-    nivelMaturidade: string
-    porDiretoria: JsonNullValueInput | InputJsonValue
     porDimensao: JsonNullValueInput | InputJsonValue
-    createdAt?: Date | string
-    respostas?: RespostaUncheckedCreateNestedManyWithoutDiagnosticoInput
+    porDiretoria: JsonNullValueInput | InputJsonValue
+    resposta?: respostaUncheckedCreateNestedManyWithoutDiagnosticoInput
   }
 
-  export type DiagnosticoUpdateInput = {
+  export type diagnosticoUpdateInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    nivelMaturidade?: StringFieldUpdateOperationsInput | string
     notaGeral?: FloatFieldUpdateOperationsInput | number
     percentualMaturidade?: FloatFieldUpdateOperationsInput | number
-    nivelMaturidade?: StringFieldUpdateOperationsInput | string
-    porDiretoria?: JsonNullValueInput | InputJsonValue
     porDimensao?: JsonNullValueInput | InputJsonValue
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    empresa?: EmpresaUpdateOneRequiredWithoutDiagnosticosNestedInput
-    respostas?: RespostaUpdateManyWithoutDiagnosticoNestedInput
+    porDiretoria?: JsonNullValueInput | InputJsonValue
+    empresa?: empresaUpdateOneRequiredWithoutDiagnosticoNestedInput
+    resposta?: respostaUpdateManyWithoutDiagnosticoNestedInput
   }
 
-  export type DiagnosticoUncheckedUpdateInput = {
+  export type diagnosticoUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     empresaId?: IntFieldUpdateOperationsInput | number
+    nivelMaturidade?: StringFieldUpdateOperationsInput | string
     notaGeral?: FloatFieldUpdateOperationsInput | number
     percentualMaturidade?: FloatFieldUpdateOperationsInput | number
-    nivelMaturidade?: StringFieldUpdateOperationsInput | string
-    porDiretoria?: JsonNullValueInput | InputJsonValue
     porDimensao?: JsonNullValueInput | InputJsonValue
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    respostas?: RespostaUncheckedUpdateManyWithoutDiagnosticoNestedInput
+    porDiretoria?: JsonNullValueInput | InputJsonValue
+    resposta?: respostaUncheckedUpdateManyWithoutDiagnosticoNestedInput
   }
 
-  export type DiagnosticoCreateManyInput = {
+  export type diagnosticoCreateManyInput = {
     id?: number
+    createdAt?: Date | string
     empresaId: number
+    nivelMaturidade: string
     notaGeral: number
     percentualMaturidade: number
-    nivelMaturidade: string
-    porDiretoria: JsonNullValueInput | InputJsonValue
     porDimensao: JsonNullValueInput | InputJsonValue
+    porDiretoria: JsonNullValueInput | InputJsonValue
+  }
+
+  export type diagnosticoUpdateManyMutationInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    nivelMaturidade?: StringFieldUpdateOperationsInput | string
+    notaGeral?: FloatFieldUpdateOperationsInput | number
+    percentualMaturidade?: FloatFieldUpdateOperationsInput | number
+    porDimensao?: JsonNullValueInput | InputJsonValue
+    porDiretoria?: JsonNullValueInput | InputJsonValue
+  }
+
+  export type diagnosticoUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    empresaId?: IntFieldUpdateOperationsInput | number
+    nivelMaturidade?: StringFieldUpdateOperationsInput | string
+    notaGeral?: FloatFieldUpdateOperationsInput | number
+    percentualMaturidade?: FloatFieldUpdateOperationsInput | number
+    porDimensao?: JsonNullValueInput | InputJsonValue
+    porDiretoria?: JsonNullValueInput | InputJsonValue
+  }
+
+  export type empresaCreateInput = {
+    nome: string
+    createdAt?: Date | string
+    diagnostico?: diagnosticoCreateNestedManyWithoutEmpresaInput
+  }
+
+  export type empresaUncheckedCreateInput = {
+    id?: number
+    nome: string
+    createdAt?: Date | string
+    diagnostico?: diagnosticoUncheckedCreateNestedManyWithoutEmpresaInput
+  }
+
+  export type empresaUpdateInput = {
+    nome?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    diagnostico?: diagnosticoUpdateManyWithoutEmpresaNestedInput
+  }
+
+  export type empresaUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    nome?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    diagnostico?: diagnosticoUncheckedUpdateManyWithoutEmpresaNestedInput
+  }
+
+  export type empresaCreateManyInput = {
+    id?: number
+    nome: string
     createdAt?: Date | string
   }
 
-  export type DiagnosticoUpdateManyMutationInput = {
-    notaGeral?: FloatFieldUpdateOperationsInput | number
-    percentualMaturidade?: FloatFieldUpdateOperationsInput | number
-    nivelMaturidade?: StringFieldUpdateOperationsInput | string
-    porDiretoria?: JsonNullValueInput | InputJsonValue
-    porDimensao?: JsonNullValueInput | InputJsonValue
+  export type empresaUpdateManyMutationInput = {
+    nome?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type DiagnosticoUncheckedUpdateManyInput = {
+  export type empresaUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    empresaId?: IntFieldUpdateOperationsInput | number
-    notaGeral?: FloatFieldUpdateOperationsInput | number
-    percentualMaturidade?: FloatFieldUpdateOperationsInput | number
-    nivelMaturidade?: StringFieldUpdateOperationsInput | string
-    porDiretoria?: JsonNullValueInput | InputJsonValue
-    porDimensao?: JsonNullValueInput | InputJsonValue
+    nome?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type RespostaCreateInput = {
+  export type respostaCreateInput = {
     perguntaId: number
     codigo: string
     diretoria: string
     dimensao: string
     texto: string
     valor: number
-    diagnostico: DiagnosticoCreateNestedOneWithoutRespostasInput
+    diagnostico: diagnosticoCreateNestedOneWithoutRespostaInput
   }
 
-  export type RespostaUncheckedCreateInput = {
+  export type respostaUncheckedCreateInput = {
     id?: number
     diagnosticoId: number
     perguntaId: number
@@ -4600,17 +4600,17 @@ export namespace Prisma {
     valor: number
   }
 
-  export type RespostaUpdateInput = {
+  export type respostaUpdateInput = {
     perguntaId?: IntFieldUpdateOperationsInput | number
     codigo?: StringFieldUpdateOperationsInput | string
     diretoria?: StringFieldUpdateOperationsInput | string
     dimensao?: StringFieldUpdateOperationsInput | string
     texto?: StringFieldUpdateOperationsInput | string
     valor?: IntFieldUpdateOperationsInput | number
-    diagnostico?: DiagnosticoUpdateOneRequiredWithoutRespostasNestedInput
+    diagnostico?: diagnosticoUpdateOneRequiredWithoutRespostaNestedInput
   }
 
-  export type RespostaUncheckedUpdateInput = {
+  export type respostaUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     diagnosticoId?: IntFieldUpdateOperationsInput | number
     perguntaId?: IntFieldUpdateOperationsInput | number
@@ -4621,7 +4621,7 @@ export namespace Prisma {
     valor?: IntFieldUpdateOperationsInput | number
   }
 
-  export type RespostaCreateManyInput = {
+  export type respostaCreateManyInput = {
     id?: number
     diagnosticoId: number
     perguntaId: number
@@ -4632,7 +4632,7 @@ export namespace Prisma {
     valor: number
   }
 
-  export type RespostaUpdateManyMutationInput = {
+  export type respostaUpdateManyMutationInput = {
     perguntaId?: IntFieldUpdateOperationsInput | number
     codigo?: StringFieldUpdateOperationsInput | string
     diretoria?: StringFieldUpdateOperationsInput | string
@@ -4641,7 +4641,7 @@ export namespace Prisma {
     valor?: IntFieldUpdateOperationsInput | number
   }
 
-  export type RespostaUncheckedUpdateManyInput = {
+  export type respostaUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     diagnosticoId?: IntFieldUpdateOperationsInput | number
     perguntaId?: IntFieldUpdateOperationsInput | number
@@ -4663,6 +4663,17 @@ export namespace Prisma {
     not?: NestedIntFilter<$PrismaModel> | number
   }
 
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[]
@@ -4676,107 +4687,6 @@ export namespace Prisma {
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     search?: string
     not?: NestedStringFilter<$PrismaModel> | string
-  }
-
-  export type DateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
-  export type DiagnosticoListRelationFilter = {
-    every?: DiagnosticoWhereInput
-    some?: DiagnosticoWhereInput
-    none?: DiagnosticoWhereInput
-  }
-
-  export type DiagnosticoOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type EmpresaOrderByRelevanceInput = {
-    fields: EmpresaOrderByRelevanceFieldEnum | EmpresaOrderByRelevanceFieldEnum[]
-    sort: SortOrder
-    search: string
-  }
-
-  export type EmpresaCountOrderByAggregateInput = {
-    id?: SortOrder
-    nome?: SortOrder
-    createdAt?: SortOrder
-  }
-
-  export type EmpresaAvgOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
-  export type EmpresaMaxOrderByAggregateInput = {
-    id?: SortOrder
-    nome?: SortOrder
-    createdAt?: SortOrder
-  }
-
-  export type EmpresaMinOrderByAggregateInput = {
-    id?: SortOrder
-    nome?: SortOrder
-    createdAt?: SortOrder
-  }
-
-  export type EmpresaSumOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
-  }
-
-  export type StringWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[]
-    notIn?: string[]
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    search?: string
-    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedStringFilter<$PrismaModel>
-    _max?: NestedStringFilter<$PrismaModel>
-  }
-
-  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
   export type FloatFilter<$PrismaModel = never> = {
@@ -4814,67 +4724,115 @@ export namespace Prisma {
   }
 
   export type EmpresaScalarRelationFilter = {
-    is?: EmpresaWhereInput
-    isNot?: EmpresaWhereInput
+    is?: empresaWhereInput
+    isNot?: empresaWhereInput
   }
 
   export type RespostaListRelationFilter = {
-    every?: RespostaWhereInput
-    some?: RespostaWhereInput
-    none?: RespostaWhereInput
+    every?: respostaWhereInput
+    some?: respostaWhereInput
+    none?: respostaWhereInput
   }
 
-  export type RespostaOrderByRelationAggregateInput = {
+  export type respostaOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type DiagnosticoOrderByRelevanceInput = {
-    fields: DiagnosticoOrderByRelevanceFieldEnum | DiagnosticoOrderByRelevanceFieldEnum[]
+  export type diagnosticoOrderByRelevanceInput = {
+    fields: diagnosticoOrderByRelevanceFieldEnum | diagnosticoOrderByRelevanceFieldEnum[]
     sort: SortOrder
     search: string
   }
 
-  export type DiagnosticoCountOrderByAggregateInput = {
+  export type diagnosticoCountOrderByAggregateInput = {
     id?: SortOrder
+    createdAt?: SortOrder
     empresaId?: SortOrder
+    nivelMaturidade?: SortOrder
     notaGeral?: SortOrder
     percentualMaturidade?: SortOrder
-    nivelMaturidade?: SortOrder
-    porDiretoria?: SortOrder
     porDimensao?: SortOrder
+    porDiretoria?: SortOrder
+  }
+
+  export type diagnosticoAvgOrderByAggregateInput = {
+    id?: SortOrder
+    empresaId?: SortOrder
+    notaGeral?: SortOrder
+    percentualMaturidade?: SortOrder
+  }
+
+  export type diagnosticoMaxOrderByAggregateInput = {
+    id?: SortOrder
     createdAt?: SortOrder
-  }
-
-  export type DiagnosticoAvgOrderByAggregateInput = {
-    id?: SortOrder
     empresaId?: SortOrder
-    notaGeral?: SortOrder
-    percentualMaturidade?: SortOrder
-  }
-
-  export type DiagnosticoMaxOrderByAggregateInput = {
-    id?: SortOrder
-    empresaId?: SortOrder
-    notaGeral?: SortOrder
-    percentualMaturidade?: SortOrder
     nivelMaturidade?: SortOrder
-    createdAt?: SortOrder
-  }
-
-  export type DiagnosticoMinOrderByAggregateInput = {
-    id?: SortOrder
-    empresaId?: SortOrder
     notaGeral?: SortOrder
     percentualMaturidade?: SortOrder
+  }
+
+  export type diagnosticoMinOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    empresaId?: SortOrder
     nivelMaturidade?: SortOrder
-    createdAt?: SortOrder
+    notaGeral?: SortOrder
+    percentualMaturidade?: SortOrder
   }
 
-  export type DiagnosticoSumOrderByAggregateInput = {
+  export type diagnosticoSumOrderByAggregateInput = {
     id?: SortOrder
     empresaId?: SortOrder
     notaGeral?: SortOrder
     percentualMaturidade?: SortOrder
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type StringWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[]
+    notIn?: string[]
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    search?: string
+    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedStringFilter<$PrismaModel>
+    _max?: NestedStringFilter<$PrismaModel>
   }
 
   export type FloatWithAggregatesFilter<$PrismaModel = never> = {
@@ -4919,18 +4877,60 @@ export namespace Prisma {
     _max?: NestedJsonFilter<$PrismaModel>
   }
 
-  export type DiagnosticoScalarRelationFilter = {
-    is?: DiagnosticoWhereInput
-    isNot?: DiagnosticoWhereInput
+  export type DiagnosticoListRelationFilter = {
+    every?: diagnosticoWhereInput
+    some?: diagnosticoWhereInput
+    none?: diagnosticoWhereInput
   }
 
-  export type RespostaOrderByRelevanceInput = {
-    fields: RespostaOrderByRelevanceFieldEnum | RespostaOrderByRelevanceFieldEnum[]
+  export type diagnosticoOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type empresaOrderByRelevanceInput = {
+    fields: empresaOrderByRelevanceFieldEnum | empresaOrderByRelevanceFieldEnum[]
     sort: SortOrder
     search: string
   }
 
-  export type RespostaCountOrderByAggregateInput = {
+  export type empresaCountOrderByAggregateInput = {
+    id?: SortOrder
+    nome?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type empresaAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type empresaMaxOrderByAggregateInput = {
+    id?: SortOrder
+    nome?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type empresaMinOrderByAggregateInput = {
+    id?: SortOrder
+    nome?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type empresaSumOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type DiagnosticoScalarRelationFilter = {
+    is?: diagnosticoWhereInput
+    isNot?: diagnosticoWhereInput
+  }
+
+  export type respostaOrderByRelevanceInput = {
+    fields: respostaOrderByRelevanceFieldEnum | respostaOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type respostaCountOrderByAggregateInput = {
     id?: SortOrder
     diagnosticoId?: SortOrder
     perguntaId?: SortOrder
@@ -4941,25 +4941,14 @@ export namespace Prisma {
     valor?: SortOrder
   }
 
-  export type RespostaAvgOrderByAggregateInput = {
+  export type respostaAvgOrderByAggregateInput = {
     id?: SortOrder
     diagnosticoId?: SortOrder
     perguntaId?: SortOrder
     valor?: SortOrder
   }
 
-  export type RespostaMaxOrderByAggregateInput = {
-    id?: SortOrder
-    diagnosticoId?: SortOrder
-    perguntaId?: SortOrder
-    codigo?: SortOrder
-    diretoria?: SortOrder
-    dimensao?: SortOrder
-    texto?: SortOrder
-    valor?: SortOrder
-  }
-
-  export type RespostaMinOrderByAggregateInput = {
+  export type respostaMaxOrderByAggregateInput = {
     id?: SortOrder
     diagnosticoId?: SortOrder
     perguntaId?: SortOrder
@@ -4970,89 +4959,50 @@ export namespace Prisma {
     valor?: SortOrder
   }
 
-  export type RespostaSumOrderByAggregateInput = {
+  export type respostaMinOrderByAggregateInput = {
+    id?: SortOrder
+    diagnosticoId?: SortOrder
+    perguntaId?: SortOrder
+    codigo?: SortOrder
+    diretoria?: SortOrder
+    dimensao?: SortOrder
+    texto?: SortOrder
+    valor?: SortOrder
+  }
+
+  export type respostaSumOrderByAggregateInput = {
     id?: SortOrder
     diagnosticoId?: SortOrder
     perguntaId?: SortOrder
     valor?: SortOrder
   }
 
-  export type DiagnosticoCreateNestedManyWithoutEmpresaInput = {
-    create?: XOR<DiagnosticoCreateWithoutEmpresaInput, DiagnosticoUncheckedCreateWithoutEmpresaInput> | DiagnosticoCreateWithoutEmpresaInput[] | DiagnosticoUncheckedCreateWithoutEmpresaInput[]
-    connectOrCreate?: DiagnosticoCreateOrConnectWithoutEmpresaInput | DiagnosticoCreateOrConnectWithoutEmpresaInput[]
-    createMany?: DiagnosticoCreateManyEmpresaInputEnvelope
-    connect?: DiagnosticoWhereUniqueInput | DiagnosticoWhereUniqueInput[]
+  export type empresaCreateNestedOneWithoutDiagnosticoInput = {
+    create?: XOR<empresaCreateWithoutDiagnosticoInput, empresaUncheckedCreateWithoutDiagnosticoInput>
+    connectOrCreate?: empresaCreateOrConnectWithoutDiagnosticoInput
+    connect?: empresaWhereUniqueInput
   }
 
-  export type DiagnosticoUncheckedCreateNestedManyWithoutEmpresaInput = {
-    create?: XOR<DiagnosticoCreateWithoutEmpresaInput, DiagnosticoUncheckedCreateWithoutEmpresaInput> | DiagnosticoCreateWithoutEmpresaInput[] | DiagnosticoUncheckedCreateWithoutEmpresaInput[]
-    connectOrCreate?: DiagnosticoCreateOrConnectWithoutEmpresaInput | DiagnosticoCreateOrConnectWithoutEmpresaInput[]
-    createMany?: DiagnosticoCreateManyEmpresaInputEnvelope
-    connect?: DiagnosticoWhereUniqueInput | DiagnosticoWhereUniqueInput[]
+  export type respostaCreateNestedManyWithoutDiagnosticoInput = {
+    create?: XOR<respostaCreateWithoutDiagnosticoInput, respostaUncheckedCreateWithoutDiagnosticoInput> | respostaCreateWithoutDiagnosticoInput[] | respostaUncheckedCreateWithoutDiagnosticoInput[]
+    connectOrCreate?: respostaCreateOrConnectWithoutDiagnosticoInput | respostaCreateOrConnectWithoutDiagnosticoInput[]
+    createMany?: respostaCreateManyDiagnosticoInputEnvelope
+    connect?: respostaWhereUniqueInput | respostaWhereUniqueInput[]
   }
 
-  export type StringFieldUpdateOperationsInput = {
-    set?: string
+  export type respostaUncheckedCreateNestedManyWithoutDiagnosticoInput = {
+    create?: XOR<respostaCreateWithoutDiagnosticoInput, respostaUncheckedCreateWithoutDiagnosticoInput> | respostaCreateWithoutDiagnosticoInput[] | respostaUncheckedCreateWithoutDiagnosticoInput[]
+    connectOrCreate?: respostaCreateOrConnectWithoutDiagnosticoInput | respostaCreateOrConnectWithoutDiagnosticoInput[]
+    createMany?: respostaCreateManyDiagnosticoInputEnvelope
+    connect?: respostaWhereUniqueInput | respostaWhereUniqueInput[]
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
   }
 
-  export type DiagnosticoUpdateManyWithoutEmpresaNestedInput = {
-    create?: XOR<DiagnosticoCreateWithoutEmpresaInput, DiagnosticoUncheckedCreateWithoutEmpresaInput> | DiagnosticoCreateWithoutEmpresaInput[] | DiagnosticoUncheckedCreateWithoutEmpresaInput[]
-    connectOrCreate?: DiagnosticoCreateOrConnectWithoutEmpresaInput | DiagnosticoCreateOrConnectWithoutEmpresaInput[]
-    upsert?: DiagnosticoUpsertWithWhereUniqueWithoutEmpresaInput | DiagnosticoUpsertWithWhereUniqueWithoutEmpresaInput[]
-    createMany?: DiagnosticoCreateManyEmpresaInputEnvelope
-    set?: DiagnosticoWhereUniqueInput | DiagnosticoWhereUniqueInput[]
-    disconnect?: DiagnosticoWhereUniqueInput | DiagnosticoWhereUniqueInput[]
-    delete?: DiagnosticoWhereUniqueInput | DiagnosticoWhereUniqueInput[]
-    connect?: DiagnosticoWhereUniqueInput | DiagnosticoWhereUniqueInput[]
-    update?: DiagnosticoUpdateWithWhereUniqueWithoutEmpresaInput | DiagnosticoUpdateWithWhereUniqueWithoutEmpresaInput[]
-    updateMany?: DiagnosticoUpdateManyWithWhereWithoutEmpresaInput | DiagnosticoUpdateManyWithWhereWithoutEmpresaInput[]
-    deleteMany?: DiagnosticoScalarWhereInput | DiagnosticoScalarWhereInput[]
-  }
-
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
-  export type DiagnosticoUncheckedUpdateManyWithoutEmpresaNestedInput = {
-    create?: XOR<DiagnosticoCreateWithoutEmpresaInput, DiagnosticoUncheckedCreateWithoutEmpresaInput> | DiagnosticoCreateWithoutEmpresaInput[] | DiagnosticoUncheckedCreateWithoutEmpresaInput[]
-    connectOrCreate?: DiagnosticoCreateOrConnectWithoutEmpresaInput | DiagnosticoCreateOrConnectWithoutEmpresaInput[]
-    upsert?: DiagnosticoUpsertWithWhereUniqueWithoutEmpresaInput | DiagnosticoUpsertWithWhereUniqueWithoutEmpresaInput[]
-    createMany?: DiagnosticoCreateManyEmpresaInputEnvelope
-    set?: DiagnosticoWhereUniqueInput | DiagnosticoWhereUniqueInput[]
-    disconnect?: DiagnosticoWhereUniqueInput | DiagnosticoWhereUniqueInput[]
-    delete?: DiagnosticoWhereUniqueInput | DiagnosticoWhereUniqueInput[]
-    connect?: DiagnosticoWhereUniqueInput | DiagnosticoWhereUniqueInput[]
-    update?: DiagnosticoUpdateWithWhereUniqueWithoutEmpresaInput | DiagnosticoUpdateWithWhereUniqueWithoutEmpresaInput[]
-    updateMany?: DiagnosticoUpdateManyWithWhereWithoutEmpresaInput | DiagnosticoUpdateManyWithWhereWithoutEmpresaInput[]
-    deleteMany?: DiagnosticoScalarWhereInput | DiagnosticoScalarWhereInput[]
-  }
-
-  export type EmpresaCreateNestedOneWithoutDiagnosticosInput = {
-    create?: XOR<EmpresaCreateWithoutDiagnosticosInput, EmpresaUncheckedCreateWithoutDiagnosticosInput>
-    connectOrCreate?: EmpresaCreateOrConnectWithoutDiagnosticosInput
-    connect?: EmpresaWhereUniqueInput
-  }
-
-  export type RespostaCreateNestedManyWithoutDiagnosticoInput = {
-    create?: XOR<RespostaCreateWithoutDiagnosticoInput, RespostaUncheckedCreateWithoutDiagnosticoInput> | RespostaCreateWithoutDiagnosticoInput[] | RespostaUncheckedCreateWithoutDiagnosticoInput[]
-    connectOrCreate?: RespostaCreateOrConnectWithoutDiagnosticoInput | RespostaCreateOrConnectWithoutDiagnosticoInput[]
-    createMany?: RespostaCreateManyDiagnosticoInputEnvelope
-    connect?: RespostaWhereUniqueInput | RespostaWhereUniqueInput[]
-  }
-
-  export type RespostaUncheckedCreateNestedManyWithoutDiagnosticoInput = {
-    create?: XOR<RespostaCreateWithoutDiagnosticoInput, RespostaUncheckedCreateWithoutDiagnosticoInput> | RespostaCreateWithoutDiagnosticoInput[] | RespostaUncheckedCreateWithoutDiagnosticoInput[]
-    connectOrCreate?: RespostaCreateOrConnectWithoutDiagnosticoInput | RespostaCreateOrConnectWithoutDiagnosticoInput[]
-    createMany?: RespostaCreateManyDiagnosticoInputEnvelope
-    connect?: RespostaWhereUniqueInput | RespostaWhereUniqueInput[]
+  export type StringFieldUpdateOperationsInput = {
+    set?: string
   }
 
   export type FloatFieldUpdateOperationsInput = {
@@ -5063,54 +5013,104 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type EmpresaUpdateOneRequiredWithoutDiagnosticosNestedInput = {
-    create?: XOR<EmpresaCreateWithoutDiagnosticosInput, EmpresaUncheckedCreateWithoutDiagnosticosInput>
-    connectOrCreate?: EmpresaCreateOrConnectWithoutDiagnosticosInput
-    upsert?: EmpresaUpsertWithoutDiagnosticosInput
-    connect?: EmpresaWhereUniqueInput
-    update?: XOR<XOR<EmpresaUpdateToOneWithWhereWithoutDiagnosticosInput, EmpresaUpdateWithoutDiagnosticosInput>, EmpresaUncheckedUpdateWithoutDiagnosticosInput>
+  export type empresaUpdateOneRequiredWithoutDiagnosticoNestedInput = {
+    create?: XOR<empresaCreateWithoutDiagnosticoInput, empresaUncheckedCreateWithoutDiagnosticoInput>
+    connectOrCreate?: empresaCreateOrConnectWithoutDiagnosticoInput
+    upsert?: empresaUpsertWithoutDiagnosticoInput
+    connect?: empresaWhereUniqueInput
+    update?: XOR<XOR<empresaUpdateToOneWithWhereWithoutDiagnosticoInput, empresaUpdateWithoutDiagnosticoInput>, empresaUncheckedUpdateWithoutDiagnosticoInput>
   }
 
-  export type RespostaUpdateManyWithoutDiagnosticoNestedInput = {
-    create?: XOR<RespostaCreateWithoutDiagnosticoInput, RespostaUncheckedCreateWithoutDiagnosticoInput> | RespostaCreateWithoutDiagnosticoInput[] | RespostaUncheckedCreateWithoutDiagnosticoInput[]
-    connectOrCreate?: RespostaCreateOrConnectWithoutDiagnosticoInput | RespostaCreateOrConnectWithoutDiagnosticoInput[]
-    upsert?: RespostaUpsertWithWhereUniqueWithoutDiagnosticoInput | RespostaUpsertWithWhereUniqueWithoutDiagnosticoInput[]
-    createMany?: RespostaCreateManyDiagnosticoInputEnvelope
-    set?: RespostaWhereUniqueInput | RespostaWhereUniqueInput[]
-    disconnect?: RespostaWhereUniqueInput | RespostaWhereUniqueInput[]
-    delete?: RespostaWhereUniqueInput | RespostaWhereUniqueInput[]
-    connect?: RespostaWhereUniqueInput | RespostaWhereUniqueInput[]
-    update?: RespostaUpdateWithWhereUniqueWithoutDiagnosticoInput | RespostaUpdateWithWhereUniqueWithoutDiagnosticoInput[]
-    updateMany?: RespostaUpdateManyWithWhereWithoutDiagnosticoInput | RespostaUpdateManyWithWhereWithoutDiagnosticoInput[]
-    deleteMany?: RespostaScalarWhereInput | RespostaScalarWhereInput[]
+  export type respostaUpdateManyWithoutDiagnosticoNestedInput = {
+    create?: XOR<respostaCreateWithoutDiagnosticoInput, respostaUncheckedCreateWithoutDiagnosticoInput> | respostaCreateWithoutDiagnosticoInput[] | respostaUncheckedCreateWithoutDiagnosticoInput[]
+    connectOrCreate?: respostaCreateOrConnectWithoutDiagnosticoInput | respostaCreateOrConnectWithoutDiagnosticoInput[]
+    upsert?: respostaUpsertWithWhereUniqueWithoutDiagnosticoInput | respostaUpsertWithWhereUniqueWithoutDiagnosticoInput[]
+    createMany?: respostaCreateManyDiagnosticoInputEnvelope
+    set?: respostaWhereUniqueInput | respostaWhereUniqueInput[]
+    disconnect?: respostaWhereUniqueInput | respostaWhereUniqueInput[]
+    delete?: respostaWhereUniqueInput | respostaWhereUniqueInput[]
+    connect?: respostaWhereUniqueInput | respostaWhereUniqueInput[]
+    update?: respostaUpdateWithWhereUniqueWithoutDiagnosticoInput | respostaUpdateWithWhereUniqueWithoutDiagnosticoInput[]
+    updateMany?: respostaUpdateManyWithWhereWithoutDiagnosticoInput | respostaUpdateManyWithWhereWithoutDiagnosticoInput[]
+    deleteMany?: respostaScalarWhereInput | respostaScalarWhereInput[]
   }
 
-  export type RespostaUncheckedUpdateManyWithoutDiagnosticoNestedInput = {
-    create?: XOR<RespostaCreateWithoutDiagnosticoInput, RespostaUncheckedCreateWithoutDiagnosticoInput> | RespostaCreateWithoutDiagnosticoInput[] | RespostaUncheckedCreateWithoutDiagnosticoInput[]
-    connectOrCreate?: RespostaCreateOrConnectWithoutDiagnosticoInput | RespostaCreateOrConnectWithoutDiagnosticoInput[]
-    upsert?: RespostaUpsertWithWhereUniqueWithoutDiagnosticoInput | RespostaUpsertWithWhereUniqueWithoutDiagnosticoInput[]
-    createMany?: RespostaCreateManyDiagnosticoInputEnvelope
-    set?: RespostaWhereUniqueInput | RespostaWhereUniqueInput[]
-    disconnect?: RespostaWhereUniqueInput | RespostaWhereUniqueInput[]
-    delete?: RespostaWhereUniqueInput | RespostaWhereUniqueInput[]
-    connect?: RespostaWhereUniqueInput | RespostaWhereUniqueInput[]
-    update?: RespostaUpdateWithWhereUniqueWithoutDiagnosticoInput | RespostaUpdateWithWhereUniqueWithoutDiagnosticoInput[]
-    updateMany?: RespostaUpdateManyWithWhereWithoutDiagnosticoInput | RespostaUpdateManyWithWhereWithoutDiagnosticoInput[]
-    deleteMany?: RespostaScalarWhereInput | RespostaScalarWhereInput[]
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
-  export type DiagnosticoCreateNestedOneWithoutRespostasInput = {
-    create?: XOR<DiagnosticoCreateWithoutRespostasInput, DiagnosticoUncheckedCreateWithoutRespostasInput>
-    connectOrCreate?: DiagnosticoCreateOrConnectWithoutRespostasInput
-    connect?: DiagnosticoWhereUniqueInput
+  export type respostaUncheckedUpdateManyWithoutDiagnosticoNestedInput = {
+    create?: XOR<respostaCreateWithoutDiagnosticoInput, respostaUncheckedCreateWithoutDiagnosticoInput> | respostaCreateWithoutDiagnosticoInput[] | respostaUncheckedCreateWithoutDiagnosticoInput[]
+    connectOrCreate?: respostaCreateOrConnectWithoutDiagnosticoInput | respostaCreateOrConnectWithoutDiagnosticoInput[]
+    upsert?: respostaUpsertWithWhereUniqueWithoutDiagnosticoInput | respostaUpsertWithWhereUniqueWithoutDiagnosticoInput[]
+    createMany?: respostaCreateManyDiagnosticoInputEnvelope
+    set?: respostaWhereUniqueInput | respostaWhereUniqueInput[]
+    disconnect?: respostaWhereUniqueInput | respostaWhereUniqueInput[]
+    delete?: respostaWhereUniqueInput | respostaWhereUniqueInput[]
+    connect?: respostaWhereUniqueInput | respostaWhereUniqueInput[]
+    update?: respostaUpdateWithWhereUniqueWithoutDiagnosticoInput | respostaUpdateWithWhereUniqueWithoutDiagnosticoInput[]
+    updateMany?: respostaUpdateManyWithWhereWithoutDiagnosticoInput | respostaUpdateManyWithWhereWithoutDiagnosticoInput[]
+    deleteMany?: respostaScalarWhereInput | respostaScalarWhereInput[]
   }
 
-  export type DiagnosticoUpdateOneRequiredWithoutRespostasNestedInput = {
-    create?: XOR<DiagnosticoCreateWithoutRespostasInput, DiagnosticoUncheckedCreateWithoutRespostasInput>
-    connectOrCreate?: DiagnosticoCreateOrConnectWithoutRespostasInput
-    upsert?: DiagnosticoUpsertWithoutRespostasInput
-    connect?: DiagnosticoWhereUniqueInput
-    update?: XOR<XOR<DiagnosticoUpdateToOneWithWhereWithoutRespostasInput, DiagnosticoUpdateWithoutRespostasInput>, DiagnosticoUncheckedUpdateWithoutRespostasInput>
+  export type diagnosticoCreateNestedManyWithoutEmpresaInput = {
+    create?: XOR<diagnosticoCreateWithoutEmpresaInput, diagnosticoUncheckedCreateWithoutEmpresaInput> | diagnosticoCreateWithoutEmpresaInput[] | diagnosticoUncheckedCreateWithoutEmpresaInput[]
+    connectOrCreate?: diagnosticoCreateOrConnectWithoutEmpresaInput | diagnosticoCreateOrConnectWithoutEmpresaInput[]
+    createMany?: diagnosticoCreateManyEmpresaInputEnvelope
+    connect?: diagnosticoWhereUniqueInput | diagnosticoWhereUniqueInput[]
+  }
+
+  export type diagnosticoUncheckedCreateNestedManyWithoutEmpresaInput = {
+    create?: XOR<diagnosticoCreateWithoutEmpresaInput, diagnosticoUncheckedCreateWithoutEmpresaInput> | diagnosticoCreateWithoutEmpresaInput[] | diagnosticoUncheckedCreateWithoutEmpresaInput[]
+    connectOrCreate?: diagnosticoCreateOrConnectWithoutEmpresaInput | diagnosticoCreateOrConnectWithoutEmpresaInput[]
+    createMany?: diagnosticoCreateManyEmpresaInputEnvelope
+    connect?: diagnosticoWhereUniqueInput | diagnosticoWhereUniqueInput[]
+  }
+
+  export type diagnosticoUpdateManyWithoutEmpresaNestedInput = {
+    create?: XOR<diagnosticoCreateWithoutEmpresaInput, diagnosticoUncheckedCreateWithoutEmpresaInput> | diagnosticoCreateWithoutEmpresaInput[] | diagnosticoUncheckedCreateWithoutEmpresaInput[]
+    connectOrCreate?: diagnosticoCreateOrConnectWithoutEmpresaInput | diagnosticoCreateOrConnectWithoutEmpresaInput[]
+    upsert?: diagnosticoUpsertWithWhereUniqueWithoutEmpresaInput | diagnosticoUpsertWithWhereUniqueWithoutEmpresaInput[]
+    createMany?: diagnosticoCreateManyEmpresaInputEnvelope
+    set?: diagnosticoWhereUniqueInput | diagnosticoWhereUniqueInput[]
+    disconnect?: diagnosticoWhereUniqueInput | diagnosticoWhereUniqueInput[]
+    delete?: diagnosticoWhereUniqueInput | diagnosticoWhereUniqueInput[]
+    connect?: diagnosticoWhereUniqueInput | diagnosticoWhereUniqueInput[]
+    update?: diagnosticoUpdateWithWhereUniqueWithoutEmpresaInput | diagnosticoUpdateWithWhereUniqueWithoutEmpresaInput[]
+    updateMany?: diagnosticoUpdateManyWithWhereWithoutEmpresaInput | diagnosticoUpdateManyWithWhereWithoutEmpresaInput[]
+    deleteMany?: diagnosticoScalarWhereInput | diagnosticoScalarWhereInput[]
+  }
+
+  export type diagnosticoUncheckedUpdateManyWithoutEmpresaNestedInput = {
+    create?: XOR<diagnosticoCreateWithoutEmpresaInput, diagnosticoUncheckedCreateWithoutEmpresaInput> | diagnosticoCreateWithoutEmpresaInput[] | diagnosticoUncheckedCreateWithoutEmpresaInput[]
+    connectOrCreate?: diagnosticoCreateOrConnectWithoutEmpresaInput | diagnosticoCreateOrConnectWithoutEmpresaInput[]
+    upsert?: diagnosticoUpsertWithWhereUniqueWithoutEmpresaInput | diagnosticoUpsertWithWhereUniqueWithoutEmpresaInput[]
+    createMany?: diagnosticoCreateManyEmpresaInputEnvelope
+    set?: diagnosticoWhereUniqueInput | diagnosticoWhereUniqueInput[]
+    disconnect?: diagnosticoWhereUniqueInput | diagnosticoWhereUniqueInput[]
+    delete?: diagnosticoWhereUniqueInput | diagnosticoWhereUniqueInput[]
+    connect?: diagnosticoWhereUniqueInput | diagnosticoWhereUniqueInput[]
+    update?: diagnosticoUpdateWithWhereUniqueWithoutEmpresaInput | diagnosticoUpdateWithWhereUniqueWithoutEmpresaInput[]
+    updateMany?: diagnosticoUpdateManyWithWhereWithoutEmpresaInput | diagnosticoUpdateManyWithWhereWithoutEmpresaInput[]
+    deleteMany?: diagnosticoScalarWhereInput | diagnosticoScalarWhereInput[]
+  }
+
+  export type diagnosticoCreateNestedOneWithoutRespostaInput = {
+    create?: XOR<diagnosticoCreateWithoutRespostaInput, diagnosticoUncheckedCreateWithoutRespostaInput>
+    connectOrCreate?: diagnosticoCreateOrConnectWithoutRespostaInput
+    connect?: diagnosticoWhereUniqueInput
+  }
+
+  export type diagnosticoUpdateOneRequiredWithoutRespostaNestedInput = {
+    create?: XOR<diagnosticoCreateWithoutRespostaInput, diagnosticoUncheckedCreateWithoutRespostaInput>
+    connectOrCreate?: diagnosticoCreateOrConnectWithoutRespostaInput
+    upsert?: diagnosticoUpsertWithoutRespostaInput
+    connect?: diagnosticoWhereUniqueInput
+    update?: XOR<XOR<diagnosticoUpdateToOneWithWhereWithoutRespostaInput, diagnosticoUpdateWithoutRespostaInput>, diagnosticoUncheckedUpdateWithoutRespostaInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -5122,6 +5122,17 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -5139,15 +5150,15 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type NestedDateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  export type NestedFloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -5166,15 +5177,18 @@ export namespace Prisma {
     _max?: NestedIntFilter<$PrismaModel>
   }
 
-  export type NestedFloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
+  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
@@ -5193,20 +5207,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
-  }
-
-  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
   export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
@@ -5248,84 +5248,23 @@ export namespace Prisma {
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
   }
 
-  export type DiagnosticoCreateWithoutEmpresaInput = {
-    notaGeral: number
-    percentualMaturidade: number
-    nivelMaturidade: string
-    porDiretoria: JsonNullValueInput | InputJsonValue
-    porDimensao: JsonNullValueInput | InputJsonValue
-    createdAt?: Date | string
-    respostas?: RespostaCreateNestedManyWithoutDiagnosticoInput
-  }
-
-  export type DiagnosticoUncheckedCreateWithoutEmpresaInput = {
-    id?: number
-    notaGeral: number
-    percentualMaturidade: number
-    nivelMaturidade: string
-    porDiretoria: JsonNullValueInput | InputJsonValue
-    porDimensao: JsonNullValueInput | InputJsonValue
-    createdAt?: Date | string
-    respostas?: RespostaUncheckedCreateNestedManyWithoutDiagnosticoInput
-  }
-
-  export type DiagnosticoCreateOrConnectWithoutEmpresaInput = {
-    where: DiagnosticoWhereUniqueInput
-    create: XOR<DiagnosticoCreateWithoutEmpresaInput, DiagnosticoUncheckedCreateWithoutEmpresaInput>
-  }
-
-  export type DiagnosticoCreateManyEmpresaInputEnvelope = {
-    data: DiagnosticoCreateManyEmpresaInput | DiagnosticoCreateManyEmpresaInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type DiagnosticoUpsertWithWhereUniqueWithoutEmpresaInput = {
-    where: DiagnosticoWhereUniqueInput
-    update: XOR<DiagnosticoUpdateWithoutEmpresaInput, DiagnosticoUncheckedUpdateWithoutEmpresaInput>
-    create: XOR<DiagnosticoCreateWithoutEmpresaInput, DiagnosticoUncheckedCreateWithoutEmpresaInput>
-  }
-
-  export type DiagnosticoUpdateWithWhereUniqueWithoutEmpresaInput = {
-    where: DiagnosticoWhereUniqueInput
-    data: XOR<DiagnosticoUpdateWithoutEmpresaInput, DiagnosticoUncheckedUpdateWithoutEmpresaInput>
-  }
-
-  export type DiagnosticoUpdateManyWithWhereWithoutEmpresaInput = {
-    where: DiagnosticoScalarWhereInput
-    data: XOR<DiagnosticoUpdateManyMutationInput, DiagnosticoUncheckedUpdateManyWithoutEmpresaInput>
-  }
-
-  export type DiagnosticoScalarWhereInput = {
-    AND?: DiagnosticoScalarWhereInput | DiagnosticoScalarWhereInput[]
-    OR?: DiagnosticoScalarWhereInput[]
-    NOT?: DiagnosticoScalarWhereInput | DiagnosticoScalarWhereInput[]
-    id?: IntFilter<"Diagnostico"> | number
-    empresaId?: IntFilter<"Diagnostico"> | number
-    notaGeral?: FloatFilter<"Diagnostico"> | number
-    percentualMaturidade?: FloatFilter<"Diagnostico"> | number
-    nivelMaturidade?: StringFilter<"Diagnostico"> | string
-    porDiretoria?: JsonFilter<"Diagnostico">
-    porDimensao?: JsonFilter<"Diagnostico">
-    createdAt?: DateTimeFilter<"Diagnostico"> | Date | string
-  }
-
-  export type EmpresaCreateWithoutDiagnosticosInput = {
+  export type empresaCreateWithoutDiagnosticoInput = {
     nome: string
     createdAt?: Date | string
   }
 
-  export type EmpresaUncheckedCreateWithoutDiagnosticosInput = {
+  export type empresaUncheckedCreateWithoutDiagnosticoInput = {
     id?: number
     nome: string
     createdAt?: Date | string
   }
 
-  export type EmpresaCreateOrConnectWithoutDiagnosticosInput = {
-    where: EmpresaWhereUniqueInput
-    create: XOR<EmpresaCreateWithoutDiagnosticosInput, EmpresaUncheckedCreateWithoutDiagnosticosInput>
+  export type empresaCreateOrConnectWithoutDiagnosticoInput = {
+    where: empresaWhereUniqueInput
+    create: XOR<empresaCreateWithoutDiagnosticoInput, empresaUncheckedCreateWithoutDiagnosticoInput>
   }
 
-  export type RespostaCreateWithoutDiagnosticoInput = {
+  export type respostaCreateWithoutDiagnosticoInput = {
     perguntaId: number
     codigo: string
     diretoria: string
@@ -5334,7 +5273,7 @@ export namespace Prisma {
     valor: number
   }
 
-  export type RespostaUncheckedCreateWithoutDiagnosticoInput = {
+  export type respostaUncheckedCreateWithoutDiagnosticoInput = {
     id?: number
     perguntaId: number
     codigo: string
@@ -5344,168 +5283,188 @@ export namespace Prisma {
     valor: number
   }
 
-  export type RespostaCreateOrConnectWithoutDiagnosticoInput = {
-    where: RespostaWhereUniqueInput
-    create: XOR<RespostaCreateWithoutDiagnosticoInput, RespostaUncheckedCreateWithoutDiagnosticoInput>
+  export type respostaCreateOrConnectWithoutDiagnosticoInput = {
+    where: respostaWhereUniqueInput
+    create: XOR<respostaCreateWithoutDiagnosticoInput, respostaUncheckedCreateWithoutDiagnosticoInput>
   }
 
-  export type RespostaCreateManyDiagnosticoInputEnvelope = {
-    data: RespostaCreateManyDiagnosticoInput | RespostaCreateManyDiagnosticoInput[]
+  export type respostaCreateManyDiagnosticoInputEnvelope = {
+    data: respostaCreateManyDiagnosticoInput | respostaCreateManyDiagnosticoInput[]
     skipDuplicates?: boolean
   }
 
-  export type EmpresaUpsertWithoutDiagnosticosInput = {
-    update: XOR<EmpresaUpdateWithoutDiagnosticosInput, EmpresaUncheckedUpdateWithoutDiagnosticosInput>
-    create: XOR<EmpresaCreateWithoutDiagnosticosInput, EmpresaUncheckedCreateWithoutDiagnosticosInput>
-    where?: EmpresaWhereInput
+  export type empresaUpsertWithoutDiagnosticoInput = {
+    update: XOR<empresaUpdateWithoutDiagnosticoInput, empresaUncheckedUpdateWithoutDiagnosticoInput>
+    create: XOR<empresaCreateWithoutDiagnosticoInput, empresaUncheckedCreateWithoutDiagnosticoInput>
+    where?: empresaWhereInput
   }
 
-  export type EmpresaUpdateToOneWithWhereWithoutDiagnosticosInput = {
-    where?: EmpresaWhereInput
-    data: XOR<EmpresaUpdateWithoutDiagnosticosInput, EmpresaUncheckedUpdateWithoutDiagnosticosInput>
+  export type empresaUpdateToOneWithWhereWithoutDiagnosticoInput = {
+    where?: empresaWhereInput
+    data: XOR<empresaUpdateWithoutDiagnosticoInput, empresaUncheckedUpdateWithoutDiagnosticoInput>
   }
 
-  export type EmpresaUpdateWithoutDiagnosticosInput = {
+  export type empresaUpdateWithoutDiagnosticoInput = {
     nome?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type EmpresaUncheckedUpdateWithoutDiagnosticosInput = {
+  export type empresaUncheckedUpdateWithoutDiagnosticoInput = {
     id?: IntFieldUpdateOperationsInput | number
     nome?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type RespostaUpsertWithWhereUniqueWithoutDiagnosticoInput = {
-    where: RespostaWhereUniqueInput
-    update: XOR<RespostaUpdateWithoutDiagnosticoInput, RespostaUncheckedUpdateWithoutDiagnosticoInput>
-    create: XOR<RespostaCreateWithoutDiagnosticoInput, RespostaUncheckedCreateWithoutDiagnosticoInput>
+  export type respostaUpsertWithWhereUniqueWithoutDiagnosticoInput = {
+    where: respostaWhereUniqueInput
+    update: XOR<respostaUpdateWithoutDiagnosticoInput, respostaUncheckedUpdateWithoutDiagnosticoInput>
+    create: XOR<respostaCreateWithoutDiagnosticoInput, respostaUncheckedCreateWithoutDiagnosticoInput>
   }
 
-  export type RespostaUpdateWithWhereUniqueWithoutDiagnosticoInput = {
-    where: RespostaWhereUniqueInput
-    data: XOR<RespostaUpdateWithoutDiagnosticoInput, RespostaUncheckedUpdateWithoutDiagnosticoInput>
+  export type respostaUpdateWithWhereUniqueWithoutDiagnosticoInput = {
+    where: respostaWhereUniqueInput
+    data: XOR<respostaUpdateWithoutDiagnosticoInput, respostaUncheckedUpdateWithoutDiagnosticoInput>
   }
 
-  export type RespostaUpdateManyWithWhereWithoutDiagnosticoInput = {
-    where: RespostaScalarWhereInput
-    data: XOR<RespostaUpdateManyMutationInput, RespostaUncheckedUpdateManyWithoutDiagnosticoInput>
+  export type respostaUpdateManyWithWhereWithoutDiagnosticoInput = {
+    where: respostaScalarWhereInput
+    data: XOR<respostaUpdateManyMutationInput, respostaUncheckedUpdateManyWithoutDiagnosticoInput>
   }
 
-  export type RespostaScalarWhereInput = {
-    AND?: RespostaScalarWhereInput | RespostaScalarWhereInput[]
-    OR?: RespostaScalarWhereInput[]
-    NOT?: RespostaScalarWhereInput | RespostaScalarWhereInput[]
-    id?: IntFilter<"Resposta"> | number
-    diagnosticoId?: IntFilter<"Resposta"> | number
-    perguntaId?: IntFilter<"Resposta"> | number
-    codigo?: StringFilter<"Resposta"> | string
-    diretoria?: StringFilter<"Resposta"> | string
-    dimensao?: StringFilter<"Resposta"> | string
-    texto?: StringFilter<"Resposta"> | string
-    valor?: IntFilter<"Resposta"> | number
+  export type respostaScalarWhereInput = {
+    AND?: respostaScalarWhereInput | respostaScalarWhereInput[]
+    OR?: respostaScalarWhereInput[]
+    NOT?: respostaScalarWhereInput | respostaScalarWhereInput[]
+    id?: IntFilter<"resposta"> | number
+    diagnosticoId?: IntFilter<"resposta"> | number
+    perguntaId?: IntFilter<"resposta"> | number
+    codigo?: StringFilter<"resposta"> | string
+    diretoria?: StringFilter<"resposta"> | string
+    dimensao?: StringFilter<"resposta"> | string
+    texto?: StringFilter<"resposta"> | string
+    valor?: IntFilter<"resposta"> | number
   }
 
-  export type DiagnosticoCreateWithoutRespostasInput = {
+  export type diagnosticoCreateWithoutEmpresaInput = {
+    createdAt?: Date | string
+    nivelMaturidade: string
     notaGeral: number
     percentualMaturidade: number
-    nivelMaturidade: string
-    porDiretoria: JsonNullValueInput | InputJsonValue
     porDimensao: JsonNullValueInput | InputJsonValue
-    createdAt?: Date | string
-    empresa: EmpresaCreateNestedOneWithoutDiagnosticosInput
+    porDiretoria: JsonNullValueInput | InputJsonValue
+    resposta?: respostaCreateNestedManyWithoutDiagnosticoInput
   }
 
-  export type DiagnosticoUncheckedCreateWithoutRespostasInput = {
+  export type diagnosticoUncheckedCreateWithoutEmpresaInput = {
     id?: number
+    createdAt?: Date | string
+    nivelMaturidade: string
+    notaGeral: number
+    percentualMaturidade: number
+    porDimensao: JsonNullValueInput | InputJsonValue
+    porDiretoria: JsonNullValueInput | InputJsonValue
+    resposta?: respostaUncheckedCreateNestedManyWithoutDiagnosticoInput
+  }
+
+  export type diagnosticoCreateOrConnectWithoutEmpresaInput = {
+    where: diagnosticoWhereUniqueInput
+    create: XOR<diagnosticoCreateWithoutEmpresaInput, diagnosticoUncheckedCreateWithoutEmpresaInput>
+  }
+
+  export type diagnosticoCreateManyEmpresaInputEnvelope = {
+    data: diagnosticoCreateManyEmpresaInput | diagnosticoCreateManyEmpresaInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type diagnosticoUpsertWithWhereUniqueWithoutEmpresaInput = {
+    where: diagnosticoWhereUniqueInput
+    update: XOR<diagnosticoUpdateWithoutEmpresaInput, diagnosticoUncheckedUpdateWithoutEmpresaInput>
+    create: XOR<diagnosticoCreateWithoutEmpresaInput, diagnosticoUncheckedCreateWithoutEmpresaInput>
+  }
+
+  export type diagnosticoUpdateWithWhereUniqueWithoutEmpresaInput = {
+    where: diagnosticoWhereUniqueInput
+    data: XOR<diagnosticoUpdateWithoutEmpresaInput, diagnosticoUncheckedUpdateWithoutEmpresaInput>
+  }
+
+  export type diagnosticoUpdateManyWithWhereWithoutEmpresaInput = {
+    where: diagnosticoScalarWhereInput
+    data: XOR<diagnosticoUpdateManyMutationInput, diagnosticoUncheckedUpdateManyWithoutEmpresaInput>
+  }
+
+  export type diagnosticoScalarWhereInput = {
+    AND?: diagnosticoScalarWhereInput | diagnosticoScalarWhereInput[]
+    OR?: diagnosticoScalarWhereInput[]
+    NOT?: diagnosticoScalarWhereInput | diagnosticoScalarWhereInput[]
+    id?: IntFilter<"diagnostico"> | number
+    createdAt?: DateTimeFilter<"diagnostico"> | Date | string
+    empresaId?: IntFilter<"diagnostico"> | number
+    nivelMaturidade?: StringFilter<"diagnostico"> | string
+    notaGeral?: FloatFilter<"diagnostico"> | number
+    percentualMaturidade?: FloatFilter<"diagnostico"> | number
+    porDimensao?: JsonFilter<"diagnostico">
+    porDiretoria?: JsonFilter<"diagnostico">
+  }
+
+  export type diagnosticoCreateWithoutRespostaInput = {
+    createdAt?: Date | string
+    nivelMaturidade: string
+    notaGeral: number
+    percentualMaturidade: number
+    porDimensao: JsonNullValueInput | InputJsonValue
+    porDiretoria: JsonNullValueInput | InputJsonValue
+    empresa: empresaCreateNestedOneWithoutDiagnosticoInput
+  }
+
+  export type diagnosticoUncheckedCreateWithoutRespostaInput = {
+    id?: number
+    createdAt?: Date | string
     empresaId: number
+    nivelMaturidade: string
     notaGeral: number
     percentualMaturidade: number
-    nivelMaturidade: string
-    porDiretoria: JsonNullValueInput | InputJsonValue
     porDimensao: JsonNullValueInput | InputJsonValue
-    createdAt?: Date | string
+    porDiretoria: JsonNullValueInput | InputJsonValue
   }
 
-  export type DiagnosticoCreateOrConnectWithoutRespostasInput = {
-    where: DiagnosticoWhereUniqueInput
-    create: XOR<DiagnosticoCreateWithoutRespostasInput, DiagnosticoUncheckedCreateWithoutRespostasInput>
+  export type diagnosticoCreateOrConnectWithoutRespostaInput = {
+    where: diagnosticoWhereUniqueInput
+    create: XOR<diagnosticoCreateWithoutRespostaInput, diagnosticoUncheckedCreateWithoutRespostaInput>
   }
 
-  export type DiagnosticoUpsertWithoutRespostasInput = {
-    update: XOR<DiagnosticoUpdateWithoutRespostasInput, DiagnosticoUncheckedUpdateWithoutRespostasInput>
-    create: XOR<DiagnosticoCreateWithoutRespostasInput, DiagnosticoUncheckedCreateWithoutRespostasInput>
-    where?: DiagnosticoWhereInput
+  export type diagnosticoUpsertWithoutRespostaInput = {
+    update: XOR<diagnosticoUpdateWithoutRespostaInput, diagnosticoUncheckedUpdateWithoutRespostaInput>
+    create: XOR<diagnosticoCreateWithoutRespostaInput, diagnosticoUncheckedCreateWithoutRespostaInput>
+    where?: diagnosticoWhereInput
   }
 
-  export type DiagnosticoUpdateToOneWithWhereWithoutRespostasInput = {
-    where?: DiagnosticoWhereInput
-    data: XOR<DiagnosticoUpdateWithoutRespostasInput, DiagnosticoUncheckedUpdateWithoutRespostasInput>
+  export type diagnosticoUpdateToOneWithWhereWithoutRespostaInput = {
+    where?: diagnosticoWhereInput
+    data: XOR<diagnosticoUpdateWithoutRespostaInput, diagnosticoUncheckedUpdateWithoutRespostaInput>
   }
 
-  export type DiagnosticoUpdateWithoutRespostasInput = {
+  export type diagnosticoUpdateWithoutRespostaInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    nivelMaturidade?: StringFieldUpdateOperationsInput | string
     notaGeral?: FloatFieldUpdateOperationsInput | number
     percentualMaturidade?: FloatFieldUpdateOperationsInput | number
-    nivelMaturidade?: StringFieldUpdateOperationsInput | string
-    porDiretoria?: JsonNullValueInput | InputJsonValue
     porDimensao?: JsonNullValueInput | InputJsonValue
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    empresa?: EmpresaUpdateOneRequiredWithoutDiagnosticosNestedInput
+    porDiretoria?: JsonNullValueInput | InputJsonValue
+    empresa?: empresaUpdateOneRequiredWithoutDiagnosticoNestedInput
   }
 
-  export type DiagnosticoUncheckedUpdateWithoutRespostasInput = {
+  export type diagnosticoUncheckedUpdateWithoutRespostaInput = {
     id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     empresaId?: IntFieldUpdateOperationsInput | number
+    nivelMaturidade?: StringFieldUpdateOperationsInput | string
     notaGeral?: FloatFieldUpdateOperationsInput | number
     percentualMaturidade?: FloatFieldUpdateOperationsInput | number
-    nivelMaturidade?: StringFieldUpdateOperationsInput | string
-    porDiretoria?: JsonNullValueInput | InputJsonValue
     porDimensao?: JsonNullValueInput | InputJsonValue
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type DiagnosticoCreateManyEmpresaInput = {
-    id?: number
-    notaGeral: number
-    percentualMaturidade: number
-    nivelMaturidade: string
-    porDiretoria: JsonNullValueInput | InputJsonValue
-    porDimensao: JsonNullValueInput | InputJsonValue
-    createdAt?: Date | string
-  }
-
-  export type DiagnosticoUpdateWithoutEmpresaInput = {
-    notaGeral?: FloatFieldUpdateOperationsInput | number
-    percentualMaturidade?: FloatFieldUpdateOperationsInput | number
-    nivelMaturidade?: StringFieldUpdateOperationsInput | string
     porDiretoria?: JsonNullValueInput | InputJsonValue
-    porDimensao?: JsonNullValueInput | InputJsonValue
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    respostas?: RespostaUpdateManyWithoutDiagnosticoNestedInput
   }
 
-  export type DiagnosticoUncheckedUpdateWithoutEmpresaInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    notaGeral?: FloatFieldUpdateOperationsInput | number
-    percentualMaturidade?: FloatFieldUpdateOperationsInput | number
-    nivelMaturidade?: StringFieldUpdateOperationsInput | string
-    porDiretoria?: JsonNullValueInput | InputJsonValue
-    porDimensao?: JsonNullValueInput | InputJsonValue
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    respostas?: RespostaUncheckedUpdateManyWithoutDiagnosticoNestedInput
-  }
-
-  export type DiagnosticoUncheckedUpdateManyWithoutEmpresaInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    notaGeral?: FloatFieldUpdateOperationsInput | number
-    percentualMaturidade?: FloatFieldUpdateOperationsInput | number
-    nivelMaturidade?: StringFieldUpdateOperationsInput | string
-    porDiretoria?: JsonNullValueInput | InputJsonValue
-    porDimensao?: JsonNullValueInput | InputJsonValue
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type RespostaCreateManyDiagnosticoInput = {
+  export type respostaCreateManyDiagnosticoInput = {
     id?: number
     perguntaId: number
     codigo: string
@@ -5515,7 +5474,7 @@ export namespace Prisma {
     valor: number
   }
 
-  export type RespostaUpdateWithoutDiagnosticoInput = {
+  export type respostaUpdateWithoutDiagnosticoInput = {
     perguntaId?: IntFieldUpdateOperationsInput | number
     codigo?: StringFieldUpdateOperationsInput | string
     diretoria?: StringFieldUpdateOperationsInput | string
@@ -5524,7 +5483,7 @@ export namespace Prisma {
     valor?: IntFieldUpdateOperationsInput | number
   }
 
-  export type RespostaUncheckedUpdateWithoutDiagnosticoInput = {
+  export type respostaUncheckedUpdateWithoutDiagnosticoInput = {
     id?: IntFieldUpdateOperationsInput | number
     perguntaId?: IntFieldUpdateOperationsInput | number
     codigo?: StringFieldUpdateOperationsInput | string
@@ -5534,7 +5493,7 @@ export namespace Prisma {
     valor?: IntFieldUpdateOperationsInput | number
   }
 
-  export type RespostaUncheckedUpdateManyWithoutDiagnosticoInput = {
+  export type respostaUncheckedUpdateManyWithoutDiagnosticoInput = {
     id?: IntFieldUpdateOperationsInput | number
     perguntaId?: IntFieldUpdateOperationsInput | number
     codigo?: StringFieldUpdateOperationsInput | string
@@ -5542,6 +5501,47 @@ export namespace Prisma {
     dimensao?: StringFieldUpdateOperationsInput | string
     texto?: StringFieldUpdateOperationsInput | string
     valor?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type diagnosticoCreateManyEmpresaInput = {
+    id?: number
+    createdAt?: Date | string
+    nivelMaturidade: string
+    notaGeral: number
+    percentualMaturidade: number
+    porDimensao: JsonNullValueInput | InputJsonValue
+    porDiretoria: JsonNullValueInput | InputJsonValue
+  }
+
+  export type diagnosticoUpdateWithoutEmpresaInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    nivelMaturidade?: StringFieldUpdateOperationsInput | string
+    notaGeral?: FloatFieldUpdateOperationsInput | number
+    percentualMaturidade?: FloatFieldUpdateOperationsInput | number
+    porDimensao?: JsonNullValueInput | InputJsonValue
+    porDiretoria?: JsonNullValueInput | InputJsonValue
+    resposta?: respostaUpdateManyWithoutDiagnosticoNestedInput
+  }
+
+  export type diagnosticoUncheckedUpdateWithoutEmpresaInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    nivelMaturidade?: StringFieldUpdateOperationsInput | string
+    notaGeral?: FloatFieldUpdateOperationsInput | number
+    percentualMaturidade?: FloatFieldUpdateOperationsInput | number
+    porDimensao?: JsonNullValueInput | InputJsonValue
+    porDiretoria?: JsonNullValueInput | InputJsonValue
+    resposta?: respostaUncheckedUpdateManyWithoutDiagnosticoNestedInput
+  }
+
+  export type diagnosticoUncheckedUpdateManyWithoutEmpresaInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    nivelMaturidade?: StringFieldUpdateOperationsInput | string
+    notaGeral?: FloatFieldUpdateOperationsInput | number
+    percentualMaturidade?: FloatFieldUpdateOperationsInput | number
+    porDimensao?: JsonNullValueInput | InputJsonValue
+    porDiretoria?: JsonNullValueInput | InputJsonValue
   }
 
 

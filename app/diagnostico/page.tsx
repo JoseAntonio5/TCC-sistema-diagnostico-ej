@@ -26,12 +26,13 @@ export default function DiagnosticoPage() {
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [empresaNome, setEmpresaNome] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   function handleAnswer(id: number, value: number) {
     setAnswers((s) => ({ ...s, [id]: value }));
   }
 
-  function finalizar() {
+  async function finalizar() {
     setError(null);
 
     if (!empresaNome.trim()) {
@@ -50,18 +51,52 @@ export default function DiagnosticoPage() {
     }
 
     const resultado = calcularDiagnostico(answers, perguntas);
+    const payload = {
+      empresaNome: empresaNome.trim(),
+      respostas: perguntas.map((pergunta) => ({
+        perguntaId: pergunta.id,
+        codigo: pergunta.codigo,
+        diretoria: pergunta.diretoria,
+        dimensao: pergunta.dimensao,
+        texto: pergunta.texto,
+        valor: answers[pergunta.id],
+      })),
+      notaGeral: resultado.notaGeral,
+      percentualMaturidade: resultado.percentualMaturidade,
+      nivelMaturidade: resultado.nivelMaturidade,
+      porDiretoria: resultado.porDiretoria,
+      porDimensao: resultado.porDimensao,
+    };
 
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem(
-        "ultimoDiagnostico",
-        JSON.stringify({
-          empresa: empresaNome.trim(),
-          ...resultado,
-        }),
-      );
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/diagnosticos", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data?.error ?? "Erro ao salvar o diagnóstico.");
+        return;
+      }
+
+      if (!data?.diagnosticoId) {
+        setError("Resposta inesperada do servidor.");
+        return;
+      }
+
+      router.push(`/dashboard?diagnosticoId=${data.diagnosticoId}`);
+    } catch (error) {
+      setError(error instanceof Error ? error.message : "Falha na conexão com o servidor.");
+    } finally {
+      setIsSubmitting(false);
     }
-
-    router.push("/dashboard");
   }
 
   return (
@@ -130,9 +165,10 @@ export default function DiagnosticoPage() {
         <div className="mt-6 flex flex-col gap-3 md:flex-row md:items-center">
           <button
             onClick={finalizar}
-            className="px-5 py-2 rounded-xl bg-slate-900 text-white shadow-sm transition hover:bg-slate-800"
+            disabled={isSubmitting}
+            className="inline-flex items-center justify-center px-5 py-2 rounded-xl bg-slate-900 text-white shadow-sm transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:bg-slate-400"
           >
-            Finalizar Diagnóstico
+            {isSubmitting ? "Enviando..." : "Finalizar Diagnóstico"}
           </button>
           {error && <div className="text-red-700 text-sm">{error}</div>}
           <div className="ml-auto text-sm text-slate-600">Perguntas: {perguntas.length}</div>

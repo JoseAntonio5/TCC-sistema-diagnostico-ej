@@ -120,20 +120,20 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
+exports.Prisma.DiagnosticoScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  empresaId: 'empresaId',
+  nivelMaturidade: 'nivelMaturidade',
+  notaGeral: 'notaGeral',
+  percentualMaturidade: 'percentualMaturidade',
+  porDimensao: 'porDimensao',
+  porDiretoria: 'porDiretoria'
+};
+
 exports.Prisma.EmpresaScalarFieldEnum = {
   id: 'id',
   nome: 'nome',
-  createdAt: 'createdAt'
-};
-
-exports.Prisma.DiagnosticoScalarFieldEnum = {
-  id: 'id',
-  empresaId: 'empresaId',
-  notaGeral: 'notaGeral',
-  percentualMaturidade: 'percentualMaturidade',
-  nivelMaturidade: 'nivelMaturidade',
-  porDiretoria: 'porDiretoria',
-  porDimensao: 'porDimensao',
   createdAt: 'createdAt'
 };
 
@@ -157,10 +157,6 @@ exports.Prisma.JsonNullValueInput = {
   JsonNull: Prisma.JsonNull
 };
 
-exports.Prisma.EmpresaOrderByRelevanceFieldEnum = {
-  nome: 'nome'
-};
-
 exports.Prisma.JsonNullValueFilter = {
   DbNull: Prisma.DbNull,
   JsonNull: Prisma.JsonNull,
@@ -172,11 +168,15 @@ exports.Prisma.QueryMode = {
   insensitive: 'insensitive'
 };
 
-exports.Prisma.DiagnosticoOrderByRelevanceFieldEnum = {
+exports.Prisma.diagnosticoOrderByRelevanceFieldEnum = {
   nivelMaturidade: 'nivelMaturidade'
 };
 
-exports.Prisma.RespostaOrderByRelevanceFieldEnum = {
+exports.Prisma.empresaOrderByRelevanceFieldEnum = {
+  nome: 'nome'
+};
+
+exports.Prisma.respostaOrderByRelevanceFieldEnum = {
   codigo: 'codigo',
   diretoria: 'diretoria',
   dimensao: 'dimensao',
@@ -185,9 +185,9 @@ exports.Prisma.RespostaOrderByRelevanceFieldEnum = {
 
 
 exports.Prisma.ModelName = {
-  Empresa: 'Empresa',
-  Diagnostico: 'Diagnostico',
-  Resposta: 'Resposta'
+  diagnostico: 'diagnostico',
+  empresa: 'empresa',
+  resposta: 'resposta'
 };
 
 /**
