@@ -1,3 +1,5 @@
+import Interpretation from "../../src/components/Interpretation";
+import { interpretarDiagnostico } from "../../src/lib/interpretarDiagnostico";
 import { prisma } from "../../lib/prisma";
 
 type DashboardData = {
@@ -128,6 +130,12 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
     porDimensao: (diagnostico.porDimensao as Record<string, number>) ?? {},
   };
 
+  const analise = interpretarDiagnostico({
+    notaGeral: diagnostico.notaGeral,
+    nivelMaturidade: diagnostico.nivelMaturidade,
+    porDimensao: data.porDimensao,
+  });
+
   return (
     <main className="min-h-screen bg-slate-50 py-10">
       <div className="mx-auto max-w-6xl space-y-8 px-4 sm:px-6">
@@ -156,6 +164,8 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
             Dados carregados do diagnóstico #{diagnosticoId}.
           </div>
         </section>
+
+        <Interpretation analysis={analise} />
 
         <div className="grid gap-4 md:grid-cols-3">
           <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
